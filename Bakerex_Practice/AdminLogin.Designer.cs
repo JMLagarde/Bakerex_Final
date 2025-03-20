@@ -79,7 +79,7 @@
             this.lblRegister.Size = new System.Drawing.Size(82, 38);
             this.lblRegister.TabIndex = 23;
             this.lblRegister.Text = "Register";
-            this.lblRegister.Click += new System.EventHandler(this.lblRegister_Click);
+            this.lblRegister.Click += new System.EventHandler(this.lblRegister_Click_1);
             // 
             // btnLogin
             // 
@@ -96,6 +96,7 @@
             this.btnLogin.Size = new System.Drawing.Size(301, 45);
             this.btnLogin.TabIndex = 22;
             this.btnLogin.Text = "Login";
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // txtSignup
             // 

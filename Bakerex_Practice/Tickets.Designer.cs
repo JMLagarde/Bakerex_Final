@@ -28,34 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblLogut = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblCalendar = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblSummary = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblTechnicians = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblTickets = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.txtRole = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblStatusBoard = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.txtAdmin = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblAdminName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.pnlPendingTickets = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.lblPendingTickets = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.pnlResolved = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.lblResolved = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.pnlOpenTickets = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.lblOpenTickets = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.lblStatusBoardText = new System.Windows.Forms.Label();
+            this.txtResponse = new System.Windows.Forms.TextBox();
+            this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
+            this.cbxTechnician = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbxStatus = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblPriorityLevel = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblCreatedAt = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblProductDetails = new System.Windows.Forms.Label();
+            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblIssueType = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblPhoneNumber = new System.Windows.Forms.Label();
+            this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblSubject = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblCustomerName = new System.Windows.Forms.Label();
+            this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblCompanyName = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.pnlTicketId = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblTicketId = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblTicket = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
-            this.pnlPendingTickets.SuspendLayout();
-            this.pnlResolved.SuspendLayout();
-            this.pnlOpenTickets.SuspendLayout();
+            this.guna2Panel11.SuspendLayout();
+            this.guna2Panel10.SuspendLayout();
+            this.guna2Panel9.SuspendLayout();
+            this.guna2Panel7.SuspendLayout();
+            this.guna2Panel5.SuspendLayout();
+            this.guna2Panel3.SuspendLayout();
+            this.guna2Panel8.SuspendLayout();
+            this.guna2Panel2.SuspendLayout();
+            this.guna2Panel6.SuspendLayout();
+            this.guna2Panel4.SuspendLayout();
+            this.pnlTicketId.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,17 +156,6 @@
             this.lblTickets.TabIndex = 16;
             this.lblTickets.Text = "Tickets";
             // 
-            // txtRole
-            // 
-            this.txtRole.BackColor = System.Drawing.Color.Transparent;
-            this.txtRole.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRole.ForeColor = System.Drawing.Color.Silver;
-            this.txtRole.Location = new System.Drawing.Point(16, 98);
-            this.txtRole.Name = "txtRole";
-            this.txtRole.Size = new System.Drawing.Size(27, 21);
-            this.txtRole.TabIndex = 15;
-            this.txtRole.Text = "Role";
-            // 
             // lblStatusBoard
             // 
             this.lblStatusBoard.BackColor = System.Drawing.Color.Transparent;
@@ -141,203 +167,563 @@
             this.lblStatusBoard.Size = new System.Drawing.Size(111, 30);
             this.lblStatusBoard.TabIndex = 14;
             this.lblStatusBoard.Text = "Status Board";
-            // 
-            // txtAdmin
-            // 
-            this.txtAdmin.BackColor = System.Drawing.Color.Transparent;
-            this.txtAdmin.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAdmin.ForeColor = System.Drawing.Color.Silver;
-            this.txtAdmin.Location = new System.Drawing.Point(16, 83);
-            this.txtAdmin.Name = "txtAdmin";
-            this.txtAdmin.Size = new System.Drawing.Size(38, 21);
-            this.txtAdmin.TabIndex = 13;
-            this.txtAdmin.Text = "Admin";
-            // 
-            // lblAdminName
-            // 
-            this.lblAdminName.BackColor = System.Drawing.Color.Transparent;
-            this.lblAdminName.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdminName.ForeColor = System.Drawing.Color.White;
-            this.lblAdminName.Location = new System.Drawing.Point(16, 62);
-            this.lblAdminName.Name = "lblAdminName";
-            this.lblAdminName.Size = new System.Drawing.Size(111, 30);
-            this.lblAdminName.TabIndex = 12;
-            this.lblAdminName.Text = "Admin Name";
+            this.lblStatusBoard.Click += new System.EventHandler(this.lblStatusBoard_Click);
             // 
             // guna2Panel1
             // 
             this.guna2Panel1.BorderRadius = 20;
-            this.guna2Panel1.Controls.Add(this.guna2DataGridView1);
-            this.guna2Panel1.Controls.Add(this.pnlPendingTickets);
-            this.guna2Panel1.Controls.Add(this.pnlResolved);
-            this.guna2Panel1.Controls.Add(this.pnlOpenTickets);
-            this.guna2Panel1.Controls.Add(this.guna2ComboBox1);
-            this.guna2Panel1.Controls.Add(this.lblStatusBoardText);
+            this.guna2Panel1.Controls.Add(this.txtResponse);
+            this.guna2Panel1.Controls.Add(this.btnUpdate);
+            this.guna2Panel1.Controls.Add(this.cbxTechnician);
+            this.guna2Panel1.Controls.Add(this.cbxStatus);
+            this.guna2Panel1.Controls.Add(this.label15);
+            this.guna2Panel1.Controls.Add(this.monthCalendar1);
+            this.guna2Panel1.Controls.Add(this.label18);
+            this.guna2Panel1.Controls.Add(this.label16);
+            this.guna2Panel1.Controls.Add(this.label14);
+            this.guna2Panel1.Controls.Add(this.label6);
+            this.guna2Panel1.Controls.Add(this.panel1);
+            this.guna2Panel1.Controls.Add(this.guna2Panel11);
+            this.guna2Panel1.Controls.Add(this.label13);
+            this.guna2Panel1.Controls.Add(this.guna2Panel10);
+            this.guna2Panel1.Controls.Add(this.label10);
+            this.guna2Panel1.Controls.Add(this.guna2Panel9);
+            this.guna2Panel1.Controls.Add(this.lblProductDetails);
+            this.guna2Panel1.Controls.Add(this.guna2Panel7);
+            this.guna2Panel1.Controls.Add(this.guna2Panel5);
+            this.guna2Panel1.Controls.Add(this.label4);
+            this.guna2Panel1.Controls.Add(this.guna2Panel3);
+            this.guna2Panel1.Controls.Add(this.guna2Panel8);
+            this.guna2Panel1.Controls.Add(this.label8);
+            this.guna2Panel1.Controls.Add(this.label9);
+            this.guna2Panel1.Controls.Add(this.guna2Panel2);
+            this.guna2Panel1.Controls.Add(this.guna2Panel6);
+            this.guna2Panel1.Controls.Add(this.label11);
+            this.guna2Panel1.Controls.Add(this.label5);
+            this.guna2Panel1.Controls.Add(this.label3);
+            this.guna2Panel1.Controls.Add(this.guna2Panel4);
+            this.guna2Panel1.Controls.Add(this.label7);
+            this.guna2Panel1.Controls.Add(this.pnlTicketId);
+            this.guna2Panel1.Controls.Add(this.label1);
+            this.guna2Panel1.Controls.Add(this.lblTicket);
             this.guna2Panel1.Controls.Add(this.pictureBox1);
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
             this.guna2Panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(51)))), ((int)(((byte)(255)))));
             this.guna2Panel1.Location = new System.Drawing.Point(165, 12);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(666, 519);
+            this.guna2Panel1.Size = new System.Drawing.Size(666, 827);
             this.guna2Panel1.TabIndex = 21;
             // 
-            // guna2DataGridView1
+            // txtResponse
             // 
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
-            this.guna2DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
-            this.guna2DataGridView1.ColumnHeadersHeight = 4;
-            this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(51)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle18;
-            this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(25, 177);
-            this.guna2DataGridView1.Name = "guna2DataGridView1";
-            this.guna2DataGridView1.RowHeadersVisible = false;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(613, 315);
-            this.guna2DataGridView1.TabIndex = 7;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 4;
-            this.guna2DataGridView1.ThemeStyle.ReadOnly = false;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(51)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 22;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.txtResponse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(59)))));
+            this.txtResponse.ForeColor = System.Drawing.Color.White;
+            this.txtResponse.Location = new System.Drawing.Point(346, 614);
+            this.txtResponse.Multiline = true;
+            this.txtResponse.Name = "txtResponse";
+            this.txtResponse.Size = new System.Drawing.Size(283, 162);
+            this.txtResponse.TabIndex = 27;
             // 
-            // pnlPendingTickets
+            // btnUpdate
             // 
-            this.pnlPendingTickets.BackColor = System.Drawing.Color.Transparent;
-            this.pnlPendingTickets.BorderRadius = 10;
-            this.pnlPendingTickets.Controls.Add(this.lblPendingTickets);
-            this.pnlPendingTickets.FillColor = System.Drawing.Color.Gainsboro;
-            this.pnlPendingTickets.FillColor2 = System.Drawing.Color.DarkGray;
-            this.pnlPendingTickets.Font = new System.Drawing.Font("Poppins", 21.75F);
-            this.pnlPendingTickets.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.pnlPendingTickets.Location = new System.Drawing.Point(246, 86);
-            this.pnlPendingTickets.Name = "pnlPendingTickets";
-            this.pnlPendingTickets.Size = new System.Drawing.Size(168, 76);
-            this.pnlPendingTickets.TabIndex = 6;
+            this.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(51)))), ((int)(((byte)(255)))));
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnUpdate.Location = new System.Drawing.Point(405, 782);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(173, 37);
+            this.btnUpdate.TabIndex = 26;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // lblPendingTickets
+            // cbxTechnician
             // 
-            this.lblPendingTickets.BackColor = System.Drawing.Color.Transparent;
-            this.lblPendingTickets.Font = new System.Drawing.Font("Poppins SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPendingTickets.ForeColor = System.Drawing.Color.Black;
-            this.lblPendingTickets.Location = new System.Drawing.Point(43, 55);
-            this.lblPendingTickets.Name = "lblPendingTickets";
-            this.lblPendingTickets.Size = new System.Drawing.Size(90, 21);
-            this.lblPendingTickets.TabIndex = 7;
-            this.lblPendingTickets.Text = "Pending Tickets";
+            this.cbxTechnician.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(59)))));
+            this.cbxTechnician.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxTechnician.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxTechnician.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(59)))));
+            this.cbxTechnician.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxTechnician.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxTechnician.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbxTechnician.ForeColor = System.Drawing.Color.White;
+            this.cbxTechnician.ItemHeight = 30;
+            this.cbxTechnician.Location = new System.Drawing.Point(346, 549);
+            this.cbxTechnician.Name = "cbxTechnician";
+            this.cbxTechnician.Size = new System.Drawing.Size(283, 36);
+            this.cbxTechnician.TabIndex = 25;
             // 
-            // pnlResolved
+            // cbxStatus
             // 
-            this.pnlResolved.BackColor = System.Drawing.Color.Transparent;
-            this.pnlResolved.BorderRadius = 10;
-            this.pnlResolved.Controls.Add(this.lblResolved);
-            this.pnlResolved.FillColor = System.Drawing.Color.Gainsboro;
-            this.pnlResolved.FillColor2 = System.Drawing.Color.DarkGray;
-            this.pnlResolved.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlResolved.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.pnlResolved.Location = new System.Drawing.Point(470, 86);
-            this.pnlResolved.Name = "pnlResolved";
-            this.pnlResolved.Size = new System.Drawing.Size(168, 76);
-            this.pnlResolved.TabIndex = 5;
+            this.cbxStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(59)))));
+            this.cbxStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxStatus.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(59)))));
+            this.cbxStatus.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxStatus.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbxStatus.ForeColor = System.Drawing.Color.White;
+            this.cbxStatus.ItemHeight = 30;
+            this.cbxStatus.Items.AddRange(new object[] {
+            "Pending",
+            "Scheduled",
+            "In Progress",
+            "Resolved"});
+            this.cbxStatus.Location = new System.Drawing.Point(38, 549);
+            this.cbxStatus.Name = "cbxStatus";
+            this.cbxStatus.Size = new System.Drawing.Size(283, 36);
+            this.cbxStatus.StartIndex = 0;
+            this.cbxStatus.TabIndex = 24;
             // 
-            // lblResolved
+            // label15
             // 
-            this.lblResolved.BackColor = System.Drawing.Color.Transparent;
-            this.lblResolved.Font = new System.Drawing.Font("Poppins SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResolved.ForeColor = System.Drawing.Color.Black;
-            this.lblResolved.Location = new System.Drawing.Point(59, 55);
-            this.lblResolved.Name = "lblResolved";
-            this.lblResolved.Size = new System.Drawing.Size(54, 21);
-            this.lblResolved.TabIndex = 8;
-            this.lblResolved.Text = "Resolved";
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(346, 588);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(67, 22);
+            this.label15.TabIndex = 14;
+            this.label15.Text = "Response";
             // 
-            // pnlOpenTickets
+            // monthCalendar1
             // 
-            this.pnlOpenTickets.BackColor = System.Drawing.Color.Transparent;
-            this.pnlOpenTickets.BorderRadius = 10;
-            this.pnlOpenTickets.Controls.Add(this.lblOpenTickets);
-            this.pnlOpenTickets.FillColor = System.Drawing.Color.Gainsboro;
-            this.pnlOpenTickets.FillColor2 = System.Drawing.Color.DarkGray;
-            this.pnlOpenTickets.Font = new System.Drawing.Font("Poppins", 21.75F);
-            this.pnlOpenTickets.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.pnlOpenTickets.Location = new System.Drawing.Point(25, 86);
-            this.pnlOpenTickets.Name = "pnlOpenTickets";
-            this.pnlOpenTickets.Size = new System.Drawing.Size(168, 76);
-            this.pnlOpenTickets.TabIndex = 4;
+            this.monthCalendar1.Location = new System.Drawing.Point(34, 614);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 23;
             // 
-            // lblOpenTickets
+            // label18
             // 
-            this.lblOpenTickets.BackColor = System.Drawing.Color.Transparent;
-            this.lblOpenTickets.Font = new System.Drawing.Font("Poppins SemiBold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOpenTickets.ForeColor = System.Drawing.Color.Black;
-            this.lblOpenTickets.Location = new System.Drawing.Point(43, 55);
-            this.lblOpenTickets.Name = "lblOpenTickets";
-            this.lblOpenTickets.Size = new System.Drawing.Size(75, 21);
-            this.lblOpenTickets.TabIndex = 9;
-            this.lblOpenTickets.Text = "Open Tickets";
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.Transparent;
+            this.label18.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(346, 527);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(75, 22);
+            this.label18.TabIndex = 20;
+            this.label18.Text = "Technician";
             // 
-            // guna2ComboBox1
+            // label16
             // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.White;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FillColor = System.Drawing.SystemColors.Window;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.Items.AddRange(new object[] {
-            "This Day",
-            "This Week",
-            "This Month"});
-            this.guna2ComboBox1.Location = new System.Drawing.Point(25, 44);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(137, 36);
-            this.guna2ComboBox1.TabIndex = 8;
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(33, 594);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(65, 22);
+            this.label16.TabIndex = 22;
+            this.label16.Text = "Schedule";
             // 
-            // lblStatusBoardText
+            // label14
             // 
-            this.lblStatusBoardText.AutoSize = true;
-            this.lblStatusBoardText.BackColor = System.Drawing.Color.Transparent;
-            this.lblStatusBoardText.Font = new System.Drawing.Font("Poppins Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatusBoardText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.lblStatusBoardText.Location = new System.Drawing.Point(19, 13);
-            this.lblStatusBoardText.Name = "lblStatusBoardText";
-            this.lblStatusBoardText.Size = new System.Drawing.Size(143, 34);
-            this.lblStatusBoardText.TabIndex = 1;
-            this.lblStatusBoardText.Text = "Status Board";
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(35, 527);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(47, 22);
+            this.label14.TabIndex = 18;
+            this.label14.Text = "Status";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Poppins Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.label6.Location = new System.Drawing.Point(34, 497);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(156, 34);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Update Status";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(51)))), ((int)(((byte)(255)))));
+            this.panel1.Location = new System.Drawing.Point(34, 487);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(618, 10);
+            this.panel1.TabIndex = 20;
+            // 
+            // guna2Panel11
+            // 
+            this.guna2Panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(59)))));
+            this.guna2Panel11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(94)))), ((int)(((byte)(255)))));
+            this.guna2Panel11.BorderThickness = 2;
+            this.guna2Panel11.Controls.Add(this.lblPriorityLevel);
+            this.guna2Panel11.ForeColor = System.Drawing.Color.White;
+            this.guna2Panel11.Location = new System.Drawing.Point(346, 378);
+            this.guna2Panel11.Name = "guna2Panel11";
+            this.guna2Panel11.Size = new System.Drawing.Size(287, 33);
+            this.guna2Panel11.TabIndex = 19;
+            // 
+            // lblPriorityLevel
+            // 
+            this.lblPriorityLevel.AutoSize = true;
+            this.lblPriorityLevel.Location = new System.Drawing.Point(3, 9);
+            this.lblPriorityLevel.MaximumSize = new System.Drawing.Size(287, 0);
+            this.lblPriorityLevel.Name = "lblPriorityLevel";
+            this.lblPriorityLevel.Size = new System.Drawing.Size(67, 13);
+            this.lblPriorityLevel.TabIndex = 0;
+            this.lblPriorityLevel.Text = "Priority Level";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(346, 353);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(82, 22);
+            this.label13.TabIndex = 18;
+            this.label13.Text = "Priority Level";
+            // 
+            // guna2Panel10
+            // 
+            this.guna2Panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(59)))));
+            this.guna2Panel10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(94)))), ((int)(((byte)(255)))));
+            this.guna2Panel10.BorderThickness = 2;
+            this.guna2Panel10.Controls.Add(this.lblCreatedAt);
+            this.guna2Panel10.ForeColor = System.Drawing.Color.White;
+            this.guna2Panel10.Location = new System.Drawing.Point(34, 441);
+            this.guna2Panel10.Name = "guna2Panel10";
+            this.guna2Panel10.Size = new System.Drawing.Size(287, 33);
+            this.guna2Panel10.TabIndex = 17;
+            // 
+            // lblCreatedAt
+            // 
+            this.lblCreatedAt.AutoSize = true;
+            this.lblCreatedAt.Location = new System.Drawing.Point(3, 9);
+            this.lblCreatedAt.MaximumSize = new System.Drawing.Size(287, 0);
+            this.lblCreatedAt.Name = "lblCreatedAt";
+            this.lblCreatedAt.Size = new System.Drawing.Size(57, 13);
+            this.lblCreatedAt.TabIndex = 0;
+            this.lblCreatedAt.Text = "Created At";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(34, 416);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(80, 22);
+            this.label10.TabIndex = 16;
+            this.label10.Text = "Date Posted";
+            // 
+            // guna2Panel9
+            // 
+            this.guna2Panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(59)))));
+            this.guna2Panel9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(94)))), ((int)(((byte)(255)))));
+            this.guna2Panel9.BorderThickness = 2;
+            this.guna2Panel9.Controls.Add(this.label2);
+            this.guna2Panel9.ForeColor = System.Drawing.Color.White;
+            this.guna2Panel9.Location = new System.Drawing.Point(346, 318);
+            this.guna2Panel9.Name = "guna2Panel9";
+            this.guna2Panel9.Size = new System.Drawing.Size(287, 33);
+            this.guna2Panel9.TabIndex = 15;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 9);
+            this.label2.MaximumSize = new System.Drawing.Size(287, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Issue Type";
+            // 
+            // lblProductDetails
+            // 
+            this.lblProductDetails.AutoSize = true;
+            this.lblProductDetails.BackColor = System.Drawing.Color.Transparent;
+            this.lblProductDetails.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductDetails.Location = new System.Drawing.Point(346, 293);
+            this.lblProductDetails.Name = "lblProductDetails";
+            this.lblProductDetails.Size = new System.Drawing.Size(98, 22);
+            this.lblProductDetails.TabIndex = 14;
+            this.lblProductDetails.Text = "Product Details";
+            // 
+            // guna2Panel7
+            // 
+            this.guna2Panel7.AutoScroll = true;
+            this.guna2Panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(59)))));
+            this.guna2Panel7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(94)))), ((int)(((byte)(255)))));
+            this.guna2Panel7.BorderThickness = 2;
+            this.guna2Panel7.Controls.Add(this.lblDescription);
+            this.guna2Panel7.ForeColor = System.Drawing.Color.White;
+            this.guna2Panel7.Location = new System.Drawing.Point(346, 127);
+            this.guna2Panel7.Name = "guna2Panel7";
+            this.guna2Panel7.Size = new System.Drawing.Size(287, 160);
+            this.guna2Panel7.TabIndex = 13;
+            // 
+            // lblDescription
+            // 
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Location = new System.Drawing.Point(3, 9);
+            this.lblDescription.MaximumSize = new System.Drawing.Size(280, 0);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(60, 13);
+            this.lblDescription.TabIndex = 0;
+            this.lblDescription.Text = "Description";
+            // 
+            // guna2Panel5
+            // 
+            this.guna2Panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(59)))));
+            this.guna2Panel5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(94)))), ((int)(((byte)(255)))));
+            this.guna2Panel5.BorderThickness = 2;
+            this.guna2Panel5.Controls.Add(this.lblIssueType);
+            this.guna2Panel5.ForeColor = System.Drawing.Color.White;
+            this.guna2Panel5.Location = new System.Drawing.Point(35, 378);
+            this.guna2Panel5.Name = "guna2Panel5";
+            this.guna2Panel5.Size = new System.Drawing.Size(287, 33);
+            this.guna2Panel5.TabIndex = 13;
+            // 
+            // lblIssueType
+            // 
+            this.lblIssueType.AutoSize = true;
+            this.lblIssueType.Location = new System.Drawing.Point(3, 9);
+            this.lblIssueType.MaximumSize = new System.Drawing.Size(287, 0);
+            this.lblIssueType.Name = "lblIssueType";
+            this.lblIssueType.Size = new System.Drawing.Size(59, 13);
+            this.lblIssueType.TabIndex = 0;
+            this.lblIssueType.Text = "Issue Type";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(346, 102);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(76, 22);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Description";
+            // 
+            // guna2Panel3
+            // 
+            this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(59)))));
+            this.guna2Panel3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(94)))), ((int)(((byte)(255)))));
+            this.guna2Panel3.BorderThickness = 2;
+            this.guna2Panel3.Controls.Add(this.lblPhoneNumber);
+            this.guna2Panel3.ForeColor = System.Drawing.Color.White;
+            this.guna2Panel3.Location = new System.Drawing.Point(35, 254);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.Size = new System.Drawing.Size(287, 33);
+            this.guna2Panel3.TabIndex = 13;
+            // 
+            // lblPhoneNumber
+            // 
+            this.lblPhoneNumber.AutoSize = true;
+            this.lblPhoneNumber.Location = new System.Drawing.Point(3, 9);
+            this.lblPhoneNumber.MaximumSize = new System.Drawing.Size(287, 0);
+            this.lblPhoneNumber.Name = "lblPhoneNumber";
+            this.lblPhoneNumber.Size = new System.Drawing.Size(78, 13);
+            this.lblPhoneNumber.TabIndex = 0;
+            this.lblPhoneNumber.Text = "Phone Number";
+            // 
+            // guna2Panel8
+            // 
+            this.guna2Panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(59)))));
+            this.guna2Panel8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(94)))), ((int)(((byte)(255)))));
+            this.guna2Panel8.BorderThickness = 2;
+            this.guna2Panel8.Controls.Add(this.lblSubject);
+            this.guna2Panel8.ForeColor = System.Drawing.Color.White;
+            this.guna2Panel8.Location = new System.Drawing.Point(346, 67);
+            this.guna2Panel8.Name = "guna2Panel8";
+            this.guna2Panel8.Size = new System.Drawing.Size(287, 33);
+            this.guna2Panel8.TabIndex = 11;
+            // 
+            // lblSubject
+            // 
+            this.lblSubject.AutoSize = true;
+            this.lblSubject.Location = new System.Drawing.Point(3, 9);
+            this.lblSubject.MaximumSize = new System.Drawing.Size(287, 0);
+            this.lblSubject.Name = "lblSubject";
+            this.lblSubject.Size = new System.Drawing.Size(43, 13);
+            this.lblSubject.TabIndex = 0;
+            this.lblSubject.Text = "Subject";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(346, 42);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(54, 22);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Subject";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(35, 353);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(71, 22);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "Issue Type";
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(59)))));
+            this.guna2Panel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(94)))), ((int)(((byte)(255)))));
+            this.guna2Panel2.BorderThickness = 2;
+            this.guna2Panel2.Controls.Add(this.lblCustomerName);
+            this.guna2Panel2.ForeColor = System.Drawing.Color.White;
+            this.guna2Panel2.Location = new System.Drawing.Point(35, 127);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(287, 33);
+            this.guna2Panel2.TabIndex = 9;
+            // 
+            // lblCustomerName
+            // 
+            this.lblCustomerName.AutoSize = true;
+            this.lblCustomerName.Location = new System.Drawing.Point(3, 9);
+            this.lblCustomerName.MaximumSize = new System.Drawing.Size(287, 0);
+            this.lblCustomerName.Name = "lblCustomerName";
+            this.lblCustomerName.Size = new System.Drawing.Size(82, 13);
+            this.lblCustomerName.TabIndex = 0;
+            this.lblCustomerName.Text = "Customer Name";
+            // 
+            // guna2Panel6
+            // 
+            this.guna2Panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(59)))));
+            this.guna2Panel6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(94)))), ((int)(((byte)(255)))));
+            this.guna2Panel6.BorderThickness = 2;
+            this.guna2Panel6.Controls.Add(this.lblCompanyName);
+            this.guna2Panel6.ForeColor = System.Drawing.Color.White;
+            this.guna2Panel6.Location = new System.Drawing.Point(35, 318);
+            this.guna2Panel6.Name = "guna2Panel6";
+            this.guna2Panel6.Size = new System.Drawing.Size(287, 33);
+            this.guna2Panel6.TabIndex = 11;
+            // 
+            // lblCompanyName
+            // 
+            this.lblCompanyName.AutoSize = true;
+            this.lblCompanyName.Location = new System.Drawing.Point(3, 9);
+            this.lblCompanyName.MaximumSize = new System.Drawing.Size(287, 0);
+            this.lblCompanyName.Name = "lblCompanyName";
+            this.lblCompanyName.Size = new System.Drawing.Size(82, 13);
+            this.lblCompanyName.TabIndex = 0;
+            this.lblCompanyName.Text = "Company Name";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(34, 293);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(111, 22);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Company Name ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(35, 230);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(95, 22);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "PhoneNumber";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(35, 102);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(106, 22);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Customer Name";
+            // 
+            // guna2Panel4
+            // 
+            this.guna2Panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(59)))));
+            this.guna2Panel4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(94)))), ((int)(((byte)(255)))));
+            this.guna2Panel4.BorderThickness = 2;
+            this.guna2Panel4.Controls.Add(this.lblEmail);
+            this.guna2Panel4.ForeColor = System.Drawing.Color.White;
+            this.guna2Panel4.Location = new System.Drawing.Point(35, 194);
+            this.guna2Panel4.Name = "guna2Panel4";
+            this.guna2Panel4.Size = new System.Drawing.Size(287, 33);
+            this.guna2Panel4.TabIndex = 11;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(3, 9);
+            this.lblEmail.MaximumSize = new System.Drawing.Size(287, 0);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblEmail.TabIndex = 0;
+            this.lblEmail.Text = "Email";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(35, 169);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(42, 22);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Email";
+            // 
+            // pnlTicketId
+            // 
+            this.pnlTicketId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(59)))));
+            this.pnlTicketId.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(94)))), ((int)(((byte)(255)))));
+            this.pnlTicketId.BorderThickness = 2;
+            this.pnlTicketId.Controls.Add(this.lblTicketId);
+            this.pnlTicketId.ForeColor = System.Drawing.Color.White;
+            this.pnlTicketId.Location = new System.Drawing.Point(35, 67);
+            this.pnlTicketId.Name = "pnlTicketId";
+            this.pnlTicketId.Size = new System.Drawing.Size(287, 33);
+            this.pnlTicketId.TabIndex = 7;
+            // 
+            // lblTicketId
+            // 
+            this.lblTicketId.AutoSize = true;
+            this.lblTicketId.Location = new System.Drawing.Point(3, 9);
+            this.lblTicketId.MaximumSize = new System.Drawing.Size(287, 0);
+            this.lblTicketId.Name = "lblTicketId";
+            this.lblTicketId.Size = new System.Drawing.Size(46, 13);
+            this.lblTicketId.TabIndex = 0;
+            this.lblTicketId.Text = "TicketId";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(35, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 22);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Ticket ID";
+            // 
+            // lblTicket
+            // 
+            this.lblTicket.AutoSize = true;
+            this.lblTicket.BackColor = System.Drawing.Color.Transparent;
+            this.lblTicket.Font = new System.Drawing.Font("Poppins Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTicket.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.lblTicket.Location = new System.Drawing.Point(25, -1);
+            this.lblTicket.Name = "lblTicket";
+            this.lblTicket.Size = new System.Drawing.Size(78, 34);
+            this.lblTicket.TabIndex = 1;
+            this.lblTicket.Text = "Ticket";
             // 
             // pictureBox1
             // 
@@ -355,30 +741,44 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.ClientSize = new System.Drawing.Size(843, 551);
+            this.ClientSize = new System.Drawing.Size(843, 849);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.lblLogut);
             this.Controls.Add(this.lblCalendar);
             this.Controls.Add(this.lblSummary);
             this.Controls.Add(this.lblTechnicians);
             this.Controls.Add(this.lblTickets);
-            this.Controls.Add(this.txtRole);
             this.Controls.Add(this.lblStatusBoard);
-            this.Controls.Add(this.txtAdmin);
-            this.Controls.Add(this.lblAdminName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Tickets";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Tickets_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
-            this.pnlPendingTickets.ResumeLayout(false);
-            this.pnlPendingTickets.PerformLayout();
-            this.pnlResolved.ResumeLayout(false);
-            this.pnlResolved.PerformLayout();
-            this.pnlOpenTickets.ResumeLayout(false);
-            this.pnlOpenTickets.PerformLayout();
+            this.guna2Panel11.ResumeLayout(false);
+            this.guna2Panel11.PerformLayout();
+            this.guna2Panel10.ResumeLayout(false);
+            this.guna2Panel10.PerformLayout();
+            this.guna2Panel9.ResumeLayout(false);
+            this.guna2Panel9.PerformLayout();
+            this.guna2Panel7.ResumeLayout(false);
+            this.guna2Panel7.PerformLayout();
+            this.guna2Panel5.ResumeLayout(false);
+            this.guna2Panel5.PerformLayout();
+            this.guna2Panel3.ResumeLayout(false);
+            this.guna2Panel3.PerformLayout();
+            this.guna2Panel8.ResumeLayout(false);
+            this.guna2Panel8.PerformLayout();
+            this.guna2Panel2.ResumeLayout(false);
+            this.guna2Panel2.PerformLayout();
+            this.guna2Panel6.ResumeLayout(false);
+            this.guna2Panel6.PerformLayout();
+            this.guna2Panel4.ResumeLayout(false);
+            this.guna2Panel4.PerformLayout();
+            this.pnlTicketId.ResumeLayout(false);
+            this.pnlTicketId.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -392,20 +792,53 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblSummary;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTechnicians;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTickets;
-        private Guna.UI2.WinForms.Guna2HtmlLabel txtRole;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblStatusBoard;
-        private Guna.UI2.WinForms.Guna2HtmlLabel txtAdmin;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblAdminName;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
-        private Guna.UI2.WinForms.Guna2GradientPanel pnlPendingTickets;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblPendingTickets;
-        private Guna.UI2.WinForms.Guna2GradientPanel pnlResolved;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblResolved;
-        private Guna.UI2.WinForms.Guna2GradientPanel pnlOpenTickets;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblOpenTickets;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
-        private System.Windows.Forms.Label lblStatusBoardText;
+        private System.Windows.Forms.Label lblTicket;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2Panel pnlTicketId;
+        private System.Windows.Forms.Label lblTicketId;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
+        private System.Windows.Forms.Label lblIssueType;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        private System.Windows.Forms.Label lblPhoneNumber;
+        private System.Windows.Forms.Label label9;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private System.Windows.Forms.Label lblCustomerName;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
+        private System.Windows.Forms.Label lblCompanyName;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label label7;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
+        private System.Windows.Forms.Label lblDescription;
+        private System.Windows.Forms.Label label4;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
+        private System.Windows.Forms.Label lblSubject;
+        private System.Windows.Forms.Label label8;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblProductDetails;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel11;
+        private System.Windows.Forms.Label lblPriorityLevel;
+        private System.Windows.Forms.Label label13;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel10;
+        private System.Windows.Forms.Label lblCreatedAt;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private Guna.UI2.WinForms.Guna2ComboBox cbxStatus;
+        private Guna.UI2.WinForms.Guna2ComboBox cbxTechnician;
+        private Guna.UI2.WinForms.Guna2Button btnUpdate;
+        private System.Windows.Forms.TextBox txtResponse;
     }
 }

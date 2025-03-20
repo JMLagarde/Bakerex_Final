@@ -38,11 +38,8 @@
             this.lblSummary = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblTechnicians = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblTickets = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.txtRole = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblStatusBoard = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.txtAdmin = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblAdminName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.DataGridStatusBoard = new Guna.UI2.WinForms.Guna2DataGridView();
             this.lblStatusBoardText = new System.Windows.Forms.Label();
@@ -131,17 +128,6 @@
             this.lblTickets.TabIndex = 19;
             this.lblTickets.Text = "Tickets";
             // 
-            // txtRole
-            // 
-            this.txtRole.BackColor = System.Drawing.Color.Transparent;
-            this.txtRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRole.ForeColor = System.Drawing.Color.Silver;
-            this.txtRole.Location = new System.Drawing.Point(16, 98);
-            this.txtRole.Name = "txtRole";
-            this.txtRole.Size = new System.Drawing.Size(25, 15);
-            this.txtRole.TabIndex = 18;
-            this.txtRole.Text = "Role";
-            // 
             // guna2HtmlLabel4
             // 
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
@@ -164,28 +150,6 @@
             this.lblStatusBoard.Size = new System.Drawing.Size(109, 22);
             this.lblStatusBoard.TabIndex = 16;
             this.lblStatusBoard.Text = "Status Board";
-            // 
-            // txtAdmin
-            // 
-            this.txtAdmin.BackColor = System.Drawing.Color.Transparent;
-            this.txtAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAdmin.ForeColor = System.Drawing.Color.Silver;
-            this.txtAdmin.Location = new System.Drawing.Point(16, 83);
-            this.txtAdmin.Name = "txtAdmin";
-            this.txtAdmin.Size = new System.Drawing.Size(32, 15);
-            this.txtAdmin.TabIndex = 15;
-            this.txtAdmin.Text = "Admin";
-            // 
-            // lblAdminName
-            // 
-            this.lblAdminName.BackColor = System.Drawing.Color.Transparent;
-            this.lblAdminName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdminName.ForeColor = System.Drawing.Color.White;
-            this.lblAdminName.Location = new System.Drawing.Point(16, 62);
-            this.lblAdminName.Name = "lblAdminName";
-            this.lblAdminName.Size = new System.Drawing.Size(104, 22);
-            this.lblAdminName.TabIndex = 14;
-            this.lblAdminName.Text = "Admin Name";
             // 
             // guna2Panel1
             // 
@@ -359,11 +323,8 @@
             this.Controls.Add(this.lblSummary);
             this.Controls.Add(this.lblTechnicians);
             this.Controls.Add(this.lblTickets);
-            this.Controls.Add(this.txtRole);
             this.Controls.Add(this.guna2HtmlLabel4);
             this.Controls.Add(this.lblStatusBoard);
-            this.Controls.Add(this.txtAdmin);
-            this.Controls.Add(this.lblAdminName);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Technicians";
@@ -387,11 +348,8 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblSummary;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTechnicians;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTickets;
-        private Guna.UI2.WinForms.Guna2HtmlLabel txtRole;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblStatusBoard;
-        private Guna.UI2.WinForms.Guna2HtmlLabel txtAdmin;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblAdminName;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2DataGridView DataGridStatusBoard;

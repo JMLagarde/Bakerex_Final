@@ -31,9 +31,7 @@
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.cbxExit = new Guna.UI2.WinForms.Guna2ControlBox();
             this.lblRegister = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
-            this.txtSignup = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.btnSignin = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblLogin = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -81,44 +79,22 @@
             this.lblRegister.TabIndex = 23;
             this.lblRegister.Text = "Register";
             // 
-            // btnLogin
+            // btnSignin
             // 
-            this.btnLogin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(128)))), ((int)(((byte)(73)))));
-            this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnLogin.Location = new System.Drawing.Point(69, 469);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(301, 45);
-            this.btnLogin.TabIndex = 22;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // txtSignup
-            // 
-            this.txtSignup.BackColor = System.Drawing.Color.Transparent;
-            this.txtSignup.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSignup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(128)))), ((int)(((byte)(73)))));
-            this.txtSignup.Location = new System.Drawing.Point(327, 442);
-            this.txtSignup.Name = "txtSignup";
-            this.txtSignup.Size = new System.Drawing.Size(43, 21);
-            this.txtSignup.TabIndex = 21;
-            this.txtSignup.Text = "Sign Up";
-            // 
-            // guna2HtmlLabel2
-            // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.DarkGray;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(70, 442);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(137, 21);
-            this.guna2HtmlLabel2.TabIndex = 20;
-            this.guna2HtmlLabel2.Text = "Dont\'t have an account?";
+            this.btnSignin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSignin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSignin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSignin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSignin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(128)))), ((int)(((byte)(73)))));
+            this.btnSignin.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSignin.ForeColor = System.Drawing.Color.White;
+            this.btnSignin.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnSignin.Location = new System.Drawing.Point(69, 436);
+            this.btnSignin.Name = "btnSignin";
+            this.btnSignin.Size = new System.Drawing.Size(301, 45);
+            this.btnSignin.TabIndex = 22;
+            this.btnSignin.Text = "Sign In";
+            this.btnSignin.Click += new System.EventHandler(this.btnSignin_Click);
             // 
             // guna2TextBox2
             // 
@@ -308,9 +284,7 @@
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.cbxExit);
             this.Controls.Add(this.lblRegister);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.txtSignup);
-            this.Controls.Add(this.guna2HtmlLabel2);
+            this.Controls.Add(this.btnSignin);
             this.Controls.Add(this.guna2TextBox2);
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.guna2HtmlLabel1);
@@ -333,9 +307,7 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2ControlBox cbxExit;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblRegister;
-        private Guna.UI2.WinForms.Guna2Button btnLogin;
-        private Guna.UI2.WinForms.Guna2HtmlLabel txtSignup;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2Button btnSignin;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblLogin;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;

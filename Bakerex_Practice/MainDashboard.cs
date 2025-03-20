@@ -33,17 +33,17 @@ namespace Bakerex_Practice
             if (cbxIdentifier.SelectedItem.ToString() == "This Day")
                 dateFilter = "CAST(CreatedAt AS DATE) = CAST(GETDATE() AS DATE)";
             else if (cbxIdentifier.SelectedItem.ToString() == "This Week")
-                dateFilter = "CreatedAt >= DATEADD(WEEK, -1, GETDATE())";
+                dateFilter = "DATEPART(WEEK, CreatedAt) = DATEPART(WEEK, GETDATE()) AND YEAR(CreatedAt) = YEAR(GETDATE())";
             else if (cbxIdentifier.SelectedItem.ToString() == "This Month")
                 dateFilter = "MONTH(CreatedAt) = MONTH(GETDATE()) AND YEAR(CreatedAt) = YEAR(GETDATE())";
 
             string summaryQuery = $@"
-        SELECT 
-            COUNT(*) AS TotalTickets,
-            (SELECT TOP 1 PriorityLevel FROM CustomerRequests WHERE {dateFilter} GROUP BY PriorityLevel ORDER BY COUNT(*) DESC) AS MostFrequentPriority,
-            (SELECT TOP 1 IssueType FROM CustomerRequests WHERE {dateFilter} GROUP BY IssueType ORDER BY COUNT(*) DESC) AS MostFrequentIssue
-        FROM CustomerRequests
-        WHERE {dateFilter}";
+    SELECT 
+        COUNT(*) AS TotalTickets,
+        (SELECT TOP 1 PriorityLevel FROM CustomerRequests WHERE {dateFilter} GROUP BY PriorityLevel ORDER BY COUNT(*) DESC) AS MostFrequentPriority,
+        (SELECT TOP 1 IssueType FROM CustomerRequests WHERE {dateFilter} GROUP BY IssueType ORDER BY COUNT(*) DESC) AS MostFrequentIssue
+    FROM CustomerRequests
+    WHERE {dateFilter}";
 
             string dataQuery = $"SELECT * FROM CustomerRequests WHERE {dateFilter}";
 
@@ -82,7 +82,8 @@ namespace Bakerex_Practice
 
         private void cbxIdentifier_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Selected: " + cbxIdentifier.SelectedItem.ToString()); 
+            LoadDashboardSummary();
         }
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
@@ -101,6 +102,17 @@ namespace Bakerex_Practice
             techiniciansform.Show();
 
             this.Hide();
+        }
+
+        private void DataGridStatusBoard_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) 
+            {
+                int requestID = Convert.ToInt32(DataGridStatusBoard.Rows[e.RowIndex].Cells["RequestID"].Value);
+
+                Tickets detailsForm = new Tickets(requestID);
+                detailsForm.Show();
+            }
         }
     }
 }

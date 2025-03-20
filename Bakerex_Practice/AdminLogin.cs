@@ -21,6 +21,34 @@ namespace Bakerex_Practice
         {
             InitializeComponent();
         }
+        private bool ValidateInputs()
+        {
+            if (string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtPassword.Text))
+            {
+                MessageBox.Show("All fields are required!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (!Regex.IsMatch(txtEmail.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            {
+                MessageBox.Show("Invalid email format!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
+
+        private void cbxExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void lblRegister_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminRegister adminRegister = new AdminRegister();
+            adminRegister.Show();
+        }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -39,7 +67,7 @@ namespace Bakerex_Practice
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
-                        cmd.Parameters.AddWithValue("@Password", txtPassword.Text.Trim()); // TODO: Hash this password for security
+                        cmd.Parameters.AddWithValue("@Password", txtPassword.Text.Trim());
 
                         int count = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -47,7 +75,7 @@ namespace Bakerex_Practice
                         {
                             MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            this.Hide(); // Hide before showing next form
+                            this.Hide();
                             MainDashboard dashboard = new MainDashboard();
                             dashboard.Show();
                         }
@@ -62,30 +90,6 @@ namespace Bakerex_Practice
                     MessageBox.Show("Database Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        }
-
-        private bool ValidateInputs()
-        {
-            if (string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtPassword.Text))
-            {
-                MessageBox.Show("All fields are required!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-
-            if (!Regex.IsMatch(txtEmail.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
-            {
-                MessageBox.Show("Invalid email format!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-
-            return true;
-        }
-
-        private void lblRegister_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            AdminRegister adminRegister = new AdminRegister();
-            adminRegister.Show();
         }
     }
 }

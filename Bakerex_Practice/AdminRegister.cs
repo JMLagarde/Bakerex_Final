@@ -30,7 +30,7 @@ namespace Bakerex_Practice
 
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void btnSignin_Click(object sender, EventArgs e)
         {
             if (!ValidateInputs())
             {
