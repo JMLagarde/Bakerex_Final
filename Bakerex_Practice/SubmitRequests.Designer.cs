@@ -93,7 +93,7 @@
             this.lblTrackTicket.AutoSize = true;
             this.lblTrackTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTrackTicket.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.lblTrackTicket.Location = new System.Drawing.Point(713, 20);
+            this.lblTrackTicket.Location = new System.Drawing.Point(699, 20);
             this.lblTrackTicket.Name = "lblTrackTicket";
             this.lblTrackTicket.Size = new System.Drawing.Size(68, 13);
             this.lblTrackTicket.TabIndex = 4;
@@ -207,7 +207,7 @@
             this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
             this.txtEmail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
             this.txtEmail.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtEmail.DefaultText = "Email";
+            this.txtEmail.DefaultText = "";
             this.txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -223,7 +223,7 @@
             this.txtEmail.Location = new System.Drawing.Point(403, 156);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.PlaceholderText = "";
+            this.txtEmail.PlaceholderText = "Email";
             this.txtEmail.SelectedText = "";
             this.txtEmail.Size = new System.Drawing.Size(242, 44);
             this.txtEmail.TabIndex = 8;
@@ -244,7 +244,7 @@
             this.txtPhoneNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
             this.txtPhoneNumber.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
             this.txtPhoneNumber.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtPhoneNumber.DefaultText = "Phone number";
+            this.txtPhoneNumber.DefaultText = "";
             this.txtPhoneNumber.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtPhoneNumber.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtPhoneNumber.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -260,7 +260,7 @@
             this.txtPhoneNumber.Location = new System.Drawing.Point(158, 223);
             this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.PlaceholderText = "";
+            this.txtPhoneNumber.PlaceholderText = "Phone number";
             this.txtPhoneNumber.SelectedText = "";
             this.txtPhoneNumber.Size = new System.Drawing.Size(488, 44);
             this.txtPhoneNumber.TabIndex = 10;
@@ -281,7 +281,7 @@
             this.txtCompany.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
             this.txtCompany.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
             this.txtCompany.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtCompany.DefaultText = "Company name";
+            this.txtCompany.DefaultText = "";
             this.txtCompany.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtCompany.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtCompany.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -297,7 +297,7 @@
             this.txtCompany.Location = new System.Drawing.Point(158, 290);
             this.txtCompany.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCompany.Name = "txtCompany";
-            this.txtCompany.PlaceholderText = "";
+            this.txtCompany.PlaceholderText = "Company name";
             this.txtCompany.SelectedText = "";
             this.txtCompany.Size = new System.Drawing.Size(494, 44);
             this.txtCompany.TabIndex = 12;
@@ -361,7 +361,7 @@
             this.txtSubject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
             this.txtSubject.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
             this.txtSubject.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtSubject.DefaultText = "Subject";
+            this.txtSubject.DefaultText = "";
             this.txtSubject.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtSubject.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtSubject.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -377,7 +377,7 @@
             this.txtSubject.Location = new System.Drawing.Point(158, 418);
             this.txtSubject.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSubject.Name = "txtSubject";
-            this.txtSubject.PlaceholderText = "";
+            this.txtSubject.PlaceholderText = "Subject";
             this.txtSubject.SelectedText = "";
             this.txtSubject.Size = new System.Drawing.Size(494, 44);
             this.txtSubject.TabIndex = 17;
@@ -387,7 +387,7 @@
             this.txtDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
             this.txtDescription.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
             this.txtDescription.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtDescription.DefaultText = "Description";
+            this.txtDescription.DefaultText = "";
             this.txtDescription.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtDescription.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtDescription.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -403,7 +403,7 @@
             this.txtDescription.Location = new System.Drawing.Point(158, 490);
             this.txtDescription.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.PlaceholderText = "";
+            this.txtDescription.PlaceholderText = "Description";
             this.txtDescription.SelectedText = "";
             this.txtDescription.Size = new System.Drawing.Size(494, 114);
             this.txtDescription.TabIndex = 19;
@@ -424,7 +424,7 @@
             this.txtProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
             this.txtProduct.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
             this.txtProduct.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtProduct.DefaultText = "Product details";
+            this.txtProduct.DefaultText = "";
             this.txtProduct.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtProduct.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtProduct.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -440,7 +440,7 @@
             this.txtProduct.Location = new System.Drawing.Point(158, 632);
             this.txtProduct.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtProduct.Name = "txtProduct";
-            this.txtProduct.PlaceholderText = "";
+            this.txtProduct.PlaceholderText = "Product details";
             this.txtProduct.SelectedText = "";
             this.txtProduct.Size = new System.Drawing.Size(494, 44);
             this.txtProduct.TabIndex = 21;

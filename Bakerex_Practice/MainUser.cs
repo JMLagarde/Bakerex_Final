@@ -89,5 +89,12 @@ namespace Bakerex_Practice
 
             this.Hide();
         }
+
+        private void lblTrackTicket_Click(object sender, EventArgs e)
+        {
+            TrackTicket1stForm trackTicket1stForm = new TrackTicket1stForm();
+            trackTicket1stForm.Show();
+            this.Hide();
+        }
     }
 }

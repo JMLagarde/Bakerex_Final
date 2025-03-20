@@ -336,6 +336,7 @@
             this.lblTickets.Size = new System.Drawing.Size(60, 22);
             this.lblTickets.TabIndex = 7;
             this.lblTickets.Text = "Tickets";
+            this.lblTickets.Click += new System.EventHandler(this.lblTickets_Click);
             // 
             // lblSummary
             // 

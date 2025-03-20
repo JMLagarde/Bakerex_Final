@@ -14,7 +14,7 @@ namespace Bakerex_Practice
     public partial class MainDashboard : Form
     {
         string connectionString = "Server=DESKTOP-D9KJ8S9\\SQLEXPRESS;Database=BakerexCustomerSupportSystem;Integrated Security=True;";
-
+        private int requestID;
         public MainDashboard()
         {
             InitializeComponent();
@@ -112,6 +112,20 @@ namespace Bakerex_Practice
 
                 Tickets detailsForm = new Tickets(requestID);
                 detailsForm.Show();
+            }
+        }
+
+        private void lblTickets_Click(object sender, EventArgs e)
+        {
+            if (requestID <= 0)
+            {
+                MessageBox.Show("Please select a client to access tickets.", "No Ticket Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                Tickets tickets = new Tickets(requestID);
+                tickets.Show();
+                this.Hide();
             }
         }
     }

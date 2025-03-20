@@ -105,20 +105,22 @@ namespace Bakerex_Practice
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 string query = @"UPDATE CustomerRequests 
-                         SET Status = @Status, Response = @Response, Technician = @Technician
+                         SET Status = @Status, Response = @Response, Technician = @Technician, Schedule = @Schedule
                          WHERE RequestID = @RequestID";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@Status", cbxStatus.SelectedItem?.ToString() ?? "Pending");
-                    cmd.Parameters.AddWithValue("@Response", txtResponse.Text); 
+                    cmd.Parameters.AddWithValue("@Response", txtResponse.Text);
 
                     if (cbxTechnician.SelectedItem != null)
                         cmd.Parameters.AddWithValue("@Technician", cbxTechnician.SelectedItem.ToString());
                     else
                         cmd.Parameters.AddWithValue("@Technician", DBNull.Value);
 
-                    cmd.Parameters.AddWithValue("@RequestID", requestID); 
+                    cmd.Parameters.AddWithValue("@Schedule", dtmSchedule.Value); 
+
+                    cmd.Parameters.AddWithValue("@RequestID", requestID);
 
                     try
                     {
@@ -139,6 +141,27 @@ namespace Bakerex_Practice
         {
             MainDashboard mainDashboard = new MainDashboard();
             mainDashboard.Show();
+            this.Hide();
+        }
+
+        private void lblTechnicians_Click(object sender, EventArgs e)
+        {
+            Technicians technicians = new Technicians();
+            technicians.Show();
+            this.Hide();
+        }
+
+        private void lblLogut_Click(object sender, EventArgs e)
+        {
+            AdminLogin adminLogin = new AdminLogin();
+            adminLogin.Show();
+            this.Hide();
+        }
+
+        private void lblTickets_Click(object sender, EventArgs e)
+        {
+            Tickets tickets = new Tickets(requestID);
+            tickets.Show();
             this.Hide();
         }
     }

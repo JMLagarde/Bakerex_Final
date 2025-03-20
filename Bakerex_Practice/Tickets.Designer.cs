@@ -35,12 +35,12 @@
             this.lblTickets = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblStatusBoard = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.dtmSchedule = new System.Windows.Forms.DateTimePicker();
             this.txtResponse = new System.Windows.Forms.TextBox();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.cbxTechnician = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbxStatus = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.label18 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -107,6 +107,7 @@
             this.lblLogut.Size = new System.Drawing.Size(60, 30);
             this.lblLogut.TabIndex = 20;
             this.lblLogut.Text = "Logout";
+            this.lblLogut.Click += new System.EventHandler(this.lblLogut_Click);
             // 
             // lblCalendar
             // 
@@ -143,6 +144,7 @@
             this.lblTechnicians.Size = new System.Drawing.Size(106, 30);
             this.lblTechnicians.TabIndex = 17;
             this.lblTechnicians.Text = "Technicians";
+            this.lblTechnicians.Click += new System.EventHandler(this.lblTechnicians_Click);
             // 
             // lblTickets
             // 
@@ -155,6 +157,7 @@
             this.lblTickets.Size = new System.Drawing.Size(64, 30);
             this.lblTickets.TabIndex = 16;
             this.lblTickets.Text = "Tickets";
+            this.lblTickets.Click += new System.EventHandler(this.lblTickets_Click);
             // 
             // lblStatusBoard
             // 
@@ -172,12 +175,12 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BorderRadius = 20;
+            this.guna2Panel1.Controls.Add(this.dtmSchedule);
             this.guna2Panel1.Controls.Add(this.txtResponse);
             this.guna2Panel1.Controls.Add(this.btnUpdate);
             this.guna2Panel1.Controls.Add(this.cbxTechnician);
             this.guna2Panel1.Controls.Add(this.cbxStatus);
             this.guna2Panel1.Controls.Add(this.label15);
-            this.guna2Panel1.Controls.Add(this.monthCalendar1);
             this.guna2Panel1.Controls.Add(this.label18);
             this.guna2Panel1.Controls.Add(this.label16);
             this.guna2Panel1.Controls.Add(this.label14);
@@ -214,14 +217,21 @@
             this.guna2Panel1.Size = new System.Drawing.Size(666, 827);
             this.guna2Panel1.TabIndex = 21;
             // 
+            // dtmSchedule
+            // 
+            this.dtmSchedule.Location = new System.Drawing.Point(38, 619);
+            this.dtmSchedule.Name = "dtmSchedule";
+            this.dtmSchedule.Size = new System.Drawing.Size(203, 20);
+            this.dtmSchedule.TabIndex = 28;
+            // 
             // txtResponse
             // 
             this.txtResponse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(59)))));
             this.txtResponse.ForeColor = System.Drawing.Color.White;
-            this.txtResponse.Location = new System.Drawing.Point(346, 614);
+            this.txtResponse.Location = new System.Drawing.Point(275, 614);
             this.txtResponse.Multiline = true;
             this.txtResponse.Name = "txtResponse";
-            this.txtResponse.Size = new System.Drawing.Size(283, 162);
+            this.txtResponse.Size = new System.Drawing.Size(354, 162);
             this.txtResponse.TabIndex = 27;
             // 
             // btnUpdate
@@ -284,17 +294,11 @@
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(346, 588);
+            this.label15.Location = new System.Drawing.Point(275, 588);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(67, 22);
             this.label15.TabIndex = 14;
             this.label15.Text = "Response";
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(34, 614);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 23;
             // 
             // label18
             // 
@@ -835,10 +839,10 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
         private Guna.UI2.WinForms.Guna2ComboBox cbxStatus;
         private Guna.UI2.WinForms.Guna2ComboBox cbxTechnician;
         private Guna.UI2.WinForms.Guna2Button btnUpdate;
         private System.Windows.Forms.TextBox txtResponse;
+        private System.Windows.Forms.DateTimePicker dtmSchedule;
     }
 }

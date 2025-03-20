@@ -206,11 +206,12 @@
             this.lblTrackTicket.AutoSize = true;
             this.lblTrackTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTrackTicket.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.lblTrackTicket.Location = new System.Drawing.Point(713, 20);
+            this.lblTrackTicket.Location = new System.Drawing.Point(699, 20);
             this.lblTrackTicket.Name = "lblTrackTicket";
             this.lblTrackTicket.Size = new System.Drawing.Size(68, 13);
             this.lblTrackTicket.TabIndex = 4;
             this.lblTrackTicket.Text = "Track Ticket";
+            this.lblTrackTicket.Click += new System.EventHandler(this.lblTrackTicket_Click);
             // 
             // cbxExit
             // 
