@@ -15,11 +15,13 @@ namespace Bakerex_Practice
     {
         string connectionString = "Server=DESKTOP-D9KJ8S9\\SQLEXPRESS;Database=BakerexCustomerSupportSystem;Integrated Security=True;";
         private int requestID;
+        private int adminId;
 
-        public Technicians()
+        public Technicians(int adminId)
         {
             InitializeComponent();
-            LoadRegistrationData();
+            this.adminId = adminId;
+            LoadAdminProfile();
         }
 
         private void Technicians_Load(object sender, EventArgs e)
@@ -27,38 +29,12 @@ namespace Bakerex_Practice
 
         }
 
-        private void DataGridStatusBoard_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
 
-        private void LoadRegistrationData()
-        {
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
-                    string query = "SELECT LoginID, FullName, Email, PhoneNumber, Role FROM Registration"; // Exclude Password for security
-
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(query, conn))
-                    {
-                        DataTable dt = new DataTable();
-                        adapter.Fill(dt);
-
-                        DataGridStatusBoard.DataSource = dt; 
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error loading data: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
         private void lblStatusBoard_Click(object sender, EventArgs e)
         {
-            MainDashboard mainDashboard = new MainDashboard();
+            MainDashboard mainDashboard = new MainDashboard(adminId);
             mainDashboard.Show();
             this.Hide();
         }
@@ -71,7 +47,7 @@ namespace Bakerex_Practice
             }
             else
             {
-                Tickets tickets = new Tickets(requestID);
+                Tickets tickets = new Tickets(requestID, adminId);
                 tickets.Show();
                 this.Hide();
             }
@@ -82,6 +58,47 @@ namespace Bakerex_Practice
             AdminLogin adminLogin = new AdminLogin();
             adminLogin.Show();
             this.Hide();
+        }
+
+        private void lblIssueType_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void LoadAdminProfile()
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT FullName, Email, PhoneNumber, Role, Password FROM Registration WHERE AdminID = @AdminID";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@AdminID", adminId); 
+
+                    try
+                    {
+                        conn.Open();
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                lblFullName.Text = reader["FullName"].ToString();
+                                lblEmail.Text = reader["Email"].ToString();
+                                lblPhoneNumber.Text = reader["PhoneNumber"].ToString();
+                                lblRole.Text = reader["Role"].ToString();
+                                lblPassword.Text = reader["Password"].ToString();
+                            }
+                            else
+                            {
+                                MessageBox.Show("No admin profile found for the given AdminID.", "Profile Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error loading profile: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
     }
 }

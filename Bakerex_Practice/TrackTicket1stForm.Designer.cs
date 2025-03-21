@@ -114,6 +114,7 @@
             this.lblSubmitTicket.Size = new System.Drawing.Size(72, 13);
             this.lblSubmitTicket.TabIndex = 3;
             this.lblSubmitTicket.Text = "Submit Ticket";
+            this.lblSubmitTicket.Click += new System.EventHandler(this.lblSubmitTicket_Click);
             // 
             // lblHome
             // 
@@ -125,6 +126,7 @@
             this.lblHome.Size = new System.Drawing.Size(35, 13);
             this.lblHome.TabIndex = 2;
             this.lblHome.Text = "Home";
+            this.lblHome.Click += new System.EventHandler(this.lblHome_Click);
             // 
             // label1
             // 

@@ -89,6 +89,7 @@
     <Compile Include="AdminRegister.Designer.cs">
       <DependentUpon>AdminRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormNavigator.cs" />
     <Compile Include="TrackTicket1stForm.cs">
       <SubType>Form</SubType>
     </Compile>

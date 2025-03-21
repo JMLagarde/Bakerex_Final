@@ -37,47 +37,30 @@ namespace Bakerex_Practice
 
             return true;
         }
-
-        private void cbxExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void lblRegister_Click_1(object sender, EventArgs e)
-        {
-            this.Hide();
-            AdminRegister adminRegister = new AdminRegister();
-            adminRegister.Show();
-        }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (!ValidateInputs())
-            {
-                return;
-            }
+            if (!ValidateInputs()) return;
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try
                 {
                     conn.Open();
-                    string query = "SELECT COUNT(*) FROM Registration WHERE Email = @Email AND Password = @Password";
+                    string query = "SELECT AdminID FROM Registration WHERE Email = @Email AND Password = @Password";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
                         cmd.Parameters.AddWithValue("@Password", txtPassword.Text.Trim());
 
-                        int count = Convert.ToInt32(cmd.ExecuteScalar());
+                        object result = cmd.ExecuteScalar();
 
-                        if (count > 0)
+                        if (result != null)
                         {
+                            int adminID = Convert.ToInt32(result);
                             MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                             this.Hide();
-                            MainDashboard dashboard = new MainDashboard();
-                            dashboard.Show();
+                            FormNavigator.OpenMainDashboard(adminID); 
                         }
                         else
                         {
@@ -90,6 +73,22 @@ namespace Bakerex_Practice
                     MessageBox.Show("Database Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void cbxExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void lblRegister_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AdminRegister().Show();
+        }
+
+        private void AdminLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -13,17 +13,17 @@ namespace Bakerex_Practice
 {
     public partial class Tickets : Form
     {
+       
         private int requestID;
-        private int currentAdminId;
+        private int adminId;
         string connectionString = "Server=DESKTOP-D9KJ8S9\\SQLEXPRESS;Database=BakerexCustomerSupportSystem;Integrated Security=True;";
-        public Tickets(int requestID)
+        public Tickets(int requestID, int adminId)
         {
             InitializeComponent();
             this.requestID = requestID;
+            this.adminId = adminId;
             LoadTicketDetails();
             LoadTechnicians();
-
-            guna2Panel1.RightToLeft = RightToLeft.No;
         }
 
         private void Tickets_Load(object sender, EventArgs e)
@@ -77,7 +77,6 @@ namespace Bakerex_Practice
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 string query = "SELECT FullName FROM Registration WHERE Role = 'Technician'";
-
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
@@ -139,16 +138,16 @@ namespace Bakerex_Practice
 
         private void lblStatusBoard_Click(object sender, EventArgs e)
         {
-            MainDashboard mainDashboard = new MainDashboard();
+            MainDashboard mainDashboard = new MainDashboard(adminId); 
             mainDashboard.Show();
             this.Hide();
         }
 
         private void lblTechnicians_Click(object sender, EventArgs e)
         {
-            Technicians technicians = new Technicians();
+            Technicians technicians = new Technicians(adminId); 
             technicians.Show();
-            this.Hide();
+            this.Hide(); ;
         }
 
         private void lblLogut_Click(object sender, EventArgs e)
@@ -160,7 +159,7 @@ namespace Bakerex_Practice
 
         private void lblTickets_Click(object sender, EventArgs e)
         {
-            Tickets tickets = new Tickets(requestID);
+            Tickets tickets = new Tickets(requestID, adminId);
             tickets.Show();
             this.Hide();
         }

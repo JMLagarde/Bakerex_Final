@@ -79,7 +79,6 @@
             this.lblRegister.Size = new System.Drawing.Size(82, 38);
             this.lblRegister.TabIndex = 23;
             this.lblRegister.Text = "Register";
-            this.lblRegister.Click += new System.EventHandler(this.lblRegister_Click_1);
             // 
             // btnLogin
             // 
@@ -247,6 +246,7 @@
             this.Name = "AdminLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.AdminLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

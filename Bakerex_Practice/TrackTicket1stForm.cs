@@ -74,5 +74,18 @@ namespace Bakerex_Practice
             }
         }
 
+        private void lblSubmitTicket_Click(object sender, EventArgs e)
+        {
+            SubmitRequest submitRequestForm = new SubmitRequest();
+            submitRequestForm.Show();
+            this.Hide();
+        }
+
+        private void lblHome_Click(object sender, EventArgs e)
+        {
+            MainUser mainUserForm = new MainUser();
+            mainUserForm.Show();
+            this.Hide();
+        }
     }
 }
