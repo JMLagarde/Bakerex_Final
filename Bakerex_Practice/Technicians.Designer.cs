@@ -38,16 +38,11 @@
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblStatusBoard = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.lblPendingTickets = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.txtFrequentPriority = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblResolved = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.txtFrequentIssue = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblOpenTickets = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.txtTotalTickets = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblRole = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblEmail = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblFullName = new System.Windows.Forms.Label();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
@@ -59,16 +54,21 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lblTicket = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.lblRole = new System.Windows.Forms.Label();
-            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.lblPendingTickets = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.txtFrequentPriority = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblResolved = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.txtFrequentIssue = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblOpenTickets = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.txtTotalTickets = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.guna2Panel5.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
-            this.guna2Panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // cbxExit
@@ -191,86 +191,28 @@
             this.guna2Panel1.Size = new System.Drawing.Size(666, 519);
             this.guna2Panel1.TabIndex = 13;
             // 
-            // pictureBox1
+            // guna2Panel5
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::Bakerex_Practice.Properties.Resources.Bakerex_logo1;
-            this.pictureBox1.Location = new System.Drawing.Point(542, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(110, 44);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.guna2Panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(59)))));
+            this.guna2Panel5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(94)))), ((int)(((byte)(255)))));
+            this.guna2Panel5.BorderThickness = 2;
+            this.guna2Panel5.Controls.Add(this.lblRole);
+            this.guna2Panel5.ForeColor = System.Drawing.Color.White;
+            this.guna2Panel5.Location = new System.Drawing.Point(24, 339);
+            this.guna2Panel5.Name = "guna2Panel5";
+            this.guna2Panel5.Size = new System.Drawing.Size(287, 33);
+            this.guna2Panel5.TabIndex = 29;
             // 
-            // guna2Elipse1
+            // lblRole
             // 
-            this.guna2Elipse1.BorderRadius = 8;
-            // 
-            // lblPendingTickets
-            // 
-            this.lblPendingTickets.BackColor = System.Drawing.Color.Transparent;
-            this.lblPendingTickets.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPendingTickets.ForeColor = System.Drawing.Color.Black;
-            this.lblPendingTickets.Location = new System.Drawing.Point(3, 51);
-            this.lblPendingTickets.Name = "lblPendingTickets";
-            this.lblPendingTickets.Size = new System.Drawing.Size(162, 15);
-            this.lblPendingTickets.TabIndex = 7;
-            this.lblPendingTickets.Text = "Most Frequent Priority Level";
-            // 
-            // txtFrequentPriority
-            // 
-            this.txtFrequentPriority.BackColor = System.Drawing.Color.Transparent;
-            this.txtFrequentPriority.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFrequentPriority.ForeColor = System.Drawing.Color.Black;
-            this.txtFrequentPriority.Location = new System.Drawing.Point(50, 30);
-            this.txtFrequentPriority.Name = "txtFrequentPriority";
-            this.txtFrequentPriority.Size = new System.Drawing.Size(10, 15);
-            this.txtFrequentPriority.TabIndex = 8;
-            this.txtFrequentPriority.Text = "0";
-            // 
-            // lblResolved
-            // 
-            this.lblResolved.BackColor = System.Drawing.Color.Transparent;
-            this.lblResolved.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResolved.ForeColor = System.Drawing.Color.Black;
-            this.lblResolved.Location = new System.Drawing.Point(13, 51);
-            this.lblResolved.Name = "lblResolved";
-            this.lblResolved.Size = new System.Drawing.Size(150, 15);
-            this.lblResolved.TabIndex = 8;
-            this.lblResolved.Text = "Most Frequent Issue Type";
-            // 
-            // txtFrequentIssue
-            // 
-            this.txtFrequentIssue.BackColor = System.Drawing.Color.Transparent;
-            this.txtFrequentIssue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFrequentIssue.ForeColor = System.Drawing.Color.Black;
-            this.txtFrequentIssue.Location = new System.Drawing.Point(22, 30);
-            this.txtFrequentIssue.Name = "txtFrequentIssue";
-            this.txtFrequentIssue.Size = new System.Drawing.Size(10, 15);
-            this.txtFrequentIssue.TabIndex = 9;
-            this.txtFrequentIssue.Text = "0";
-            // 
-            // lblOpenTickets
-            // 
-            this.lblOpenTickets.BackColor = System.Drawing.Color.Transparent;
-            this.lblOpenTickets.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOpenTickets.ForeColor = System.Drawing.Color.Black;
-            this.lblOpenTickets.Location = new System.Drawing.Point(43, 51);
-            this.lblOpenTickets.Name = "lblOpenTickets";
-            this.lblOpenTickets.Size = new System.Drawing.Size(78, 15);
-            this.lblOpenTickets.TabIndex = 9;
-            this.lblOpenTickets.Text = "Total Tickets";
-            // 
-            // txtTotalTickets
-            // 
-            this.txtTotalTickets.BackColor = System.Drawing.Color.Transparent;
-            this.txtTotalTickets.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalTickets.ForeColor = System.Drawing.Color.Black;
-            this.txtTotalTickets.Location = new System.Drawing.Point(82, 30);
-            this.txtTotalTickets.Name = "txtTotalTickets";
-            this.txtTotalTickets.Size = new System.Drawing.Size(10, 15);
-            this.txtTotalTickets.TabIndex = 10;
-            this.txtTotalTickets.Text = "0";
+            this.lblRole.AutoSize = true;
+            this.lblRole.Location = new System.Drawing.Point(3, 9);
+            this.lblRole.MaximumSize = new System.Drawing.Size(287, 0);
+            this.lblRole.Name = "lblRole";
+            this.lblRole.Size = new System.Drawing.Size(29, 13);
+            this.lblRole.TabIndex = 0;
+            this.lblRole.Text = "Role";
+            this.lblRole.Click += new System.EventHandler(this.lblIssueType_Click);
             // 
             // guna2Panel3
             // 
@@ -293,6 +235,17 @@
             this.lblEmail.Size = new System.Drawing.Size(32, 13);
             this.lblEmail.TabIndex = 0;
             this.lblEmail.Text = "Email";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(24, 314);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 22);
+            this.label9.TabIndex = 27;
+            this.label9.Text = "Role";
             // 
             // guna2Panel2
             // 
@@ -416,39 +369,86 @@
             this.lblTicket.TabIndex = 18;
             this.lblTicket.Text = "Ticket";
             // 
-            // label9
+            // pictureBox1
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(24, 314);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 22);
-            this.label9.TabIndex = 27;
-            this.label9.Text = "Role";
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::Bakerex_Practice.Properties.Resources.Bakerex_logo1;
+            this.pictureBox1.Location = new System.Drawing.Point(542, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(110, 44);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
-            // lblRole
+            // guna2Elipse1
             // 
-            this.lblRole.AutoSize = true;
-            this.lblRole.Location = new System.Drawing.Point(3, 9);
-            this.lblRole.MaximumSize = new System.Drawing.Size(287, 0);
-            this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(29, 13);
-            this.lblRole.TabIndex = 0;
-            this.lblRole.Text = "Role";
-            this.lblRole.Click += new System.EventHandler(this.lblIssueType_Click);
+            this.guna2Elipse1.BorderRadius = 8;
             // 
-            // guna2Panel5
+            // lblPendingTickets
             // 
-            this.guna2Panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(59)))));
-            this.guna2Panel5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(94)))), ((int)(((byte)(255)))));
-            this.guna2Panel5.BorderThickness = 2;
-            this.guna2Panel5.Controls.Add(this.lblRole);
-            this.guna2Panel5.ForeColor = System.Drawing.Color.White;
-            this.guna2Panel5.Location = new System.Drawing.Point(24, 339);
-            this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(287, 33);
-            this.guna2Panel5.TabIndex = 29;
+            this.lblPendingTickets.BackColor = System.Drawing.Color.Transparent;
+            this.lblPendingTickets.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPendingTickets.ForeColor = System.Drawing.Color.Black;
+            this.lblPendingTickets.Location = new System.Drawing.Point(3, 51);
+            this.lblPendingTickets.Name = "lblPendingTickets";
+            this.lblPendingTickets.Size = new System.Drawing.Size(162, 15);
+            this.lblPendingTickets.TabIndex = 7;
+            this.lblPendingTickets.Text = "Most Frequent Priority Level";
+            // 
+            // txtFrequentPriority
+            // 
+            this.txtFrequentPriority.BackColor = System.Drawing.Color.Transparent;
+            this.txtFrequentPriority.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFrequentPriority.ForeColor = System.Drawing.Color.Black;
+            this.txtFrequentPriority.Location = new System.Drawing.Point(50, 30);
+            this.txtFrequentPriority.Name = "txtFrequentPriority";
+            this.txtFrequentPriority.Size = new System.Drawing.Size(10, 15);
+            this.txtFrequentPriority.TabIndex = 8;
+            this.txtFrequentPriority.Text = "0";
+            // 
+            // lblResolved
+            // 
+            this.lblResolved.BackColor = System.Drawing.Color.Transparent;
+            this.lblResolved.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResolved.ForeColor = System.Drawing.Color.Black;
+            this.lblResolved.Location = new System.Drawing.Point(13, 51);
+            this.lblResolved.Name = "lblResolved";
+            this.lblResolved.Size = new System.Drawing.Size(150, 15);
+            this.lblResolved.TabIndex = 8;
+            this.lblResolved.Text = "Most Frequent Issue Type";
+            // 
+            // txtFrequentIssue
+            // 
+            this.txtFrequentIssue.BackColor = System.Drawing.Color.Transparent;
+            this.txtFrequentIssue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFrequentIssue.ForeColor = System.Drawing.Color.Black;
+            this.txtFrequentIssue.Location = new System.Drawing.Point(22, 30);
+            this.txtFrequentIssue.Name = "txtFrequentIssue";
+            this.txtFrequentIssue.Size = new System.Drawing.Size(10, 15);
+            this.txtFrequentIssue.TabIndex = 9;
+            this.txtFrequentIssue.Text = "0";
+            // 
+            // lblOpenTickets
+            // 
+            this.lblOpenTickets.BackColor = System.Drawing.Color.Transparent;
+            this.lblOpenTickets.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOpenTickets.ForeColor = System.Drawing.Color.Black;
+            this.lblOpenTickets.Location = new System.Drawing.Point(43, 51);
+            this.lblOpenTickets.Name = "lblOpenTickets";
+            this.lblOpenTickets.Size = new System.Drawing.Size(78, 15);
+            this.lblOpenTickets.TabIndex = 9;
+            this.lblOpenTickets.Text = "Total Tickets";
+            // 
+            // txtTotalTickets
+            // 
+            this.txtTotalTickets.BackColor = System.Drawing.Color.Transparent;
+            this.txtTotalTickets.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalTickets.ForeColor = System.Drawing.Color.Black;
+            this.txtTotalTickets.Location = new System.Drawing.Point(82, 30);
+            this.txtTotalTickets.Name = "txtTotalTickets";
+            this.txtTotalTickets.Size = new System.Drawing.Size(10, 15);
+            this.txtTotalTickets.TabIndex = 10;
+            this.txtTotalTickets.Text = "0";
             // 
             // Technicians
             // 
@@ -471,7 +471,8 @@
             this.Text = "Form1";
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.guna2Panel5.ResumeLayout(false);
+            this.guna2Panel5.PerformLayout();
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
@@ -480,8 +481,7 @@
             this.guna2Panel6.PerformLayout();
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel4.PerformLayout();
-            this.guna2Panel5.ResumeLayout(false);
-            this.guna2Panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
