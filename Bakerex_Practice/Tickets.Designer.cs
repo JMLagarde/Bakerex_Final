@@ -132,6 +132,7 @@
             this.lblSummary.Size = new System.Drawing.Size(86, 30);
             this.lblSummary.TabIndex = 18;
             this.lblSummary.Text = "Summary";
+            this.lblSummary.Click += new System.EventHandler(this.lblSummary_Click);
             // 
             // lblTechnicians
             // 

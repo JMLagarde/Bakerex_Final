@@ -111,9 +111,8 @@ namespace Bakerex_Practice
 
         private void lblHome_Click(object sender, EventArgs e)
         {
-            int adminId = 0;
-            MainDashboard mainDashboard = new MainDashboard(adminId);
-            mainDashboard.Show();
+            MainUser mainUserForm = new MainUser();
+            mainUserForm.Show();
             this.Hide();
         }
 

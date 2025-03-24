@@ -1,6 +1,6 @@
 ﻿namespace Bakerex_Practice
 {
-    partial class Form1
+    partial class Summary
     {
         /// <summary>
         /// Required designer variable.
@@ -83,6 +83,7 @@
             this.lblLogut.Size = new System.Drawing.Size(59, 22);
             this.lblLogut.TabIndex = 38;
             this.lblLogut.Text = "Logout";
+            this.lblLogut.Click += new System.EventHandler(this.lblLogut_Click);
             // 
             // lblCalendar
             // 
@@ -119,6 +120,7 @@
             this.lblTechnicians.Size = new System.Drawing.Size(98, 22);
             this.lblTechnicians.TabIndex = 35;
             this.lblTechnicians.Text = "Technicians";
+            this.lblTechnicians.Click += new System.EventHandler(this.lblTechnicians_Click);
             // 
             // lblTickets
             // 
@@ -131,6 +133,7 @@
             this.lblTickets.Size = new System.Drawing.Size(60, 22);
             this.lblTickets.TabIndex = 34;
             this.lblTickets.Text = "Tickets";
+            this.lblTickets.Click += new System.EventHandler(this.lblTickets_Click);
             // 
             // guna2HtmlLabel4
             // 
@@ -154,6 +157,7 @@
             this.lblStatusBoard.Size = new System.Drawing.Size(109, 22);
             this.lblStatusBoard.TabIndex = 32;
             this.lblStatusBoard.Text = "Status Board";
+            this.lblStatusBoard.Click += new System.EventHandler(this.lblStatusBoard_Click);
             // 
             // guna2Panel1
             // 

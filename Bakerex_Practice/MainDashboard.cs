@@ -62,7 +62,6 @@ namespace Bakerex_Practice
                         }
                     }
 
-                    // Load detailed data into DataGridView
                     using (SqlDataAdapter adapter = new SqlDataAdapter(dataQuery, conn))
                     {
                         DataTable dt = new DataTable();
@@ -132,6 +131,13 @@ namespace Bakerex_Practice
             {
                 MessageBox.Show("Please select a ticket to access details.", "No Ticket Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void lblSummary_Click(object sender, EventArgs e)
+        {
+            Summary summaryForm = new Summary(adminId);
+            summaryForm.Show();
+            this.Hide();
         }
     }
 }

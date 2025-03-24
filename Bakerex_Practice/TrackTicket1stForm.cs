@@ -87,5 +87,12 @@ namespace Bakerex_Practice
             mainUserForm.Show();
             this.Hide();
         }
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+            AdminLogin adminLoginForm = new AdminLogin();
+            adminLoginForm.Show();
+            this.Hide();
+        }
     }
 }

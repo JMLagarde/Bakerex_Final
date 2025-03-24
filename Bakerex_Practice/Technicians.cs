@@ -14,7 +14,6 @@ namespace Bakerex_Practice
     public partial class Technicians : Form
     {
         string connectionString = "Server=DESKTOP-D9KJ8S9\\SQLEXPRESS;Database=BakerexCustomerSupportSystem;Integrated Security=True;";
-        private int requestID;
         private readonly int adminId;
 
         public Technicians(int adminId)
@@ -41,6 +40,7 @@ namespace Bakerex_Practice
 
         private void lblTickets_Click(object sender, EventArgs e)
         {
+            int requestID = 0;
             if (requestID <= 0)
             {
                 MessageBox.Show("Please select a client to access tickets.", "No Ticket Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -99,6 +99,20 @@ namespace Bakerex_Practice
                     }
                 }
             }
+        }
+
+        private void Technicians_Load_1(object sender, EventArgs e)
+        {
+            Summary summaryForm = new Summary(adminId);
+            summaryForm.Show();
+            this.Hide();
+        }
+
+        private void lblSummary_Click(object sender, EventArgs e)
+        {
+            Summary summaryForm = new Summary(adminId);
+            summaryForm.Show();
+            this.Hide();
         }
     }
 }

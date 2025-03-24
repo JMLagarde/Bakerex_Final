@@ -163,5 +163,12 @@ namespace Bakerex_Practice
             tickets.Show();
             this.Hide();
         }
+
+        private void lblSummary_Click(object sender, EventArgs e)
+        {
+            Summary summaryForm = new Summary(adminId);
+            summaryForm.Show();
+            this.Hide();
+        }
     }
 }
