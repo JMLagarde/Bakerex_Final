@@ -15,10 +15,10 @@ namespace Bakerex_Practice
     public partial class SubmitRequest : Form
     {
         string connectionString = "Server=DESKTOP-D9KJ8S9\\SQLEXPRESS;Database=BakerexCustomerSupportSystem;Integrated Security=True;";
-
         public SubmitRequest()
         {
             InitializeComponent();
+            ClearFields();
         }
 
         private void SubmitRequest_Load(object sender, EventArgs e)
@@ -45,7 +45,6 @@ namespace Bakerex_Practice
                 return;
             }
 
-            // Phone Number Validation (Must start with 09 and be 11 digits long)
             string phoneNumber = txtPhoneNumber.Text.Trim();
             if (!System.Text.RegularExpressions.Regex.IsMatch(phoneNumber, @"^09\d{9}$"))
             {
@@ -108,6 +107,21 @@ namespace Bakerex_Practice
             txtDescription.Clear();
             txtProduct.Clear();
             cbxPrioritylevel.SelectedIndex = -1;
+        }
+
+        private void lblHome_Click(object sender, EventArgs e)
+        {
+            int adminId = 0;
+            MainDashboard mainDashboard = new MainDashboard(adminId);
+            mainDashboard.Show();
+            this.Hide();
+        }
+
+        private void lblTrackTicket_Click(object sender, EventArgs e)
+        {
+            TrackTicket1stForm trackTicket1stForm = new TrackTicket1stForm();
+            trackTicket1stForm.Show();
+            this.Hide();
         }
     }
 }

@@ -98,6 +98,7 @@
             this.lblTrackTicket.Size = new System.Drawing.Size(68, 13);
             this.lblTrackTicket.TabIndex = 4;
             this.lblTrackTicket.Text = "Track Ticket";
+            this.lblTrackTicket.Click += new System.EventHandler(this.lblTrackTicket_Click);
             // 
             // lblSubmitTicket
             // 
@@ -120,6 +121,7 @@
             this.lblHome.Size = new System.Drawing.Size(35, 13);
             this.lblHome.TabIndex = 2;
             this.lblHome.Text = "Home";
+            this.lblHome.Click += new System.EventHandler(this.lblHome_Click);
             // 
             // label1
             // 

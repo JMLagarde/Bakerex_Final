@@ -15,7 +15,7 @@ namespace Bakerex_Practice
     {
         string connectionString = "Server=DESKTOP-D9KJ8S9\\SQLEXPRESS;Database=BakerexCustomerSupportSystem;Integrated Security=True;";
         private int requestID;
-        private int adminId;
+        private readonly int adminId;
 
         public Technicians(int adminId)
         {

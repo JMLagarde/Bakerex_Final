@@ -16,10 +16,6 @@ namespace Bakerex_Practice
     {
         string connectionString = "Server=DESKTOP-D9KJ8S9\\SQLEXPRESS;Database=BakerexCustomerSupportSystem;Integrated Security=True;";
 
-        private Color originalFullnameLabelColor;
-        private Color originalEmailLabelColor;
-        private Color originalPasswordLabelColor;
-        private Color originalPhoneNumberLabelColor;
         public AdminRegister()
         {
             InitializeComponent();
