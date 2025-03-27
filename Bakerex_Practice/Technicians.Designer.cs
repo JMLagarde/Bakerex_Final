@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.cbxExit = new Guna.UI2.WinForms.Guna2ControlBox();
             this.lblLogut = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblCalendar = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblSummary = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblTechnicians = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblTickets = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -89,24 +88,12 @@
             this.lblLogut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.lblLogut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogut.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lblLogut.Location = new System.Drawing.Point(16, 378);
+            this.lblLogut.Location = new System.Drawing.Point(16, 330);
             this.lblLogut.Name = "lblLogut";
             this.lblLogut.Size = new System.Drawing.Size(59, 22);
             this.lblLogut.TabIndex = 23;
             this.lblLogut.Text = "Logout";
             this.lblLogut.Click += new System.EventHandler(this.lblLogut_Click);
-            // 
-            // lblCalendar
-            // 
-            this.lblCalendar.BackColor = System.Drawing.Color.Transparent;
-            this.lblCalendar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.lblCalendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCalendar.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lblCalendar.Location = new System.Drawing.Point(16, 330);
-            this.lblCalendar.Name = "lblCalendar";
-            this.lblCalendar.Size = new System.Drawing.Size(75, 22);
-            this.lblCalendar.TabIndex = 22;
-            this.lblCalendar.Text = "Calendar";
             // 
             // lblSummary
             // 
@@ -459,7 +446,6 @@
             this.ClientSize = new System.Drawing.Size(843, 551);
             this.Controls.Add(this.cbxExit);
             this.Controls.Add(this.lblLogut);
-            this.Controls.Add(this.lblCalendar);
             this.Controls.Add(this.lblSummary);
             this.Controls.Add(this.lblTechnicians);
             this.Controls.Add(this.lblTickets);
@@ -493,7 +479,6 @@
 
         private Guna.UI2.WinForms.Guna2ControlBox cbxExit;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblLogut;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblCalendar;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblSummary;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTechnicians;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTickets;

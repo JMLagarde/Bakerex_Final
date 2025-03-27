@@ -34,14 +34,31 @@ namespace Bakerex_Practice
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string email = lblEmail.Text;
-                string phoneNumber = lblPhoneNumber.Text;
+                string email = lblEmail.Text.Trim();
+                string phoneNumber = lblPhoneNumber.Text.Trim();
 
-                string query = @"SELECT RequestID, Status, Subject, CustomerName, Email, PhoneNumber, 
-                                 CompanyName, IssueType, CreatedAt, Description, ProductDetails, 
-                                 PriorityLevel, Technician, Schedule, Response 
-                          FROM CustomerRequests 
-                          WHERE Email = @Email AND PhoneNumber = @PhoneNumber";
+                string query = @"
+                        SELECT 
+                            cr.RequestID, 
+                            st.StatusName AS Status, 
+                            cr.Subject, 
+                            cr.CustomerName, 
+                            cr.Email, 
+                            cr.PhoneNumber, 
+                            cr.CompanyName, 
+                            it.IssueTypeName AS IssueType, 
+                            cr.CreatedAt, 
+                            cr.Description, 
+                            cr.ProductDetails, 
+                            pl.PriorityLevelName AS PriorityLevel, 
+                            cr.Technician, 
+                            cr.Schedule, 
+                            cr.Response 
+                        FROM CustomerRequests cr
+                        LEFT JOIN IssueType it ON cr.IssueTypeID = it.IssueTypeID
+                        LEFT JOIN PriorityLevel pl ON cr.PriorityLevelID = pl.PriorityLevelID
+                        LEFT JOIN Status st ON cr.StatusID = st.StatusID
+                        WHERE cr.Email = @Email AND cr.PhoneNumber = @PhoneNumber;";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
@@ -54,15 +71,18 @@ namespace Bakerex_Practice
                         SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                         DataTable dt = new DataTable();
                         adapter.Fill(dt);
+
                         DataGridStatusBoard.DataSource = dt;
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Error retrieving ticket data: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
         }
+
+
 
         private void DataGridStatusBoard_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {

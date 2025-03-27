@@ -56,6 +56,7 @@
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 27;
             this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
             // 
             // cbxExit
             // 
@@ -68,6 +69,7 @@
             this.cbxExit.Name = "cbxExit";
             this.cbxExit.Size = new System.Drawing.Size(19, 19);
             this.cbxExit.TabIndex = 24;
+            this.cbxExit.Click += new System.EventHandler(this.cbxExit_Click_1);
             // 
             // lblRegister
             // 
@@ -79,6 +81,7 @@
             this.lblRegister.Size = new System.Drawing.Size(82, 38);
             this.lblRegister.TabIndex = 23;
             this.lblRegister.Text = "Register";
+            this.lblRegister.Click += new System.EventHandler(this.lblRegister_Click_1);
             // 
             // btnLogin
             // 
@@ -107,6 +110,7 @@
             this.txtSignup.Size = new System.Drawing.Size(43, 21);
             this.txtSignup.TabIndex = 21;
             this.txtSignup.Text = "Sign Up";
+            this.txtSignup.Click += new System.EventHandler(this.txtSignup_Click);
             // 
             // guna2HtmlLabel2
             // 

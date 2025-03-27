@@ -46,7 +46,7 @@ namespace Bakerex_Practice
                 try
                 {
                     conn.Open();
-                    string query = "SELECT AdminID FROM Registration WHERE Email = @Email AND Password = @Password";
+                    string query = "SELECT AdminID FROM Admin WHERE Email = @Email AND Password = @Password";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -89,6 +89,29 @@ namespace Bakerex_Practice
         private void AdminLogin_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void lblRegister_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AdminRegister().Show();
+        }
+
+        private void cbxExit_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new MainUser().Show();
+        }
+
+        private void txtSignup_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AdminRegister().Show();
         }
     }
 }

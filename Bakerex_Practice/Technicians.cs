@@ -65,41 +65,46 @@ namespace Bakerex_Practice
 
         }
         private void LoadAdminProfile()
+{
+    using (SqlConnection conn = new SqlConnection(connectionString))
+    {
+        string query = @"
+            SELECT r.FullName, r.Email, r.PhoneNumber, rl.RoleName, r.Password 
+            FROM Admin r
+            JOIN Role rl ON r.RoleID = rl.RoleID
+            WHERE r.AdminID = @AdminID";
+
+        using (SqlCommand cmd = new SqlCommand(query, conn))
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            cmd.Parameters.AddWithValue("@AdminID", adminId);
+
+            try
             {
-                string query = "SELECT FullName, Email, PhoneNumber, Role, Password FROM Registration WHERE AdminID = @AdminID";
-
-                using (SqlCommand cmd = new SqlCommand(query, conn))
+                conn.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    cmd.Parameters.AddWithValue("@AdminID", adminId); 
-
-                    try
+                    if (reader.Read())
                     {
-                        conn.Open();
-                        using (SqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            if (reader.Read())
-                            {
-                                lblFullName.Text = reader["FullName"].ToString();
-                                lblEmail.Text = reader["Email"].ToString();
-                                lblPhoneNumber.Text = reader["PhoneNumber"].ToString();
-                                lblRole.Text = reader["Role"].ToString();
-                                lblPassword.Text = reader["Password"].ToString();
-                            }
-                            else
-                            {
-                                MessageBox.Show("No admin profile found for the given AdminID.", "Profile Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            }
-                        }
+                        lblFullName.Text = reader["FullName"].ToString();
+                        lblEmail.Text = reader["Email"].ToString();
+                        lblPhoneNumber.Text = reader["PhoneNumber"].ToString();
+                        lblRole.Text = reader["RoleName"].ToString(); 
+                        lblPassword.Text = reader["Password"].ToString();
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        MessageBox.Show("Error loading profile: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("No admin profile found for the given AdminID.", "Profile Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading profile: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+    }
+}
+
 
         private void Technicians_Load_1(object sender, EventArgs e)
         {

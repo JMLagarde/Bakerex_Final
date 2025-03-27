@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cbxExit = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -41,8 +44,10 @@
             this.lblStatusBoard = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblSummaryTitle = new System.Windows.Forms.Label();
+            this.PriorityChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PriorityChart)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -78,7 +83,7 @@
             this.lblLogut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.lblLogut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogut.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lblLogut.Location = new System.Drawing.Point(16, 378);
+            this.lblLogut.Location = new System.Drawing.Point(16, 330);
             this.lblLogut.Name = "lblLogut";
             this.lblLogut.Size = new System.Drawing.Size(59, 22);
             this.lblLogut.TabIndex = 38;
@@ -93,9 +98,8 @@
             this.lblCalendar.ForeColor = System.Drawing.SystemColors.GrayText;
             this.lblCalendar.Location = new System.Drawing.Point(16, 330);
             this.lblCalendar.Name = "lblCalendar";
-            this.lblCalendar.Size = new System.Drawing.Size(75, 22);
+            this.lblCalendar.Size = new System.Drawing.Size(3, 2);
             this.lblCalendar.TabIndex = 37;
-            this.lblCalendar.Text = "Calendar";
             // 
             // lblSummary
             // 
@@ -162,6 +166,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BorderRadius = 20;
+            this.guna2Panel1.Controls.Add(this.PriorityChart);
             this.guna2Panel1.Controls.Add(this.lblSummaryTitle);
             this.guna2Panel1.Controls.Add(this.pictureBox1);
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
@@ -183,7 +188,24 @@
             this.lblSummaryTitle.TabIndex = 18;
             this.lblSummaryTitle.Text = "Summary";
             // 
-            // Form1
+            // PriorityChart
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.PriorityChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.PriorityChart.Legends.Add(legend1);
+            this.PriorityChart.Location = new System.Drawing.Point(44, 102);
+            this.PriorityChart.Name = "PriorityChart";
+            this.PriorityChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.PriorityChart.Series.Add(series1);
+            this.PriorityChart.Size = new System.Drawing.Size(458, 300);
+            this.PriorityChart.TabIndex = 19;
+            this.PriorityChart.Text = "chart1";
+            // 
+            // Summary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -199,13 +221,14 @@
             this.Controls.Add(this.lblStatusBoard);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "Summary";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PriorityChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,5 +247,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblStatusBoard;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Label lblSummaryTitle;
+        private System.Windows.Forms.DataVisualization.Charting.Chart PriorityChart;
     }
 }

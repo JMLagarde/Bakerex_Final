@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraCharts.Native;
 
 namespace Bakerex_Practice
 {
@@ -20,74 +15,110 @@ namespace Bakerex_Practice
         {
             InitializeComponent();
             this.adminId = adminId;
+            cbxIdentifier.SelectedIndex = 0; 
             LoadDashboardSummary();
         }
 
         private void MainDashboard_Load(object sender, EventArgs e)
         {
-            cbxIdentifier.SelectedItem = "This Day";
+             if (cbxIdentifier.SelectedItem == null)
+                cbxIdentifier.SelectedIndex = 0;
         }
 
         private void LoadDashboardSummary()
         {
-            string dateFilter = GetDateFilter();
-
-            string summaryQuery = $@"
-                SELECT 
-                    COUNT(*) AS TotalTickets,
-                    (SELECT TOP 1 PriorityLevel FROM CustomerRequests WHERE {dateFilter} GROUP BY PriorityLevel ORDER BY COUNT(*) DESC) AS MostFrequentPriority,
-                    (SELECT TOP 1 IssueType FROM CustomerRequests WHERE {dateFilter} GROUP BY IssueType ORDER BY COUNT(*) DESC) AS MostFrequentIssue
-                FROM CustomerRequests
-                WHERE {dateFilter}";
-
-            string dataQuery = $"SELECT * FROM CustomerRequests WHERE {dateFilter}";
-
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try
                 {
                     conn.Open();
+                    DateTime dateFilter = GetDateFilterValue();
 
-                    
-                    using (SqlCommand cmd = new SqlCommand(summaryQuery, conn))
+                    string ticketQuery = @"
+                SELECT 
+                    cr.RequestID,
+                    cr.CustomerName,
+                    cr.Email,
+                    cr.PhoneNumber,
+                    cr.CompanyName,
+                    cr.Subject,
+                    cr.Description,
+                    cr.ProductDetails,
+                    cr.CreatedAt,
+                    cr.Technician,
+                    cr.Response,
+                    cr.Schedule,
+                    it.IssueTypeName,
+                    pl.PriorityLevelName,
+                    st.StatusName
+                FROM CustomerRequests cr
+                LEFT JOIN IssueType it ON cr.IssueTypeID = it.IssueTypeID
+                LEFT JOIN PriorityLevel pl ON cr.PriorityLevelID = pl.PriorityLevelID
+                LEFT JOIN Status st ON cr.StatusID = st.StatusID
+                WHERE cr.CreatedAt >= @DateFilter";
+
+                    using (SqlCommand cmd = new SqlCommand(ticketQuery, conn))
                     {
-                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        cmd.Parameters.AddWithValue("@DateFilter", dateFilter);
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
                         {
-                            if (reader.Read())
-                            {
-                                txtTotalTickets.Text = reader["TotalTickets"].ToString();
-                                txtFrequentPriority.Text = reader["MostFrequentPriority"] != DBNull.Value ? reader["MostFrequentPriority"].ToString() : "N/A";
-                                txtFrequentIssue.Text = reader["MostFrequentIssue"] != DBNull.Value ? reader["MostFrequentIssue"].ToString() : "N/A";
-                            }
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
+                            DataGridStatusBoard.DataSource = dt;
                         }
                     }
 
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(dataQuery, conn))
+                    string summaryQuery = @"
+                SELECT 
+                    (SELECT COUNT(*) FROM CustomerRequests WHERE CreatedAt >= @DateFilter) AS TotalTickets,
+                    (SELECT TOP 1 it.IssueTypeName 
+                     FROM CustomerRequests cr 
+                     LEFT JOIN IssueType it ON cr.IssueTypeID = it.IssueTypeID
+                     WHERE cr.CreatedAt >= @DateFilter
+                     GROUP BY it.IssueTypeName 
+                     ORDER BY COUNT(*) DESC) AS MostFrequentIssueType,
+                    (SELECT TOP 1 pl.PriorityLevelName 
+                     FROM CustomerRequests cr 
+                     LEFT JOIN PriorityLevel pl ON cr.PriorityLevelID = pl.PriorityLevelID
+                     WHERE cr.CreatedAt >= @DateFilter
+                     GROUP BY pl.PriorityLevelName 
+                     ORDER BY COUNT(*) DESC) AS MostFrequentPriorityLevel";
+
+                    using (SqlCommand cmdSummary = new SqlCommand(summaryQuery, conn))
                     {
-                        DataTable dt = new DataTable();
-                        adapter.Fill(dt);
-                        DataGridStatusBoard.DataSource = dt;
+                        cmdSummary.Parameters.AddWithValue("@DateFilter", dateFilter);
+                        using (SqlDataReader reader = cmdSummary.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                txtTotalTickets.Text = (reader["TotalTickets"] != DBNull.Value ? reader["TotalTickets"].ToString() : "0");
+                                txtFrequentIssue.Text = (reader["MostFrequentIssueType"] != DBNull.Value ? reader["MostFrequentIssueType"].ToString() : "N/A");
+                                txtFrequentPriority.Text = (reader["MostFrequentPriorityLevel"] != DBNull.Value ? reader["MostFrequentPriorityLevel"].ToString() : "N/A");
+                            }
+                        }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error loading dashboard data: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
-        private string GetDateFilter()
+
+
+        private DateTime GetDateFilterValue()
         {
             switch (cbxIdentifier.SelectedItem.ToString())
             {
                 case "This Day":
-                    return "CAST(CreatedAt AS DATE) = CAST(GETDATE() AS DATE)";
+                    return DateTime.Today;
                 case "This Week":
-                    return "DATEPART(WEEK, CreatedAt) = DATEPART(WEEK, GETDATE()) AND YEAR(CreatedAt) = YEAR(GETDATE())";
+                    return DateTime.Today.AddDays(-7); 
                 case "This Month":
-                    return "MONTH(CreatedAt) = MONTH(GETDATE()) AND YEAR(CreatedAt) = YEAR(GETDATE())";
+                    return new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1); 
                 default:
-                    return "";
+                    return DateTime.MinValue; 
             }
         }
 

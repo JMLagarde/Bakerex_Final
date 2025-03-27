@@ -39,8 +39,8 @@
             this.lblTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtPhoneNumber = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtRole = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cbxRole = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,6 +55,7 @@
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 27;
             this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
             // 
             // cbxExit
             // 
@@ -89,7 +90,7 @@
             this.btnSignin.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSignin.ForeColor = System.Drawing.Color.White;
             this.btnSignin.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnSignin.Location = new System.Drawing.Point(69, 436);
+            this.btnSignin.Location = new System.Drawing.Point(69, 423);
             this.btnSignin.Name = "btnSignin";
             this.btnSignin.Size = new System.Drawing.Size(301, 45);
             this.btnSignin.TabIndex = 22;
@@ -223,29 +224,6 @@
             this.txtPassword.Size = new System.Drawing.Size(300, 44);
             this.txtPassword.TabIndex = 28;
             // 
-            // txtRole
-            // 
-            this.txtRole.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
-            this.txtRole.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.txtRole.DefaultText = "";
-            this.txtRole.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtRole.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtRole.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtRole.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtRole.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
-            this.txtRole.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(128)))), ((int)(((byte)(73)))));
-            this.txtRole.FocusedState.FillColor = System.Drawing.Color.Gray;
-            this.txtRole.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtRole.ForeColor = System.Drawing.Color.White;
-            this.txtRole.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
-            this.txtRole.HoverState.FillColor = System.Drawing.Color.Gray;
-            this.txtRole.Location = new System.Drawing.Point(70, 381);
-            this.txtRole.Name = "txtRole";
-            this.txtRole.PlaceholderText = "Role:";
-            this.txtRole.SelectedText = "";
-            this.txtRole.Size = new System.Drawing.Size(300, 44);
-            this.txtRole.TabIndex = 32;
-            // 
             // txtEmail
             // 
             this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
@@ -270,6 +248,22 @@
             this.txtEmail.Size = new System.Drawing.Size(300, 44);
             this.txtEmail.TabIndex = 33;
             // 
+            // cbxRole
+            // 
+            this.cbxRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(59)))));
+            this.cbxRole.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxRole.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
+            this.cbxRole.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxRole.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxRole.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbxRole.ForeColor = System.Drawing.Color.White;
+            this.cbxRole.ItemHeight = 30;
+            this.cbxRole.Location = new System.Drawing.Point(70, 381);
+            this.cbxRole.Name = "cbxRole";
+            this.cbxRole.Size = new System.Drawing.Size(300, 36);
+            this.cbxRole.TabIndex = 34;
+            // 
             // AdminRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -277,8 +271,8 @@
             this.BackgroundImage = global::Bakerex_Practice.Properties.Resources.Login;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(671, 581);
+            this.Controls.Add(this.cbxRole);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtRole);
             this.Controls.Add(this.txtPhoneNumber);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.guna2PictureBox1);
@@ -315,7 +309,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTitle;
         private Guna.UI2.WinForms.Guna2TextBox txtPhoneNumber;
         private Guna.UI2.WinForms.Guna2TextBox txtPassword;
-        private Guna.UI2.WinForms.Guna2TextBox txtRole;
         private Guna.UI2.WinForms.Guna2TextBox txtEmail;
+        private Guna.UI2.WinForms.Guna2ComboBox cbxRole;
     }
 }

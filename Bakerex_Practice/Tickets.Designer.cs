@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.lblLogut = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblCalendar = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblSummary = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblTechnicians = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblTickets = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -53,8 +52,8 @@
             this.lblCreatedAt = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.lblProductDetails = new System.Windows.Forms.Label();
+            this.ProductDetails = new System.Windows.Forms.Label();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblDescription = new System.Windows.Forms.Label();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
@@ -102,24 +101,12 @@
             this.lblLogut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.lblLogut.Font = new System.Drawing.Font("Poppins ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogut.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lblLogut.Location = new System.Drawing.Point(16, 378);
+            this.lblLogut.Location = new System.Drawing.Point(16, 330);
             this.lblLogut.Name = "lblLogut";
             this.lblLogut.Size = new System.Drawing.Size(60, 30);
             this.lblLogut.TabIndex = 20;
             this.lblLogut.Text = "Logout";
             this.lblLogut.Click += new System.EventHandler(this.lblLogut_Click);
-            // 
-            // lblCalendar
-            // 
-            this.lblCalendar.BackColor = System.Drawing.Color.Transparent;
-            this.lblCalendar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.lblCalendar.Font = new System.Drawing.Font("Poppins ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCalendar.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lblCalendar.Location = new System.Drawing.Point(16, 330);
-            this.lblCalendar.Name = "lblCalendar";
-            this.lblCalendar.Size = new System.Drawing.Size(81, 30);
-            this.lblCalendar.TabIndex = 19;
-            this.lblCalendar.Text = "Calendar";
             // 
             // lblSummary
             // 
@@ -192,7 +179,7 @@
             this.guna2Panel1.Controls.Add(this.guna2Panel10);
             this.guna2Panel1.Controls.Add(this.label10);
             this.guna2Panel1.Controls.Add(this.guna2Panel9);
-            this.guna2Panel1.Controls.Add(this.lblProductDetails);
+            this.guna2Panel1.Controls.Add(this.ProductDetails);
             this.guna2Panel1.Controls.Add(this.guna2Panel7);
             this.guna2Panel1.Controls.Add(this.guna2Panel5);
             this.guna2Panel1.Controls.Add(this.label4);
@@ -232,6 +219,7 @@
             this.txtResponse.Location = new System.Drawing.Point(275, 614);
             this.txtResponse.Multiline = true;
             this.txtResponse.Name = "txtResponse";
+            this.txtResponse.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtResponse.Size = new System.Drawing.Size(354, 162);
             this.txtResponse.TabIndex = 27;
             // 
@@ -279,15 +267,9 @@
             this.cbxStatus.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbxStatus.ForeColor = System.Drawing.Color.White;
             this.cbxStatus.ItemHeight = 30;
-            this.cbxStatus.Items.AddRange(new object[] {
-            "Pending",
-            "Scheduled",
-            "In Progress",
-            "Resolved"});
             this.cbxStatus.Location = new System.Drawing.Point(38, 549);
             this.cbxStatus.Name = "cbxStatus";
             this.cbxStatus.Size = new System.Drawing.Size(283, 36);
-            this.cbxStatus.StartIndex = 0;
             this.cbxStatus.TabIndex = 24;
             // 
             // label15
@@ -425,33 +407,33 @@
             this.guna2Panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(59)))));
             this.guna2Panel9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(94)))), ((int)(((byte)(255)))));
             this.guna2Panel9.BorderThickness = 2;
-            this.guna2Panel9.Controls.Add(this.label2);
+            this.guna2Panel9.Controls.Add(this.lblProductDetails);
             this.guna2Panel9.ForeColor = System.Drawing.Color.White;
             this.guna2Panel9.Location = new System.Drawing.Point(346, 318);
             this.guna2Panel9.Name = "guna2Panel9";
             this.guna2Panel9.Size = new System.Drawing.Size(287, 33);
             this.guna2Panel9.TabIndex = 15;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 9);
-            this.label2.MaximumSize = new System.Drawing.Size(287, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Issue Type";
-            // 
             // lblProductDetails
             // 
             this.lblProductDetails.AutoSize = true;
-            this.lblProductDetails.BackColor = System.Drawing.Color.Transparent;
-            this.lblProductDetails.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductDetails.Location = new System.Drawing.Point(346, 293);
+            this.lblProductDetails.Location = new System.Drawing.Point(3, 9);
+            this.lblProductDetails.MaximumSize = new System.Drawing.Size(287, 0);
             this.lblProductDetails.Name = "lblProductDetails";
-            this.lblProductDetails.Size = new System.Drawing.Size(98, 22);
-            this.lblProductDetails.TabIndex = 14;
+            this.lblProductDetails.Size = new System.Drawing.Size(79, 13);
+            this.lblProductDetails.TabIndex = 0;
             this.lblProductDetails.Text = "Product Details";
+            // 
+            // ProductDetails
+            // 
+            this.ProductDetails.AutoSize = true;
+            this.ProductDetails.BackColor = System.Drawing.Color.Transparent;
+            this.ProductDetails.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductDetails.Location = new System.Drawing.Point(346, 293);
+            this.ProductDetails.Name = "ProductDetails";
+            this.ProductDetails.Size = new System.Drawing.Size(98, 22);
+            this.ProductDetails.TabIndex = 14;
+            this.ProductDetails.Text = "Product Details";
             // 
             // guna2Panel7
             // 
@@ -749,7 +731,6 @@
             this.ClientSize = new System.Drawing.Size(843, 849);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.lblLogut);
-            this.Controls.Add(this.lblCalendar);
             this.Controls.Add(this.lblSummary);
             this.Controls.Add(this.lblTechnicians);
             this.Controls.Add(this.lblTickets);
@@ -759,7 +740,6 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Tickets_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.guna2Panel11.ResumeLayout(false);
@@ -793,7 +773,6 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2HtmlLabel lblLogut;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblCalendar;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblSummary;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTechnicians;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTickets;
@@ -826,8 +805,8 @@
         private System.Windows.Forms.Label lblSubject;
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblProductDetails;
+        private System.Windows.Forms.Label ProductDetails;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel11;
         private System.Windows.Forms.Label lblPriorityLevel;
         private System.Windows.Forms.Label label13;

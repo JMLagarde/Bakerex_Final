@@ -20,50 +20,64 @@ namespace Bakerex_Practice
         {
             InitializeComponent();
             this.requestID = requestID;
+            LoadTicketDetails();
         }
 
         private void TrackTicket2ndForm_Load(object sender, EventArgs e)
         {
-            LoadTicketDetails();
         }
         private void LoadTicketDetails()
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = @"SELECT RequestID, Status, Subject, CustomerName, Email, PhoneNumber, 
-                         CompanyName, IssueType, CreatedAt, Description, ProductDetails, 
-                         PriorityLevel, Technician, Schedule, Response 
-                  FROM CustomerRequests 
-                  WHERE RequestID = @RequestID";
+                string query = @"
+            SELECT cr.RequestID, 
+                   st.StatusName AS Status, 
+                   cr.Subject, 
+                   cr.CustomerName, 
+                   cr.Email, 
+                   cr.PhoneNumber, 
+                   cr.CompanyName, 
+                   it.IssueTypeName AS IssueType, 
+                   cr.CreatedAt, 
+                   cr.Description, 
+                   cr.ProductDetails, 
+                   pl.PriorityLevelName AS PriorityLevel, 
+                   cr.Technician, 
+                   cr.Schedule, 
+                   cr.Response 
+            FROM CustomerRequests cr
+            LEFT JOIN Status st ON cr.StatusID = st.StatusID
+            LEFT JOIN IssueType it ON cr.IssueTypeID = it.IssueTypeID
+            LEFT JOIN PriorityLevel pl ON cr.PriorityLevelID = pl.PriorityLevelID
+            WHERE cr.RequestID = @RequestID";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    // Ensure that requestID is passed as an integer
-                    cmd.Parameters.AddWithValue("@RequestID", requestID); // requestID should be an int
+                    cmd.Parameters.AddWithValue("@RequestID", requestID);
 
                     try
                     {
                         conn.Open();
                         SqlDataReader reader = cmd.ExecuteReader();
 
-                        if (reader.Read()) // Check if a record was found
+                        if (reader.Read())
                         {
-                            // Populate your form controls with the data
                             lblTicketId.Text = reader["RequestID"].ToString();
-                            lblStatus.Text = reader["Status"].ToString();
-                            lblSubject.Text = reader["Subject"].ToString();
-                            lblCustomerName.Text = reader["CustomerName"].ToString();
-                            lblEmail.Text = reader["Email"].ToString();
-                            lblPhoneNumber.Text = reader["PhoneNumber"].ToString();
-                            lblCompanyName.Text = reader["CompanyName"].ToString();
-                            lblIssueType.Text = reader["IssueType"].ToString();
-                            lblCreatedAt.Text = reader["CreatedAt"].ToString();
-                            lblDescription.Text = reader["Description"].ToString();
-                            lblProductDetails.Text = reader["ProductDetails"].ToString();
-                            lblPriorityLevel.Text = reader["PriorityLevel"].ToString();
-                            lblTechnician.Text = reader["Technician"].ToString();
-                            lblSchedule.Text = reader["Schedule"].ToString();
-                            lblResponse.Text = reader["Response"].ToString();
+                            lblStatus.Text = reader["Status"]?.ToString();
+                            lblSubject.Text = reader["Subject"]?.ToString();
+                            lblCustomerName.Text = reader["CustomerName"]?.ToString();
+                            lblEmail.Text = reader["Email"]?.ToString();
+                            lblPhoneNumber.Text = reader["PhoneNumber"]?.ToString();
+                            lblCompanyName.Text = reader["CompanyName"]?.ToString();
+                            lblIssueType.Text = reader["IssueType"]?.ToString();
+                            lblCreatedAt.Text = reader["CreatedAt"]?.ToString();
+                            lblDescription.Text = reader["Description"]?.ToString();
+                            lblProductDetails.Text = reader["ProductDetails"]?.ToString();
+                            lblPriorityLevel.Text = reader["PriorityLevel"]?.ToString();
+                            lblTechnician.Text = reader["Technician"]?.ToString()   ;
+                            lblSchedule.Text = reader["Schedule"]?.ToString();
+                            lblResponse.Text = reader["Response"]?.ToString();
                         }
                         else
                         {
@@ -77,6 +91,9 @@ namespace Bakerex_Practice
                 }
             }
         }
+
+
+
 
         private void guna2ControlBox1_Click(object sender, EventArgs e)
         {

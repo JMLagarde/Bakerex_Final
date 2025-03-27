@@ -23,39 +23,68 @@ namespace Bakerex_Practice
       
         private void AdminRegister_Load(object sender, EventArgs e)
         {
-
+            LoadRoles();
         }
+        private void LoadRoles()
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT RoleID, RoleName FROM Role";
 
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    try
+                    {
+                        conn.Open();
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        cbxRole.Items.Clear();
+
+                        while (reader.Read())
+                        {
+                            cbxRole.Items.Add(new KeyValuePair<int, string>(
+                                Convert.ToInt32(reader["RoleID"]),
+                                reader["RoleName"].ToString()
+                            ));
+                        }
+                        reader.Close();
+
+                        cbxRole.DisplayMember = "Value"; 
+                        cbxRole.ValueMember = "Key";     
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
         private void btnSignin_Click(object sender, EventArgs e)
         {
-            if (!ValidateInputs())
-            {
-                return; 
-            }
+            if (!ValidateInputs()) return;
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try
                 {
                     conn.Open();
-                    string query = "INSERT INTO Registration (FullName, Email, Password, PhoneNumber, Role) VALUES (@FullName, @Email, @Password, @PhoneNumber, @Role)";
+                    string query = "INSERT INTO Admin (FullName, Email, Password, PhoneNumber, RoleID) VALUES (@FullName, @Email, @Password, @PhoneNumber, @RoleID)";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                      
                         cmd.Parameters.AddWithValue("@FullName", txtFullName.Text.Trim());
                         cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
-                        cmd.Parameters.AddWithValue("@Password", txtPassword.Text.Trim());  
+                        cmd.Parameters.AddWithValue("@Password", txtPassword.Text.Trim());
                         cmd.Parameters.AddWithValue("@PhoneNumber", txtPhoneNumber.Text.Trim());
-                        cmd.Parameters.AddWithValue("@Role", txtRole.Text.Trim());
 
-                 
+                        KeyValuePair<int, string> selectedRole = (KeyValuePair<int, string>)cbxRole.SelectedItem;
+                        cmd.Parameters.AddWithValue("@RoleID", selectedRole.Key);
+
                         int result = cmd.ExecuteNonQuery();
 
                         if (result > 0)
                         {
                             MessageBox.Show("Admin registered successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            ClearFields(); 
+                            ClearFields();
                         }
                         else
                         {
@@ -73,10 +102,10 @@ namespace Bakerex_Practice
         private bool ValidateInputs()
         {
             if (string.IsNullOrWhiteSpace(txtFullName.Text) ||
-                string.IsNullOrWhiteSpace(txtEmail.Text) ||
-                string.IsNullOrWhiteSpace(txtPassword.Text) ||
-                string.IsNullOrWhiteSpace(txtPhoneNumber.Text) ||
-                string.IsNullOrWhiteSpace(txtRole.Text))
+               string.IsNullOrWhiteSpace(txtEmail.Text) ||
+               string.IsNullOrWhiteSpace(txtPassword.Text) ||
+               string.IsNullOrWhiteSpace(txtPhoneNumber.Text) ||
+               cbxRole.SelectedItem == null) 
             {
                 MessageBox.Show("All fields are required!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -103,7 +132,14 @@ namespace Bakerex_Practice
             txtEmail.Text = "";
             txtPassword.Text = "";
             txtPhoneNumber.Text = "";
-            txtRole.Text = "";
+            cbxRole.SelectedIndex = -1;
+        }
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+            MainUser mainUser = new MainUser();
+            mainUser.Show();
+            this.Hide();
         }
     }
 }
