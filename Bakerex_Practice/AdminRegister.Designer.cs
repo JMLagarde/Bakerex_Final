@@ -68,6 +68,7 @@
             this.cbxExit.Name = "cbxExit";
             this.cbxExit.Size = new System.Drawing.Size(19, 19);
             this.cbxExit.TabIndex = 24;
+            this.cbxExit.Click += new System.EventHandler(this.cbxExit_Click);
             // 
             // lblRegister
             // 
@@ -129,6 +130,7 @@
             this.lblLogin.Size = new System.Drawing.Size(57, 38);
             this.lblLogin.TabIndex = 17;
             this.lblLogin.Text = "Login";
+            this.lblLogin.Click += new System.EventHandler(this.lblLogin_Click);
             // 
             // guna2HtmlLabel1
             // 

@@ -32,6 +32,9 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cbxExit = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -43,10 +46,35 @@
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblStatusBoard = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblSummaryTitle = new System.Windows.Forms.Label();
+            this.guna2GradientPanel4 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblResolved = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblInProgress = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblScheduled = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.PendingTickets = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblPending = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.pnlOpenTickets = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.TotalTickets = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblTotalTickets = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.IssueChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label2 = new System.Windows.Forms.Label();
             this.PriorityChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblSummaryTitle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
+            this.guna2GradientPanel4.SuspendLayout();
+            this.guna2GradientPanel3.SuspendLayout();
+            this.guna2GradientPanel2.SuspendLayout();
+            this.guna2GradientPanel1.SuspendLayout();
+            this.pnlOpenTickets.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IssueChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PriorityChart)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,6 +104,7 @@
             this.cbxExit.Name = "cbxExit";
             this.cbxExit.Size = new System.Drawing.Size(19, 19);
             this.cbxExit.TabIndex = 39;
+            this.cbxExit.Click += new System.EventHandler(this.cbxExit_Click);
             // 
             // lblLogut
             // 
@@ -100,6 +129,7 @@
             this.lblCalendar.Name = "lblCalendar";
             this.lblCalendar.Size = new System.Drawing.Size(3, 2);
             this.lblCalendar.TabIndex = 37;
+            this.lblCalendar.Text = null;
             // 
             // lblSummary
             // 
@@ -166,15 +196,299 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BorderRadius = 20;
+            this.guna2Panel1.Controls.Add(this.guna2GradientPanel4);
+            this.guna2Panel1.Controls.Add(this.guna2GradientPanel3);
+            this.guna2Panel1.Controls.Add(this.guna2GradientPanel2);
+            this.guna2Panel1.Controls.Add(this.guna2GradientPanel1);
+            this.guna2Panel1.Controls.Add(this.pnlOpenTickets);
+            this.guna2Panel1.Controls.Add(this.label3);
+            this.guna2Panel1.Controls.Add(this.IssueChart);
+            this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.Controls.Add(this.PriorityChart);
+            this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Controls.Add(this.lblSummaryTitle);
             this.guna2Panel1.Controls.Add(this.pictureBox1);
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
             this.guna2Panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(51)))), ((int)(((byte)(255)))));
             this.guna2Panel1.Location = new System.Drawing.Point(165, 12);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(666, 519);
+            this.guna2Panel1.Size = new System.Drawing.Size(850, 791);
             this.guna2Panel1.TabIndex = 31;
+            // 
+            // guna2GradientPanel4
+            // 
+            this.guna2GradientPanel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel4.BorderRadius = 10;
+            this.guna2GradientPanel4.Controls.Add(this.guna2HtmlLabel8);
+            this.guna2GradientPanel4.Controls.Add(this.lblResolved);
+            this.guna2GradientPanel4.FillColor = System.Drawing.Color.Gainsboro;
+            this.guna2GradientPanel4.FillColor2 = System.Drawing.Color.DarkGray;
+            this.guna2GradientPanel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F);
+            this.guna2GradientPanel4.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.guna2GradientPanel4.Location = new System.Drawing.Point(508, 102);
+            this.guna2GradientPanel4.Name = "guna2GradientPanel4";
+            this.guna2GradientPanel4.Size = new System.Drawing.Size(106, 76);
+            this.guna2GradientPanel4.TabIndex = 26;
+            // 
+            // guna2HtmlLabel8
+            // 
+            this.guna2HtmlLabel8.AutoSize = false;
+            this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel8.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel8.Location = new System.Drawing.Point(0, 58);
+            this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
+            this.guna2HtmlLabel8.Size = new System.Drawing.Size(106, 15);
+            this.guna2HtmlLabel8.TabIndex = 11;
+            this.guna2HtmlLabel8.Text = "Resolved";
+            this.guna2HtmlLabel8.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblResolved
+            // 
+            this.lblResolved.AutoSize = false;
+            this.lblResolved.BackColor = System.Drawing.Color.Transparent;
+            this.lblResolved.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResolved.ForeColor = System.Drawing.Color.Black;
+            this.lblResolved.Location = new System.Drawing.Point(0, 25);
+            this.lblResolved.Name = "lblResolved";
+            this.lblResolved.Size = new System.Drawing.Size(106, 27);
+            this.lblResolved.TabIndex = 10;
+            this.lblResolved.Text = "0";
+            this.lblResolved.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // guna2GradientPanel3
+            // 
+            this.guna2GradientPanel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel3.BorderRadius = 10;
+            this.guna2GradientPanel3.Controls.Add(this.guna2HtmlLabel6);
+            this.guna2GradientPanel3.Controls.Add(this.lblInProgress);
+            this.guna2GradientPanel3.FillColor = System.Drawing.Color.Gainsboro;
+            this.guna2GradientPanel3.FillColor2 = System.Drawing.Color.DarkGray;
+            this.guna2GradientPanel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F);
+            this.guna2GradientPanel3.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.guna2GradientPanel3.Location = new System.Drawing.Point(396, 102);
+            this.guna2GradientPanel3.Name = "guna2GradientPanel3";
+            this.guna2GradientPanel3.Size = new System.Drawing.Size(106, 76);
+            this.guna2GradientPanel3.TabIndex = 26;
+            // 
+            // guna2HtmlLabel6
+            // 
+            this.guna2HtmlLabel6.AutoSize = false;
+            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel6.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(0, 58);
+            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(106, 15);
+            this.guna2HtmlLabel6.TabIndex = 11;
+            this.guna2HtmlLabel6.Text = "In Progress";
+            this.guna2HtmlLabel6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblInProgress
+            // 
+            this.lblInProgress.AutoSize = false;
+            this.lblInProgress.BackColor = System.Drawing.Color.Transparent;
+            this.lblInProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInProgress.ForeColor = System.Drawing.Color.Black;
+            this.lblInProgress.Location = new System.Drawing.Point(0, 25);
+            this.lblInProgress.Name = "lblInProgress";
+            this.lblInProgress.Size = new System.Drawing.Size(106, 27);
+            this.lblInProgress.TabIndex = 10;
+            this.lblInProgress.Text = "0";
+            this.lblInProgress.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // guna2GradientPanel2
+            // 
+            this.guna2GradientPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel2.BorderRadius = 10;
+            this.guna2GradientPanel2.Controls.Add(this.guna2HtmlLabel3);
+            this.guna2GradientPanel2.Controls.Add(this.lblScheduled);
+            this.guna2GradientPanel2.FillColor = System.Drawing.Color.Gainsboro;
+            this.guna2GradientPanel2.FillColor2 = System.Drawing.Color.DarkGray;
+            this.guna2GradientPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F);
+            this.guna2GradientPanel2.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.guna2GradientPanel2.Location = new System.Drawing.Point(284, 102);
+            this.guna2GradientPanel2.Name = "guna2GradientPanel2";
+            this.guna2GradientPanel2.Size = new System.Drawing.Size(106, 76);
+            this.guna2GradientPanel2.TabIndex = 26;
+            // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.AutoSize = false;
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(0, 58);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(106, 15);
+            this.guna2HtmlLabel3.TabIndex = 11;
+            this.guna2HtmlLabel3.Text = "Scheduled ";
+            this.guna2HtmlLabel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblScheduled
+            // 
+            this.lblScheduled.AutoSize = false;
+            this.lblScheduled.BackColor = System.Drawing.Color.Transparent;
+            this.lblScheduled.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScheduled.ForeColor = System.Drawing.Color.Black;
+            this.lblScheduled.Location = new System.Drawing.Point(0, 25);
+            this.lblScheduled.Name = "lblScheduled";
+            this.lblScheduled.Size = new System.Drawing.Size(106, 27);
+            this.lblScheduled.TabIndex = 10;
+            this.lblScheduled.Text = "0";
+            this.lblScheduled.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // guna2GradientPanel1
+            // 
+            this.guna2GradientPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel1.BorderRadius = 10;
+            this.guna2GradientPanel1.Controls.Add(this.PendingTickets);
+            this.guna2GradientPanel1.Controls.Add(this.lblPending);
+            this.guna2GradientPanel1.FillColor = System.Drawing.Color.Gainsboro;
+            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.DarkGray;
+            this.guna2GradientPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F);
+            this.guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(172, 102);
+            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(106, 76);
+            this.guna2GradientPanel1.TabIndex = 26;
+            // 
+            // PendingTickets
+            // 
+            this.PendingTickets.AutoSize = false;
+            this.PendingTickets.BackColor = System.Drawing.Color.Transparent;
+            this.PendingTickets.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PendingTickets.ForeColor = System.Drawing.Color.Black;
+            this.PendingTickets.Location = new System.Drawing.Point(0, 58);
+            this.PendingTickets.Name = "PendingTickets";
+            this.PendingTickets.Size = new System.Drawing.Size(106, 15);
+            this.PendingTickets.TabIndex = 11;
+            this.PendingTickets.Text = "Pending";
+            this.PendingTickets.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblPending
+            // 
+            this.lblPending.AutoSize = false;
+            this.lblPending.BackColor = System.Drawing.Color.Transparent;
+            this.lblPending.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPending.ForeColor = System.Drawing.Color.Black;
+            this.lblPending.Location = new System.Drawing.Point(0, 25);
+            this.lblPending.Name = "lblPending";
+            this.lblPending.Size = new System.Drawing.Size(106, 27);
+            this.lblPending.TabIndex = 10;
+            this.lblPending.Text = "0";
+            this.lblPending.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlOpenTickets
+            // 
+            this.pnlOpenTickets.BackColor = System.Drawing.Color.Transparent;
+            this.pnlOpenTickets.BorderRadius = 10;
+            this.pnlOpenTickets.Controls.Add(this.TotalTickets);
+            this.pnlOpenTickets.Controls.Add(this.lblTotalTickets);
+            this.pnlOpenTickets.FillColor = System.Drawing.Color.Gainsboro;
+            this.pnlOpenTickets.FillColor2 = System.Drawing.Color.DarkGray;
+            this.pnlOpenTickets.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F);
+            this.pnlOpenTickets.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.pnlOpenTickets.Location = new System.Drawing.Point(60, 102);
+            this.pnlOpenTickets.Name = "pnlOpenTickets";
+            this.pnlOpenTickets.Size = new System.Drawing.Size(106, 76);
+            this.pnlOpenTickets.TabIndex = 25;
+            // 
+            // TotalTickets
+            // 
+            this.TotalTickets.AutoSize = false;
+            this.TotalTickets.BackColor = System.Drawing.Color.Transparent;
+            this.TotalTickets.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalTickets.ForeColor = System.Drawing.Color.Black;
+            this.TotalTickets.Location = new System.Drawing.Point(0, 58);
+            this.TotalTickets.Name = "TotalTickets";
+            this.TotalTickets.Size = new System.Drawing.Size(106, 15);
+            this.TotalTickets.TabIndex = 11;
+            this.TotalTickets.Text = "TotalTickets";
+            this.TotalTickets.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTotalTickets
+            // 
+            this.lblTotalTickets.AutoSize = false;
+            this.lblTotalTickets.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalTickets.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalTickets.ForeColor = System.Drawing.Color.Black;
+            this.lblTotalTickets.Location = new System.Drawing.Point(0, 25);
+            this.lblTotalTickets.Name = "lblTotalTickets";
+            this.lblTotalTickets.Size = new System.Drawing.Size(106, 27);
+            this.lblTotalTickets.TabIndex = 10;
+            this.lblTotalTickets.Text = "0";
+            this.lblTotalTickets.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Poppins Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.label3.Location = new System.Drawing.Point(278, 56);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(89, 34);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Tickets";
+            // 
+            // IssueChart
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.IssueChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.IssueChart.Legends.Add(legend1);
+            this.IssueChart.Location = new System.Drawing.Point(109, 530);
+            this.IssueChart.Name = "IssueChart";
+            this.IssueChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.IssueChart.Series.Add(series1);
+            this.IssueChart.Size = new System.Drawing.Size(478, 269);
+            this.IssueChart.TabIndex = 23;
+            this.IssueChart.Text = "Priority Level";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Poppins Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.label2.Location = new System.Drawing.Point(264, 493);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(121, 34);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Issue Type";
+            // 
+            // PriorityChart
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.PriorityChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.PriorityChart.Legends.Add(legend2);
+            this.PriorityChart.Location = new System.Drawing.Point(109, 218);
+            this.PriorityChart.Name = "PriorityChart";
+            this.PriorityChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.PriorityChart.Series.Add(series2);
+            this.PriorityChart.Size = new System.Drawing.Size(478, 269);
+            this.PriorityChart.TabIndex = 21;
+            this.PriorityChart.Text = "Priority Level";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Poppins Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.label1.Location = new System.Drawing.Point(264, 181);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(146, 34);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Priority Level";
             // 
             // lblSummaryTitle
             // 
@@ -188,29 +502,12 @@
             this.lblSummaryTitle.TabIndex = 18;
             this.lblSummaryTitle.Text = "Summary";
             // 
-            // PriorityChart
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.PriorityChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.PriorityChart.Legends.Add(legend1);
-            this.PriorityChart.Location = new System.Drawing.Point(44, 102);
-            this.PriorityChart.Name = "PriorityChart";
-            this.PriorityChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.PriorityChart.Series.Add(series1);
-            this.PriorityChart.Size = new System.Drawing.Size(458, 300);
-            this.PriorityChart.TabIndex = 19;
-            this.PriorityChart.Text = "chart1";
-            // 
             // Summary
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.ClientSize = new System.Drawing.Size(843, 551);
+            this.ClientSize = new System.Drawing.Size(843, 842);
             this.Controls.Add(this.cbxExit);
             this.Controls.Add(this.lblLogut);
             this.Controls.Add(this.lblCalendar);
@@ -224,10 +521,15 @@
             this.Name = "Summary";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
+            this.guna2GradientPanel4.ResumeLayout(false);
+            this.guna2GradientPanel3.ResumeLayout(false);
+            this.guna2GradientPanel2.ResumeLayout(false);
+            this.guna2GradientPanel1.ResumeLayout(false);
+            this.pnlOpenTickets.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.IssueChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PriorityChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -247,6 +549,25 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblStatusBoard;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Label lblSummaryTitle;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataVisualization.Charting.Chart PriorityChart;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataVisualization.Charting.Chart IssueChart;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel4;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblResolved;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel3;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblInProgress;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblScheduled;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel PendingTickets;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblPending;
+        private Guna.UI2.WinForms.Guna2GradientPanel pnlOpenTickets;
+        private Guna.UI2.WinForms.Guna2HtmlLabel TotalTickets;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblTotalTickets;
     }
 }

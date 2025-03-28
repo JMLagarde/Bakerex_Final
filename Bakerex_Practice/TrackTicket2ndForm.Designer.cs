@@ -129,7 +129,7 @@
             this.guna2ControlBox1.BorderRadius = 1;
             this.guna2ControlBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(24)))), ((int)(((byte)(34)))));
             this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(807, 7);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(824, 7);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(19, 19);
             this.guna2ControlBox1.TabIndex = 47;
@@ -155,7 +155,7 @@
             this.cbxExit.BorderRadius = 1;
             this.cbxExit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(24)))), ((int)(((byte)(34)))));
             this.cbxExit.IconColor = System.Drawing.Color.White;
-            this.cbxExit.Location = new System.Drawing.Point(1890, 3);
+            this.cbxExit.Location = new System.Drawing.Point(1907, 3);
             this.cbxExit.Name = "cbxExit";
             this.cbxExit.Size = new System.Drawing.Size(19, 19);
             this.cbxExit.TabIndex = 11;

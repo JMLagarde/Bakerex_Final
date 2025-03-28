@@ -137,9 +137,19 @@ namespace Bakerex_Practice
 
         private void guna2PictureBox1_Click(object sender, EventArgs e)
         {
-            MainUser mainUser = new MainUser();
-            mainUser.Show();
             this.Hide();
+            new MainUser().Show();
+        }
+
+        private void cbxExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void lblLogin_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AdminLogin().Show();
         }
     }
 }

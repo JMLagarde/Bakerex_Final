@@ -19,12 +19,49 @@ namespace Bakerex_Practice
         {
             InitializeComponent();
             ClearFields();
+            LoadIssueTypes();
+            LoadPriorityLevels();
         }
-
-        private void SubmitRequest_Load(object sender, EventArgs e)
+        private void Summary_Load(object sender, EventArgs e)
         {
-
+            LoadIssueTypes();
+            LoadPriorityLevels();
         }
+
+        private void LoadIssueTypes()
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT IssueTypeID, IssueTypeName FROM IssueType";
+
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                DataTable issueTypeTable = new DataTable();
+                adapter.Fill(issueTypeTable);
+
+                cbxIssueType.DataSource = issueTypeTable;
+                cbxIssueType.DisplayMember = "IssueTypeName"; // Shows name in dropdown
+                cbxIssueType.ValueMember = "IssueTypeID"; // Uses ID internally
+                cbxIssueType.SelectedIndex = -1; // No default selection
+            }
+        }
+
+        private void LoadPriorityLevels()
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT PriorityLevelID, PriorityLevelName FROM PriorityLevel";
+
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                DataTable priorityTable = new DataTable();
+                adapter.Fill(priorityTable);
+
+                cbxPrioritylevel.DataSource = priorityTable;
+                cbxPrioritylevel.DisplayMember = "PriorityLevelName"; // Shows name in dropdown
+                cbxPrioritylevel.ValueMember = "PriorityLevelID"; // Uses ID internally
+                cbxPrioritylevel.SelectedIndex = -1;
+            }
+        }
+
 
         private void cbxExit_Click(object sender, EventArgs e)
         {
@@ -52,12 +89,15 @@ namespace Bakerex_Practice
                 return;
             }
 
+            int issueTypeID = Convert.ToInt32(cbxIssueType.SelectedValue);
+            int priorityLevelID = Convert.ToInt32(cbxPrioritylevel.SelectedValue);
+
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 string query = @"INSERT INTO CustomerRequests 
-                        (CustomerName, Email, PhoneNumber, CompanyName, IssueType, Subject, Description, ProductDetails, PriorityLevel) 
+                        (CustomerName, Email, PhoneNumber, CompanyName, IssueTypeID, Subject, Description, ProductDetails, PriorityLevelID) 
                         VALUES 
-                        (@CustomerName, @Email, @PhoneNumber, @CompanyName, @IssueType, @Subject, @Description, @ProductDetails, @PriorityLevel)";
+                        (@CustomerName, @Email, @PhoneNumber, @CompanyName, @IssueTypeID, @Subject, @Description, @ProductDetails, @PriorityLevelID)";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
@@ -65,11 +105,11 @@ namespace Bakerex_Practice
                     cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
                     cmd.Parameters.AddWithValue("@PhoneNumber", txtPhoneNumber.Text);
                     cmd.Parameters.AddWithValue("@CompanyName", txtCompany.Text);
-                    cmd.Parameters.AddWithValue("@IssueType", cbxIssueType.SelectedItem.ToString());
+                    cmd.Parameters.AddWithValue("@IssueTypeID", issueTypeID);
                     cmd.Parameters.AddWithValue("@Subject", txtSubject.Text);
                     cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
                     cmd.Parameters.AddWithValue("@ProductDetails", txtProduct.Text);
-                    cmd.Parameters.AddWithValue("@PriorityLevel", cbxPrioritylevel.SelectedItem.ToString());
+                    cmd.Parameters.AddWithValue("@PriorityLevelID", priorityLevelID);
 
                     try
                     {
@@ -79,9 +119,9 @@ namespace Bakerex_Practice
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show("Request submitted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            this.Hide(); 
+                            this.Hide();
                             MainUser mainUserForm = new MainUser();
-                            mainUserForm.Show();  
+                            mainUserForm.Show();
                         }
                         else
                         {
@@ -95,7 +135,8 @@ namespace Bakerex_Practice
                 }
             }
         }
-    
+
+
         private void ClearFields()
         {
             txtCustomerName.Clear();
@@ -122,5 +163,7 @@ namespace Bakerex_Practice
             trackTicket1stForm.Show();
             this.Hide();
         }
+
+
     }
 }

@@ -540,7 +540,6 @@
             this.Name = "SubmitRequest";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Submit Request";
-            this.Load += new System.EventHandler(this.SubmitRequest_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
