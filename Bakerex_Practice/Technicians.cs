@@ -106,13 +106,6 @@ namespace Bakerex_Practice
 }
 
 
-        private void Technicians_Load_1(object sender, EventArgs e)
-        {
-            Summary summaryForm = new Summary(adminId);
-            summaryForm.Show();
-            this.Hide();
-        }
-
         private void lblSummary_Click(object sender, EventArgs e)
         {
             Summary summaryForm = new Summary(adminId);

@@ -39,7 +39,8 @@ namespace Bakerex_Practice
                 SUM(CASE WHEN StatusID = 1 THEN 1 ELSE 0 END) AS PendingCount,
                 SUM(CASE WHEN StatusID = 2 THEN 1 ELSE 0 END) AS ScheduledCount,
                 SUM(CASE WHEN StatusID = 3 THEN 1 ELSE 0 END) AS InProgressCount,
-                SUM(CASE WHEN StatusID = 4 THEN 1 ELSE 0 END) AS ResolvedCount
+                SUM(CASE WHEN StatusID = 4 THEN 1 ELSE 0 END) AS ResolvedCount,
+                SUM(CASE WHEN StatusID IS NULL OR StatusID = 0 THEN 1 ELSE 0 END) AS UnassignedCount
             FROM CustomerRequests;";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -55,6 +56,7 @@ namespace Bakerex_Practice
                             lblScheduled.Text = reader["ScheduledCount"].ToString();
                             lblInProgress.Text = reader["InProgressCount"].ToString();
                             lblResolved.Text = reader["ResolvedCount"].ToString();
+                            lblUnassigned.Text = reader["UnassignedCount"].ToString();
                         }
                     }
                     catch (Exception ex)
@@ -149,7 +151,7 @@ namespace Bakerex_Practice
                     conn.Open();
                     SqlDataReader reader = cmd.ExecuteReader();
 
-                    IssueChart.Series.Clear();
+                    chart1.Series.Clear();
                     Series series = new Series("Issue Types")
                     {
                         ChartType = SeriesChartType.Column,
@@ -161,14 +163,14 @@ namespace Bakerex_Practice
                         series.Points.AddXY(reader["IssueTypeName"].ToString(), Convert.ToInt32(reader["TicketCount"]));
                     }
 
-                    IssueChart.Series.Add(series);
+                    chart1.Series.Add(series);
 
                     if (series.Points.Count > 0)
                     {
                         double maxY = series.Points.Max(p => p.YValues[0]);
-                        IssueChart.ChartAreas[0].AxisY.Maximum = maxY + 5;
-                        IssueChart.ChartAreas[0].AxisY.Minimum = 0;
-                        IssueChart.ChartAreas[0].AxisY.Interval = 1;
+                        chart1.ChartAreas[0].AxisY.Maximum = maxY + 5;
+                        chart1.ChartAreas[0].AxisY.Minimum = 0;
+                        chart1.ChartAreas[0].AxisY.Interval = 1;
                     }
                 }
                 catch (Exception ex)
@@ -182,6 +184,7 @@ namespace Bakerex_Practice
         {
             Application.Exit();
         }
+
 
     }
 }

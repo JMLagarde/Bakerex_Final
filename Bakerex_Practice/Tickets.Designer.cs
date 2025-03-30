@@ -145,7 +145,6 @@
             this.lblTickets.Size = new System.Drawing.Size(64, 30);
             this.lblTickets.TabIndex = 16;
             this.lblTickets.Text = "Tickets";
-            this.lblTickets.Click += new System.EventHandler(this.lblTickets_Click);
             // 
             // lblStatusBoard
             // 
@@ -725,8 +724,7 @@
             // 
             // Tickets
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
             this.ClientSize = new System.Drawing.Size(843, 849);
             this.Controls.Add(this.guna2Panel1);

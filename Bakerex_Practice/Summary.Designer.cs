@@ -37,7 +37,6 @@
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cbxExit = new Guna.UI2.WinForms.Guna2ControlBox();
             this.lblLogut = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblCalendar = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblSummary = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -46,6 +45,9 @@
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblStatusBoard = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2GradientPanel5 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblUnassigned = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2GradientPanel4 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblResolved = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -62,19 +64,20 @@
             this.TotalTickets = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblTotalTickets = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.label3 = new System.Windows.Forms.Label();
-            this.IssueChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label2 = new System.Windows.Forms.Label();
             this.PriorityChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label1 = new System.Windows.Forms.Label();
             this.lblSummaryTitle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
+            this.guna2GradientPanel5.SuspendLayout();
             this.guna2GradientPanel4.SuspendLayout();
             this.guna2GradientPanel3.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
             this.pnlOpenTickets.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.IssueChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PriorityChart)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,19 +95,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // cbxExit
-            // 
-            this.cbxExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxExit.BackColor = System.Drawing.Color.Transparent;
-            this.cbxExit.BorderRadius = 1;
-            this.cbxExit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(24)))), ((int)(((byte)(34)))));
-            this.cbxExit.IconColor = System.Drawing.Color.White;
-            this.cbxExit.Location = new System.Drawing.Point(12, 12);
-            this.cbxExit.Name = "cbxExit";
-            this.cbxExit.Size = new System.Drawing.Size(19, 19);
-            this.cbxExit.TabIndex = 39;
-            this.cbxExit.Click += new System.EventHandler(this.cbxExit_Click);
             // 
             // lblLogut
             // 
@@ -196,13 +186,14 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BorderRadius = 20;
+            this.guna2Panel1.Controls.Add(this.guna2GradientPanel5);
             this.guna2Panel1.Controls.Add(this.guna2GradientPanel4);
             this.guna2Panel1.Controls.Add(this.guna2GradientPanel3);
             this.guna2Panel1.Controls.Add(this.guna2GradientPanel2);
             this.guna2Panel1.Controls.Add(this.guna2GradientPanel1);
             this.guna2Panel1.Controls.Add(this.pnlOpenTickets);
             this.guna2Panel1.Controls.Add(this.label3);
-            this.guna2Panel1.Controls.Add(this.IssueChart);
+            this.guna2Panel1.Controls.Add(this.chart1);
             this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.Controls.Add(this.PriorityChart);
             this.guna2Panel1.Controls.Add(this.label1);
@@ -212,8 +203,49 @@
             this.guna2Panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(51)))), ((int)(((byte)(255)))));
             this.guna2Panel1.Location = new System.Drawing.Point(165, 12);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(850, 791);
+            this.guna2Panel1.Size = new System.Drawing.Size(666, 791);
             this.guna2Panel1.TabIndex = 31;
+            // 
+            // guna2GradientPanel5
+            // 
+            this.guna2GradientPanel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel5.BorderRadius = 10;
+            this.guna2GradientPanel5.Controls.Add(this.guna2HtmlLabel1);
+            this.guna2GradientPanel5.Controls.Add(this.lblUnassigned);
+            this.guna2GradientPanel5.FillColor = System.Drawing.Color.Gainsboro;
+            this.guna2GradientPanel5.FillColor2 = System.Drawing.Color.DarkGray;
+            this.guna2GradientPanel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F);
+            this.guna2GradientPanel5.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            this.guna2GradientPanel5.Location = new System.Drawing.Point(563, 102);
+            this.guna2GradientPanel5.Name = "guna2GradientPanel5";
+            this.guna2GradientPanel5.Size = new System.Drawing.Size(100, 76);
+            this.guna2GradientPanel5.TabIndex = 27;
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.AutoSize = false;
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(0, 58);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(106, 15);
+            this.guna2HtmlLabel1.TabIndex = 11;
+            this.guna2HtmlLabel1.Text = "Resolved";
+            this.guna2HtmlLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblUnassigned
+            // 
+            this.lblUnassigned.AutoSize = false;
+            this.lblUnassigned.BackColor = System.Drawing.Color.Transparent;
+            this.lblUnassigned.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUnassigned.ForeColor = System.Drawing.Color.Black;
+            this.lblUnassigned.Location = new System.Drawing.Point(0, 25);
+            this.lblUnassigned.Name = "lblUnassigned";
+            this.lblUnassigned.Size = new System.Drawing.Size(106, 27);
+            this.lblUnassigned.TabIndex = 10;
+            this.lblUnassigned.Text = "0";
+            this.lblUnassigned.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2GradientPanel4
             // 
@@ -225,7 +257,7 @@
             this.guna2GradientPanel4.FillColor2 = System.Drawing.Color.DarkGray;
             this.guna2GradientPanel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F);
             this.guna2GradientPanel4.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.guna2GradientPanel4.Location = new System.Drawing.Point(508, 102);
+            this.guna2GradientPanel4.Location = new System.Drawing.Point(451, 102);
             this.guna2GradientPanel4.Name = "guna2GradientPanel4";
             this.guna2GradientPanel4.Size = new System.Drawing.Size(106, 76);
             this.guna2GradientPanel4.TabIndex = 26;
@@ -266,7 +298,7 @@
             this.guna2GradientPanel3.FillColor2 = System.Drawing.Color.DarkGray;
             this.guna2GradientPanel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F);
             this.guna2GradientPanel3.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.guna2GradientPanel3.Location = new System.Drawing.Point(396, 102);
+            this.guna2GradientPanel3.Location = new System.Drawing.Point(339, 102);
             this.guna2GradientPanel3.Name = "guna2GradientPanel3";
             this.guna2GradientPanel3.Size = new System.Drawing.Size(106, 76);
             this.guna2GradientPanel3.TabIndex = 26;
@@ -307,7 +339,7 @@
             this.guna2GradientPanel2.FillColor2 = System.Drawing.Color.DarkGray;
             this.guna2GradientPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F);
             this.guna2GradientPanel2.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.guna2GradientPanel2.Location = new System.Drawing.Point(284, 102);
+            this.guna2GradientPanel2.Location = new System.Drawing.Point(227, 102);
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
             this.guna2GradientPanel2.Size = new System.Drawing.Size(106, 76);
             this.guna2GradientPanel2.TabIndex = 26;
@@ -348,7 +380,7 @@
             this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.DarkGray;
             this.guna2GradientPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F);
             this.guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(172, 102);
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(115, 102);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(106, 76);
             this.guna2GradientPanel1.TabIndex = 26;
@@ -389,7 +421,7 @@
             this.pnlOpenTickets.FillColor2 = System.Drawing.Color.DarkGray;
             this.pnlOpenTickets.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F);
             this.pnlOpenTickets.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.pnlOpenTickets.Location = new System.Drawing.Point(60, 102);
+            this.pnlOpenTickets.Location = new System.Drawing.Point(3, 102);
             this.pnlOpenTickets.Name = "pnlOpenTickets";
             this.pnlOpenTickets.Size = new System.Drawing.Size(106, 76);
             this.pnlOpenTickets.TabIndex = 25;
@@ -432,22 +464,22 @@
             this.label3.TabIndex = 24;
             this.label3.Text = "Tickets";
             // 
-            // IssueChart
+            // chart1
             // 
             chartArea1.Name = "ChartArea1";
-            this.IssueChart.ChartAreas.Add(chartArea1);
+            this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            this.IssueChart.Legends.Add(legend1);
-            this.IssueChart.Location = new System.Drawing.Point(109, 530);
-            this.IssueChart.Name = "IssueChart";
-            this.IssueChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(65, 522);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            this.IssueChart.Series.Add(series1);
-            this.IssueChart.Size = new System.Drawing.Size(478, 269);
-            this.IssueChart.TabIndex = 23;
-            this.IssueChart.Text = "Priority Level";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(587, 269);
+            this.chart1.TabIndex = 23;
+            this.chart1.Text = "Priority Level";
             // 
             // label2
             // 
@@ -508,7 +540,6 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
             this.ClientSize = new System.Drawing.Size(843, 842);
-            this.Controls.Add(this.cbxExit);
             this.Controls.Add(this.lblLogut);
             this.Controls.Add(this.lblCalendar);
             this.Controls.Add(this.lblSummary);
@@ -524,12 +555,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
+            this.guna2GradientPanel5.ResumeLayout(false);
             this.guna2GradientPanel4.ResumeLayout(false);
             this.guna2GradientPanel3.ResumeLayout(false);
             this.guna2GradientPanel2.ResumeLayout(false);
             this.guna2GradientPanel1.ResumeLayout(false);
             this.pnlOpenTickets.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.IssueChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PriorityChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -539,7 +571,6 @@
         #endregion
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI2.WinForms.Guna2ControlBox cbxExit;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblLogut;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblCalendar;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblSummary;
@@ -552,7 +583,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataVisualization.Charting.Chart PriorityChart;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataVisualization.Charting.Chart IssueChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel4;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
@@ -569,5 +600,8 @@
         private Guna.UI2.WinForms.Guna2GradientPanel pnlOpenTickets;
         private Guna.UI2.WinForms.Guna2HtmlLabel TotalTickets;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTotalTickets;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel5;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblUnassigned;
     }
 }

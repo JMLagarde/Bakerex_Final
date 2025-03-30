@@ -132,13 +132,6 @@ namespace Bakerex_Practice
             Application.Exit();
         }
 
-        private void lblTechnicians_Click(object sender, EventArgs e)
-        {
-            Technicians techniciansForm = new Technicians(adminId);
-            techniciansForm.Show();
-            this.Hide();
-        }
-
         private void DataGridStatusBoard_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -168,6 +161,13 @@ namespace Bakerex_Practice
         {
             Summary summaryForm = new Summary(adminId);
             summaryForm.Show();
+            this.Hide();
+        }
+
+        private void lblTechnicians_Click(object sender, EventArgs e)
+        {
+            Technicians techniciansForm = new Technicians(adminId);
+            techniciansForm.Show();
             this.Hide();
         }
     }

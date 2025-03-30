@@ -63,7 +63,8 @@ namespace Bakerex_Practice
                                 lblProductDetails.Text = reader["ProductDetails"].ToString();
                                 lblPriorityLevel.Text = reader["PriorityLevelName"].ToString(); 
                                 lblCreatedAt.Text = Convert.ToDateTime(reader["CreatedAt"]).ToString("yyyy-MM-dd HH:mm");
-                                cbxStatus.Text = reader["StatusName"].ToString(); 
+                                cbxStatus.SelectedValue = reader["StatusName"].ToString();
+
 
                                 txtResponse.Text = reader["Response"] != DBNull.Value ? reader["Response"].ToString() : "";
                                 cbxTechnician.SelectedItem = reader["Technician"] != DBNull.Value ? reader["Technician"].ToString() : null;
@@ -200,7 +201,7 @@ namespace Bakerex_Practice
                     cmd.Parameters.AddWithValue("@RequestID", requestID);
                     cmd.Parameters.AddWithValue("@NewStatus", newStatus);
                     cmd.Parameters.AddWithValue("@Technician", string.IsNullOrEmpty(technician) ? (object)DBNull.Value : technician);
-                    cmd.Parameters.AddWithValue("@UpdatedBy", adminId);  // ✅ Use the actual admin ID
+                    cmd.Parameters.AddWithValue("@UpdatedBy", adminId); 
                     cmd.Parameters.AddWithValue("@Response", string.IsNullOrEmpty(response) ? (object)DBNull.Value : response);
 
                     try
@@ -239,12 +240,6 @@ namespace Bakerex_Practice
             this.Hide();
         }
 
-        private void lblTickets_Click(object sender, EventArgs e)
-        {
-            Tickets tickets = new Tickets(requestID, adminId);
-            tickets.Show();
-            this.Hide();
-        }
 
         private void lblSummary_Click(object sender, EventArgs e)
         {

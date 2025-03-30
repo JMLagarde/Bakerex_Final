@@ -79,12 +79,12 @@
             this.guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblTechnician = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.guna2Panel14 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblSchedule = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.guna2Panel15 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblResponse = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.lblSchedule = new System.Windows.Forms.Label();
+            this.guna2Panel14 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -101,8 +101,8 @@
             this.guna2Panel11.SuspendLayout();
             this.guna2Panel12.SuspendLayout();
             this.guna2Panel13.SuspendLayout();
-            this.guna2Panel14.SuspendLayout();
             this.guna2Panel15.SuspendLayout();
+            this.guna2Panel14.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -129,7 +129,7 @@
             this.guna2ControlBox1.BorderRadius = 1;
             this.guna2ControlBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(24)))), ((int)(((byte)(34)))));
             this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(824, 7);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(739, 7);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(19, 19);
             this.guna2ControlBox1.TabIndex = 47;
@@ -155,7 +155,7 @@
             this.cbxExit.BorderRadius = 1;
             this.cbxExit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(24)))), ((int)(((byte)(34)))));
             this.cbxExit.IconColor = System.Drawing.Color.White;
-            this.cbxExit.Location = new System.Drawing.Point(1907, 3);
+            this.cbxExit.Location = new System.Drawing.Point(1788, 3);
             this.cbxExit.Name = "cbxExit";
             this.cbxExit.Size = new System.Drawing.Size(19, 19);
             this.cbxExit.TabIndex = 11;
@@ -596,7 +596,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Tan;
-            this.panel1.Location = new System.Drawing.Point(112, 572);
+            this.panel1.Location = new System.Drawing.Point(112, 527);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(599, 10);
             this.panel1.TabIndex = 43;
@@ -679,28 +679,6 @@
             this.label16.TabIndex = 43;
             this.label16.Text = "Technician";
             // 
-            // guna2Panel14
-            // 
-            this.guna2Panel14.BackColor = System.Drawing.Color.OldLace;
-            this.guna2Panel14.BorderColor = System.Drawing.Color.Tan;
-            this.guna2Panel14.BorderThickness = 2;
-            this.guna2Panel14.Controls.Add(this.lblSchedule);
-            this.guna2Panel14.ForeColor = System.Drawing.Color.Black;
-            this.guna2Panel14.Location = new System.Drawing.Point(112, 784);
-            this.guna2Panel14.Name = "guna2Panel14";
-            this.guna2Panel14.Size = new System.Drawing.Size(287, 33);
-            this.guna2Panel14.TabIndex = 44;
-            // 
-            // lblSchedule
-            // 
-            this.lblSchedule.AutoSize = true;
-            this.lblSchedule.Location = new System.Drawing.Point(3, 9);
-            this.lblSchedule.MaximumSize = new System.Drawing.Size(287, 0);
-            this.lblSchedule.Name = "lblSchedule";
-            this.lblSchedule.Size = new System.Drawing.Size(52, 13);
-            this.lblSchedule.TabIndex = 0;
-            this.lblSchedule.Text = "Schedule";
-            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -745,10 +723,31 @@
             this.label20.TabIndex = 45;
             this.label20.Text = "Response";
             // 
+            // lblSchedule
+            // 
+            this.lblSchedule.AutoSize = true;
+            this.lblSchedule.Location = new System.Drawing.Point(3, 9);
+            this.lblSchedule.MaximumSize = new System.Drawing.Size(287, 0);
+            this.lblSchedule.Name = "lblSchedule";
+            this.lblSchedule.Size = new System.Drawing.Size(52, 13);
+            this.lblSchedule.TabIndex = 0;
+            this.lblSchedule.Text = "Schedule";
+            // 
+            // guna2Panel14
+            // 
+            this.guna2Panel14.BackColor = System.Drawing.Color.OldLace;
+            this.guna2Panel14.BorderColor = System.Drawing.Color.Tan;
+            this.guna2Panel14.BorderThickness = 2;
+            this.guna2Panel14.Controls.Add(this.lblSchedule);
+            this.guna2Panel14.ForeColor = System.Drawing.Color.Black;
+            this.guna2Panel14.Location = new System.Drawing.Point(112, 784);
+            this.guna2Panel14.Name = "guna2Panel14";
+            this.guna2Panel14.Size = new System.Drawing.Size(287, 33);
+            this.guna2Panel14.TabIndex = 44;
+            // 
             // TrackTicket2ndForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.BackgroundImage = global::Bakerex_Practice.Properties.Resources.UserBackground__2_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -823,10 +822,10 @@
             this.guna2Panel12.PerformLayout();
             this.guna2Panel13.ResumeLayout(false);
             this.guna2Panel13.PerformLayout();
-            this.guna2Panel14.ResumeLayout(false);
-            this.guna2Panel14.PerformLayout();
             this.guna2Panel15.ResumeLayout(false);
             this.guna2Panel15.PerformLayout();
+            this.guna2Panel14.ResumeLayout(false);
+            this.guna2Panel14.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -884,12 +883,12 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel13;
         private System.Windows.Forms.Label lblTechnician;
         private System.Windows.Forms.Label label16;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel14;
-        private System.Windows.Forms.Label lblSchedule;
         private System.Windows.Forms.Label label18;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel15;
         private System.Windows.Forms.Label lblResponse;
         private System.Windows.Forms.Label label20;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
+        private System.Windows.Forms.Label lblSchedule;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel14;
     }
 }

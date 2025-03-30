@@ -256,8 +256,7 @@
             // 
             // MainUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::Bakerex_Practice.Properties.Resources.UserBackground__2_;
             this.ClientSize = new System.Drawing.Size(843, 475);
             this.Controls.Add(this.label6);
