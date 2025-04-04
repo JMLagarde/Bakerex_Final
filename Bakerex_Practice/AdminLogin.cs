@@ -15,7 +15,7 @@ namespace Bakerex_Practice
 {
     public partial class AdminLogin : Form
     {
-        private readonly string connectionString = "Server=DESKTOP-D9KJ8S9\\SQLEXPRESS;Database=BakerexCustomerSupportSystem;Integrated Security=True;";
+    
 
         public AdminLogin()
         {
@@ -41,9 +41,9 @@ namespace Bakerex_Practice
         {
             if (!ValidateInputs()) return;
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            try
             {
-                try
+                using (SqlConnection conn = DBHelper.GetConnection())
                 {
                     conn.Open();
                     string query = "SELECT AdminID FROM Admin WHERE Email = @Email AND Password = @Password";
@@ -60,7 +60,7 @@ namespace Bakerex_Practice
                             int adminID = Convert.ToInt32(result);
                             MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Hide();
-                            FormNavigator.OpenMainDashboard(adminID); 
+                            new MainDashboard(adminID).Show();
                         }
                         else
                         {
@@ -68,12 +68,13 @@ namespace Bakerex_Practice
                         }
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Database Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Database Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        
 
         private void cbxExit_Click(object sender, EventArgs e)
         {
@@ -89,17 +90,6 @@ namespace Bakerex_Practice
         private void AdminLogin_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void lblRegister_Click_1(object sender, EventArgs e)
-        {
-            this.Hide();
-            new AdminRegister().Show();
-        }
-
-        private void cbxExit_Click_1(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
         private void guna2PictureBox1_Click(object sender, EventArgs e)

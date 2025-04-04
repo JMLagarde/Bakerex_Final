@@ -8,13 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.CodeParser;
+
 
 namespace Bakerex_Practice
 {
     public partial class SubmitRequest : Form
     {
-        string connectionString = "Server=DESKTOP-D9KJ8S9\\SQLEXPRESS;Database=BakerexCustomerSupportSystem;Integrated Security=True;";
         public SubmitRequest()
         {
             InitializeComponent();
@@ -30,36 +29,22 @@ namespace Bakerex_Practice
 
         private void LoadIssueTypes()
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                string query = "SELECT IssueTypeID, IssueTypeName FROM IssueType";
-
-                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-                DataTable issueTypeTable = new DataTable();
-                adapter.Fill(issueTypeTable);
-
-                cbxIssueType.DataSource = issueTypeTable;
-                cbxIssueType.DisplayMember = "IssueTypeName"; // Shows name in dropdown
-                cbxIssueType.ValueMember = "IssueTypeID"; // Uses ID internally
-                cbxIssueType.SelectedIndex = -1; // No default selection
-            }
+            string query = "SELECT IssueTypeID, IssueTypeName FROM IssueType";
+            DataTable issueTypeTable = DBHelper.ExecuteQuery(query);
+            cbxIssueType.DataSource = issueTypeTable;
+            cbxIssueType.DisplayMember = "IssueTypeName";
+            cbxIssueType.ValueMember = "IssueTypeID";
+            cbxIssueType.SelectedIndex = -1;
         }
 
         private void LoadPriorityLevels()
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
                 string query = "SELECT PriorityLevelID, PriorityLevelName FROM PriorityLevel";
-
-                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-                DataTable priorityTable = new DataTable();
-                adapter.Fill(priorityTable);
-
+                DataTable priorityTable = DBHelper.ExecuteQuery(query);
                 cbxPrioritylevel.DataSource = priorityTable;
-                cbxPrioritylevel.DisplayMember = "PriorityLevelName"; // Shows name in dropdown
-                cbxPrioritylevel.ValueMember = "PriorityLevelID"; // Uses ID internally
+                cbxPrioritylevel.DisplayMember = "PriorityLevelName";
+                cbxPrioritylevel.ValueMember = "PriorityLevelID"; 
                 cbxPrioritylevel.SelectedIndex = -1;
-            }
         }
 
 
@@ -92,47 +77,43 @@ namespace Bakerex_Practice
             int issueTypeID = Convert.ToInt32(cbxIssueType.SelectedValue);
             int priorityLevelID = Convert.ToInt32(cbxPrioritylevel.SelectedValue);
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            string query = @"INSERT INTO CustomerRequests 
+                             (CustomerName, Email, PhoneNumber, CompanyName, IssueTypeID, Subject, Description, ProductDetails, PriorityLevelID) 
+                             VALUES 
+                             (@CustomerName, @Email, @PhoneNumber, @CompanyName, @IssueTypeID, @Subject, @Description, @ProductDetails, @PriorityLevelID)";
+
+            SqlParameter[] parameters = new SqlParameter[]
             {
-                string query = @"INSERT INTO CustomerRequests 
-                        (CustomerName, Email, PhoneNumber, CompanyName, IssueTypeID, Subject, Description, ProductDetails, PriorityLevelID) 
-                        VALUES 
-                        (@CustomerName, @Email, @PhoneNumber, @CompanyName, @IssueTypeID, @Subject, @Description, @ProductDetails, @PriorityLevelID)";
+                new SqlParameter("@CustomerName", txtCustomerName.Text),
+                new SqlParameter("@Email", txtEmail.Text),
+                new SqlParameter("@PhoneNumber", txtPhoneNumber.Text),
+                new SqlParameter("@CompanyName", txtCompany.Text),
+                new SqlParameter("@IssueTypeID", issueTypeID),
+                new SqlParameter("@Subject", txtSubject.Text),
+                new SqlParameter("@Description", txtDescription.Text),
+                new SqlParameter("@ProductDetails", txtProduct.Text),
+                new SqlParameter("@PriorityLevelID", priorityLevelID)
+            };
 
-                using (SqlCommand cmd = new SqlCommand(query, conn))
+            try
+            {
+                int rowsAffected = DBHelper.ExecuteNonQuery(query, parameters);
+
+                if (rowsAffected > 0)
                 {
-                    cmd.Parameters.AddWithValue("@CustomerName", txtCustomerName.Text);
-                    cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
-                    cmd.Parameters.AddWithValue("@PhoneNumber", txtPhoneNumber.Text);
-                    cmd.Parameters.AddWithValue("@CompanyName", txtCompany.Text);
-                    cmd.Parameters.AddWithValue("@IssueTypeID", issueTypeID);
-                    cmd.Parameters.AddWithValue("@Subject", txtSubject.Text);
-                    cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
-                    cmd.Parameters.AddWithValue("@ProductDetails", txtProduct.Text);
-                    cmd.Parameters.AddWithValue("@PriorityLevelID", priorityLevelID);
-
-                    try
-                    {
-                        conn.Open();
-                        int rowsAffected = cmd.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
-                        {
-                            MessageBox.Show("Request submitted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            this.Hide();
-                            MainUser mainUserForm = new MainUser();
-                            mainUserForm.Show();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Submission failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    MessageBox.Show("Request submitted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide();
+                    MainUser mainUserForm = new MainUser();
+                    mainUserForm.Show();
                 }
+                else
+                {
+                    MessageBox.Show("Submission failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -152,18 +133,14 @@ namespace Bakerex_Practice
 
         private void lblHome_Click(object sender, EventArgs e)
         {
-            MainUser mainUserForm = new MainUser();
-            mainUserForm.Show();
             this.Hide();
+            MainUser mainUserForm = new MainUser();
         }
 
         private void lblTrackTicket_Click(object sender, EventArgs e)
         {
-            TrackTicket1stForm trackTicket1stForm = new TrackTicket1stForm();
-            trackTicket1stForm.Show();
             this.Hide();
+            TrackTicket1stForm trackTicketForm = new TrackTicket1stForm();
         }
-
-
     }
 }

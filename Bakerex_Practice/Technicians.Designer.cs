@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.cbxExit = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.lblLogut = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblLogout = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblSummary = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblTechnicians = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblTickets = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -82,18 +82,18 @@
             this.cbxExit.Size = new System.Drawing.Size(19, 19);
             this.cbxExit.TabIndex = 24;
             // 
-            // lblLogut
+            // lblLogout
             // 
-            this.lblLogut.BackColor = System.Drawing.Color.Transparent;
-            this.lblLogut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.lblLogut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogut.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lblLogut.Location = new System.Drawing.Point(16, 330);
-            this.lblLogut.Name = "lblLogut";
-            this.lblLogut.Size = new System.Drawing.Size(59, 22);
-            this.lblLogut.TabIndex = 23;
-            this.lblLogut.Text = "Logout";
-            this.lblLogut.Click += new System.EventHandler(this.lblLogut_Click);
+            this.lblLogout.BackColor = System.Drawing.Color.Transparent;
+            this.lblLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.lblLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogout.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.lblLogout.Location = new System.Drawing.Point(16, 330);
+            this.lblLogout.Name = "lblLogout";
+            this.lblLogout.Size = new System.Drawing.Size(59, 22);
+            this.lblLogout.TabIndex = 23;
+            this.lblLogout.Text = "Logout";
+            this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click);
             // 
             // lblSummary
             // 
@@ -200,7 +200,6 @@
             this.lblRole.Size = new System.Drawing.Size(29, 13);
             this.lblRole.TabIndex = 0;
             this.lblRole.Text = "Role";
-            this.lblRole.Click += new System.EventHandler(this.lblIssueType_Click);
             // 
             // guna2Panel3
             // 
@@ -444,7 +443,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
             this.ClientSize = new System.Drawing.Size(843, 551);
             this.Controls.Add(this.cbxExit);
-            this.Controls.Add(this.lblLogut);
+            this.Controls.Add(this.lblLogout);
             this.Controls.Add(this.lblSummary);
             this.Controls.Add(this.lblTechnicians);
             this.Controls.Add(this.lblTickets);
@@ -476,7 +475,7 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2ControlBox cbxExit;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblLogut;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblLogout;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblSummary;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTechnicians;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTickets;

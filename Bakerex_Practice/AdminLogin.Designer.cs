@@ -69,7 +69,6 @@
             this.cbxExit.Name = "cbxExit";
             this.cbxExit.Size = new System.Drawing.Size(19, 19);
             this.cbxExit.TabIndex = 24;
-            this.cbxExit.Click += new System.EventHandler(this.cbxExit_Click_1);
             // 
             // lblRegister
             // 
@@ -80,8 +79,7 @@
             this.lblRegister.Name = "lblRegister";
             this.lblRegister.Size = new System.Drawing.Size(82, 38);
             this.lblRegister.TabIndex = 23;
-            this.lblRegister.Text = "Register";
-            this.lblRegister.Click += new System.EventHandler(this.lblRegister_Click_1);
+            this.lblRegister.Text = "Register"; 
             // 
             // btnLogin
             // 

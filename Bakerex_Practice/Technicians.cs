@@ -13,7 +13,6 @@ namespace Bakerex_Practice
 {
     public partial class Technicians : Form
     {
-        string connectionString = "Server=DESKTOP-D9KJ8S9\\SQLEXPRESS;Database=BakerexCustomerSupportSystem;Integrated Security=True;";
         private readonly int adminId;
 
         public Technicians(int adminId)
@@ -22,22 +21,6 @@ namespace Bakerex_Practice
             this.adminId = adminId;
             LoadAdminProfile();
         }
-
-        private void Technicians_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-
-        private void lblStatusBoard_Click(object sender, EventArgs e)
-        {
-            MainDashboard mainDashboard = new MainDashboard(adminId);
-            mainDashboard.Show();
-            this.Hide();
-        }
-
         private void lblTickets_Click(object sender, EventArgs e)
         {
             int requestID = 0;
@@ -53,64 +36,62 @@ namespace Bakerex_Practice
             }
         }
 
-        private void lblLogut_Click(object sender, EventArgs e)
-        {
-            AdminLogin adminLogin = new AdminLogin();
-            adminLogin.Show();
-            this.Hide();
-        }
-
-        private void lblIssueType_Click(object sender, EventArgs e)
-        {
-
-        }
         private void LoadAdminProfile()
-{
-    using (SqlConnection conn = new SqlConnection(connectionString))
-    {
-        string query = @"
-            SELECT r.FullName, r.Email, r.PhoneNumber, rl.RoleName, r.Password 
-            FROM Admin r
-            JOIN Role rl ON r.RoleID = rl.RoleID
-            WHERE r.AdminID = @AdminID";
-
-        using (SqlCommand cmd = new SqlCommand(query, conn))
         {
-            cmd.Parameters.AddWithValue("@AdminID", adminId);
+            string query = @"
+                SELECT r.FullName, r.Email, r.PhoneNumber, rl.RoleName, r.Password 
+                FROM Admin r
+                JOIN Role rl ON r.RoleID = rl.RoleID
+                WHERE r.AdminID = @AdminID";
 
-            try
+            using (SqlConnection conn = DBHelper.GetConnection())
+            using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                conn.Open();
-                using (SqlDataReader reader = cmd.ExecuteReader())
+                cmd.Parameters.AddWithValue("@AdminID", adminId);
+
+                try
                 {
-                    if (reader.Read())
+                    conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        lblFullName.Text = reader["FullName"].ToString();
-                        lblEmail.Text = reader["Email"].ToString();
-                        lblPhoneNumber.Text = reader["PhoneNumber"].ToString();
-                        lblRole.Text = reader["RoleName"].ToString(); 
-                        lblPassword.Text = reader["Password"].ToString();
-                    }
-                    else
-                    {
-                        MessageBox.Show("No admin profile found for the given AdminID.", "Profile Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        if (reader.Read())
+                        {
+                            lblFullName.Text = reader["FullName"].ToString();
+                            lblEmail.Text = reader["Email"].ToString();
+                            lblPhoneNumber.Text = reader["PhoneNumber"].ToString();
+                            lblRole.Text = reader["RoleName"].ToString();
+                            lblPassword.Text = reader["Password"].ToString();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No admin profile found for the given AdminID.", "Profile Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error loading profile: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading profile: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
-    }
-}
 
 
         private void lblSummary_Click(object sender, EventArgs e)
         {
-            Summary summaryForm = new Summary(adminId);
-            summaryForm.Show();
             this.Hide();
+            new Summary(adminId).Show();
+        }
+
+        private void lblLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AdminLogin().Show();
+        }
+
+        private void lblStatusBoard_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new MainDashboard(adminId).Show();
         }
     }
 }

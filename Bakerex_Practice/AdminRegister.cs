@@ -14,88 +14,72 @@ namespace Bakerex_Practice
 {
     public partial class AdminRegister : Form
     {
-        string connectionString = "Server=DESKTOP-D9KJ8S9\\SQLEXPRESS;Database=BakerexCustomerSupportSystem;Integrated Security=True;";
-
         public AdminRegister()
         {
             InitializeComponent();
-        }
-      
-        private void AdminRegister_Load(object sender, EventArgs e)
-        {
             LoadRoles();
         }
+
         private void LoadRoles()
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            string query = "SELECT RoleID, RoleName FROM Role";
+
+            try
             {
-                string query = "SELECT RoleID, RoleName FROM Role";
+                SqlParameter[] parameters = { };
+                DataTable dt = DBHelper.ExecuteQuery(query, parameters);
 
-                using (SqlCommand cmd = new SqlCommand(query, conn))
+                cbxRole.Items.Clear();
+
+                foreach (DataRow row in dt.Rows)
                 {
-                    try
-                    {
-                        conn.Open();
-                        SqlDataReader reader = cmd.ExecuteReader();
-                        cbxRole.Items.Clear();
-
-                        while (reader.Read())
-                        {
-                            cbxRole.Items.Add(new KeyValuePair<int, string>(
-                                Convert.ToInt32(reader["RoleID"]),
-                                reader["RoleName"].ToString()
-                            ));
-                        }
-                        reader.Close();
-
-                        cbxRole.DisplayMember = "Value"; 
-                        cbxRole.ValueMember = "Key";     
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    cbxRole.Items.Add(new KeyValuePair<int, string>(
+                        Convert.ToInt32(row["RoleID"]),
+                        row["RoleName"].ToString()
+                    ));
                 }
+
+                cbxRole.DisplayMember = "Value";
+                cbxRole.ValueMember = "Key";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void btnSignin_Click(object sender, EventArgs e)
         {
             if (!ValidateInputs()) return;
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            string query = "INSERT INTO Admin (FullName, Email, Password, PhoneNumber, RoleID) VALUES (@FullName, @Email, @Password, @PhoneNumber, @RoleID)";
+
+            try
             {
-                try
+                KeyValuePair<int, string> selectedRole = (KeyValuePair<int, string>)cbxRole.SelectedItem;
+
+                SqlParameter[] parameters = {
+                    new SqlParameter("@FullName", SqlDbType.NVarChar) { Value = txtFullName.Text.Trim() },
+                    new SqlParameter("@Email", SqlDbType.NVarChar) { Value = txtEmail.Text.Trim() },
+                    new SqlParameter("@Password", SqlDbType.NVarChar) { Value = txtPassword.Text.Trim() },
+                    new SqlParameter("@PhoneNumber", SqlDbType.NVarChar) { Value = txtPhoneNumber.Text.Trim() },
+                    new SqlParameter("@RoleID", SqlDbType.Int) { Value = selectedRole.Key }
+                };
+
+                int result = DBHelper.ExecuteNonQuery(query, parameters);
+
+                if (result > 0)
                 {
-                    conn.Open();
-                    string query = "INSERT INTO Admin (FullName, Email, Password, PhoneNumber, RoleID) VALUES (@FullName, @Email, @Password, @PhoneNumber, @RoleID)";
-
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@FullName", txtFullName.Text.Trim());
-                        cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
-                        cmd.Parameters.AddWithValue("@Password", txtPassword.Text.Trim());
-                        cmd.Parameters.AddWithValue("@PhoneNumber", txtPhoneNumber.Text.Trim());
-
-                        KeyValuePair<int, string> selectedRole = (KeyValuePair<int, string>)cbxRole.SelectedItem;
-                        cmd.Parameters.AddWithValue("@RoleID", selectedRole.Key);
-
-                        int result = cmd.ExecuteNonQuery();
-
-                        if (result > 0)
-                        {
-                            MessageBox.Show("Admin registered successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            ClearFields();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Registration failed!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
+                    MessageBox.Show("Admin registered successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearFields();
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Registration failed!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
