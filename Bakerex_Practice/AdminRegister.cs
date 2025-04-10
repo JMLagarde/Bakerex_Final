@@ -14,9 +14,11 @@ namespace Bakerex_Practice
 {
     public partial class AdminRegister : Form
     {
-        public AdminRegister()
+        private readonly int adminId;
+        public AdminRegister(int adminId)
         {
             InitializeComponent();
+            this.adminId = adminId;
             LoadRoles();
         }
 
@@ -49,6 +51,7 @@ namespace Bakerex_Practice
         }
         private void btnSignin_Click(object sender, EventArgs e)
         {
+
             if (!ValidateInputs()) return;
 
             string query = "INSERT INTO Admin (FullName, Email, Password, PhoneNumber, RoleID) VALUES (@FullName, @Email, @Password, @PhoneNumber, @RoleID)";
@@ -58,12 +61,12 @@ namespace Bakerex_Practice
                 KeyValuePair<int, string> selectedRole = (KeyValuePair<int, string>)cbxRole.SelectedItem;
 
                 SqlParameter[] parameters = {
-                    new SqlParameter("@FullName", SqlDbType.NVarChar) { Value = txtFullName.Text.Trim() },
-                    new SqlParameter("@Email", SqlDbType.NVarChar) { Value = txtEmail.Text.Trim() },
-                    new SqlParameter("@Password", SqlDbType.NVarChar) { Value = txtPassword.Text.Trim() },
-                    new SqlParameter("@PhoneNumber", SqlDbType.NVarChar) { Value = txtPhoneNumber.Text.Trim() },
-                    new SqlParameter("@RoleID", SqlDbType.Int) { Value = selectedRole.Key }
-                };
+            new SqlParameter("@FullName", SqlDbType.NVarChar) { Value = txtFullName.Text.Trim() },
+            new SqlParameter("@Email", SqlDbType.NVarChar) { Value = txtEmail.Text.Trim() },
+            new SqlParameter("@Password", SqlDbType.NVarChar) { Value = txtPassword.Text.Trim() },
+            new SqlParameter("@PhoneNumber", SqlDbType.NVarChar) { Value = txtPhoneNumber.Text.Trim() },
+            new SqlParameter("@RoleID", SqlDbType.Int) { Value = selectedRole.Key }
+        };
 
                 int result = DBHelper.ExecuteNonQuery(query, parameters);
 
@@ -82,25 +85,21 @@ namespace Bakerex_Practice
                 MessageBox.Show("Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private bool ValidateInputs()
         {
             if (string.IsNullOrWhiteSpace(txtFullName.Text) ||
-               string.IsNullOrWhiteSpace(txtEmail.Text) ||
-               string.IsNullOrWhiteSpace(txtPassword.Text) ||
-               string.IsNullOrWhiteSpace(txtPhoneNumber.Text) ||
-               cbxRole.SelectedItem == null) 
+                string.IsNullOrWhiteSpace(txtEmail.Text) ||  
+                string.IsNullOrWhiteSpace(txtPhoneNumber.Text) ||
+                cbxRole.SelectedItem == null)
             {
                 MessageBox.Show("All fields are required!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-
             if (!Regex.IsMatch(txtEmail.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
             {
                 MessageBox.Show("Invalid email format!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-
             if (!Regex.IsMatch(txtPhoneNumber.Text, @"^09\d{9}$"))
             {
                 MessageBox.Show("Phone number must be 11 digits and start with '09'!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -113,27 +112,47 @@ namespace Bakerex_Practice
         private void ClearFields()
         {
             txtFullName.Text = "";
-            txtEmail.Text = "";
-            txtPassword.Text = "";
+            txtEmail.Text = "";  
             txtPhoneNumber.Text = "";
-            cbxRole.SelectedIndex = -1;
+            txtPassword.Text = ""; 
+            cbxRole.SelectedIndex = -1; ;
         }
 
-        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        private void lblStatusBoard_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new MainUser().Show();
+            new MainDashboard(adminId).Show();
+        }
+
+        private void lblTickets_Click(object sender, EventArgs e)
+        {
+            int requestID = 0;
+            if (requestID <= 0)
+            {
+                MessageBox.Show("Please select a client to access tickets.", "No Ticket Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                Tickets tickets = new Tickets(requestID, adminId);
+                tickets.Show();
+                this.Hide();
+            }
+        }
+        private void lblSummary_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Summary(adminId).Show();
+        }
+
+        private void lblLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AdminLogin().Show();
         }
 
         private void cbxExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void lblLogin_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new AdminLogin().Show();
         }
     }
 }

@@ -21,17 +21,17 @@ namespace Bakerex_Practice
             InitializeComponent();
             this.requestID = requestID;
             this.adminId = adminId;
-            LoadTicketDetails();
             LoadTechnicians();
             LoadStatuses();
+            LoadTicketDetails();
         }
 
         private void LoadTicketDetails()
         {
             string query = @"
-            SELECT cr.RequestID, cr.CustomerName, cr.Email, cr.CompanyName, 
+            SELECT cr.RequestID, cr.CustomerName, cr.Email, cr.PhoneNumber, cr.CompanyName, 
                    it.IssueTypeName, cr.Subject, cr.Description, cr.ProductDetails, 
-                   pl.PriorityLevelName, cr.CreatedAt, s.StatusName, 
+                   pl.PriorityLevelName, cr.CreatedAt, s.StatusID, s.StatusName, 
                    cr.Response, cr.Technician, cr.Schedule
             FROM CustomerRequests cr
             LEFT JOIN IssueType it ON cr.IssueTypeID = it.IssueTypeID
@@ -45,9 +45,11 @@ namespace Bakerex_Practice
             if (ticketDetails.Rows.Count > 0)
             {
                 DataRow row = ticketDetails.Rows[0];
+
                 lblTicketId.Text = row["RequestID"].ToString();
                 lblCustomerName.Text = row["CustomerName"].ToString();
                 lblEmail.Text = row["Email"].ToString();
+                lblPhoneNumber.Text = row["PhoneNumber"].ToString();
                 lblCompanyName.Text = row["CompanyName"].ToString();
                 lblIssueType.Text = row["IssueTypeName"].ToString();
                 lblSubject.Text = row["Subject"].ToString();
@@ -55,12 +57,58 @@ namespace Bakerex_Practice
                 lblProductDetails.Text = row["ProductDetails"].ToString();
                 lblPriorityLevel.Text = row["PriorityLevelName"].ToString();
                 lblCreatedAt.Text = Convert.ToDateTime(row["CreatedAt"]).ToString("yyyy-MM-dd HH:mm");
-                cbxStatus.SelectedValue = row["StatusName"].ToString();
+
+                if (row["StatusID"] != DBNull.Value)
+                {
+                    int statusId = Convert.ToInt32(row["StatusID"]);
+                    cbxStatus.SelectedValue = statusId;
+                }
 
                 txtResponse.Text = row["Response"] != DBNull.Value ? row["Response"].ToString() : "";
-                cbxTechnician.SelectedItem = row["Technician"] != DBNull.Value ? row["Technician"].ToString() : null;
-                dtmSchedule.Value = row["Schedule"] != DBNull.Value ? Convert.ToDateTime(row["Schedule"]) : DateTime.Now;
+                if (row["Technician"] != DBNull.Value)
+                {
+                    string savedTechnician = row["Technician"].ToString();
+                    for (int i = 0; i < cbxTechnician.Items.Count; i++)
+                    {
+                        if (cbxTechnician.Items[i].ToString().Equals(savedTechnician, StringComparison.OrdinalIgnoreCase))
+                        {
+                            cbxTechnician.SelectedIndex = i;
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    cbxTechnician.SelectedIndex = -1;
+                }
+                if (row["Schedule"] != DBNull.Value)
+                {
+                    dtmSchedule.Value = Convert.ToDateTime(row["Schedule"]);
+                }
+                else
+                {
+                    dtmSchedule.Value = DateTime.Now;
+                }
             }
+        }
+
+
+        private void LoadStatuses()
+        {
+            string query = "SELECT StatusID, StatusName FROM Status";
+            DataTable statusData = DBHelper.ExecuteQuery(query);
+
+            cbxStatus.Items.Clear();
+            var statusList = new List<KeyValuePair<int, string>>();
+
+            foreach (DataRow row in statusData.Rows)
+            {
+                statusList.Add(new KeyValuePair<int, string>(Convert.ToInt32(row["StatusID"]), row["StatusName"].ToString()));
+            }
+
+            cbxStatus.DataSource = new BindingSource(statusList, null);
+            cbxStatus.DisplayMember = "Value";
+            cbxStatus.ValueMember = "Key";
         }
 
         private void LoadTechnicians()
@@ -73,27 +121,6 @@ namespace Bakerex_Practice
             {
                 cbxTechnician.Items.Add(row["FullName"].ToString());
             }
-        }
-
-        private void LoadStatuses()
-        {
-            string query = "SELECT StatusID, StatusName FROM Status";
-            DataTable statusData = DBHelper.ExecuteQuery(query);
-
-            cbxStatus.Items.Clear();
-            var statusList = new List<KeyValuePair<int, string>>();
-
-            foreach (DataRow row in statusData.Rows)
-            {
-                statusList.Add(new KeyValuePair<int, string>(
-                    Convert.ToInt32(row["StatusID"]),
-                    row["StatusName"].ToString()
-                ));
-            }
-
-            cbxStatus.DataSource = new BindingSource(statusList, null);
-            cbxStatus.DisplayMember = "Value";
-            cbxStatus.ValueMember = "Key";
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {

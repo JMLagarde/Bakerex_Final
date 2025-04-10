@@ -69,6 +69,7 @@
             this.PriorityChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label1 = new System.Windows.Forms.Label();
             this.lblSummaryTitle = new System.Windows.Forms.Label();
+            this.cbxExit = new Guna.UI2.WinForms.Guna2ControlBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.guna2GradientPanel5.SuspendLayout();
@@ -141,9 +142,9 @@
             this.lblTechnicians.ForeColor = System.Drawing.SystemColors.GrayText;
             this.lblTechnicians.Location = new System.Drawing.Point(16, 238);
             this.lblTechnicians.Name = "lblTechnicians";
-            this.lblTechnicians.Size = new System.Drawing.Size(98, 22);
+            this.lblTechnicians.Size = new System.Drawing.Size(54, 22);
             this.lblTechnicians.TabIndex = 35;
-            this.lblTechnicians.Text = "Technicians";
+            this.lblTechnicians.Text = "Profile";
             this.lblTechnicians.Click += new System.EventHandler(this.lblTechnicians_Click);
             // 
             // lblTickets
@@ -534,12 +535,25 @@
             this.lblSummaryTitle.TabIndex = 18;
             this.lblSummaryTitle.Text = "Summary";
             // 
+            // cbxExit
+            // 
+            this.cbxExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxExit.BackColor = System.Drawing.Color.Transparent;
+            this.cbxExit.BorderRadius = 1;
+            this.cbxExit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(24)))), ((int)(((byte)(34)))));
+            this.cbxExit.IconColor = System.Drawing.Color.White;
+            this.cbxExit.Location = new System.Drawing.Point(12, 12);
+            this.cbxExit.Name = "cbxExit";
+            this.cbxExit.Size = new System.Drawing.Size(19, 19);
+            this.cbxExit.TabIndex = 39;
+            // 
             // Summary
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
             this.ClientSize = new System.Drawing.Size(843, 842);
+            this.Controls.Add(this.cbxExit);
             this.Controls.Add(this.lblLogut);
             this.Controls.Add(this.lblCalendar);
             this.Controls.Add(this.lblSummary);
@@ -603,5 +617,6 @@
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel5;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblUnassigned;
+        private Guna.UI2.WinForms.Guna2ControlBox cbxExit;
     }
 }

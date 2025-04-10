@@ -10,8 +10,7 @@ namespace Bakerex_Practice
 {
     public static class DBHelper
     {
-        private static readonly string connectionString = "Server=YOUR_SERVER;Database=YOUR_DATABASE;Integrated Security=True;";
-
+        private static readonly string connectionString = "Server=DESKTOP-D9KJ8S9\\SQLEXPRESS;Database=BakerexCustomerSupportSystem;Integrated Security=True;";
         public static SqlConnection GetConnection()
         {
             return new SqlConnection(connectionString);
@@ -19,13 +18,21 @@ namespace Bakerex_Practice
 
         public static DataTable ExecuteQuery(string query, SqlParameter[] parameters = null)
         {
-            var conn = new SqlConnection(connectionString);
-            var adapter = new SqlDataAdapter(query, conn);
+            using (var conn = new SqlConnection(connectionString))
+            {
+                using (var cmd = new SqlCommand(query, conn))
+                {
+                    if (parameters != null)
+                        cmd.Parameters.AddRange(parameters);
 
-            DataTable dt = new DataTable();
-            adapter.Fill(dt);
-            return dt;
-
+                    using (var adapter = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        return dt;
+                    }
+                }
+            }
         }
 
         public static SqlDataReader ExecuteReader(string query, SqlParameter[] parameters)
@@ -41,12 +48,12 @@ namespace Bakerex_Practice
         public static int ExecuteNonQuery(string query, SqlParameter[] parameters = null)
         {
             SqlConnection conn = GetConnection();
-            SqlCommand cmd = new SqlCommand(query, conn); 
+            SqlCommand cmd = new SqlCommand(query, conn);
 
             cmd.Parameters.AddRange(parameters);
             conn.Open();
 
-            return cmd.ExecuteNonQuery(); 
+            return cmd.ExecuteNonQuery();
         }
 
     }

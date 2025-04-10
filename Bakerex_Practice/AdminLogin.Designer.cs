@@ -77,9 +77,8 @@
             this.lblRegister.ForeColor = System.Drawing.Color.White;
             this.lblRegister.Location = new System.Drawing.Point(158, 36);
             this.lblRegister.Name = "lblRegister";
-            this.lblRegister.Size = new System.Drawing.Size(82, 38);
+            this.lblRegister.Size = new System.Drawing.Size(3, 2);
             this.lblRegister.TabIndex = 23;
-            this.lblRegister.Text = "Register"; 
             // 
             // btnLogin
             // 
@@ -91,7 +90,7 @@
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnLogin.Location = new System.Drawing.Point(69, 309);
+            this.btnLogin.Location = new System.Drawing.Point(69, 290);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(301, 45);
             this.btnLogin.TabIndex = 22;
@@ -105,10 +104,8 @@
             this.txtSignup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(128)))), ((int)(((byte)(73)))));
             this.txtSignup.Location = new System.Drawing.Point(327, 282);
             this.txtSignup.Name = "txtSignup";
-            this.txtSignup.Size = new System.Drawing.Size(43, 21);
+            this.txtSignup.Size = new System.Drawing.Size(3, 2);
             this.txtSignup.TabIndex = 21;
-            this.txtSignup.Text = "Sign Up";
-            this.txtSignup.Click += new System.EventHandler(this.txtSignup_Click);
             // 
             // guna2HtmlLabel2
             // 
@@ -117,9 +114,8 @@
             this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.DarkGray;
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(70, 282);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(137, 21);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(3, 2);
             this.guna2HtmlLabel2.TabIndex = 20;
-            this.guna2HtmlLabel2.Text = "Dont\'t have an account?";
             // 
             // txtPassword
             // 
@@ -248,7 +244,6 @@
             this.Name = "AdminLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.AdminLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

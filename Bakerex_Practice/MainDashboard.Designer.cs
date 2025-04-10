@@ -113,7 +113,7 @@
             this.DataGridStatusBoard.Name = "DataGridStatusBoard";
             this.DataGridStatusBoard.RowHeadersVisible = false;
             this.DataGridStatusBoard.RowHeadersWidth = 51;
-            this.DataGridStatusBoard.Size = new System.Drawing.Size(613, 315);
+            this.DataGridStatusBoard.Size = new System.Drawing.Size(613, 328);
             this.DataGridStatusBoard.TabIndex = 7;
             this.DataGridStatusBoard.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DataGridStatusBoard.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -269,7 +269,8 @@
             this.cbxIdentifier.Items.AddRange(new object[] {
             "This Day",
             "This Week",
-            "This Month"});
+            "This Month",
+            "All Records"});
             this.cbxIdentifier.Location = new System.Drawing.Point(25, 44);
             this.cbxIdentifier.Name = "cbxIdentifier";
             this.cbxIdentifier.Size = new System.Drawing.Size(137, 36);
@@ -357,9 +358,9 @@
             this.lblTechnicians.ForeColor = System.Drawing.SystemColors.GrayText;
             this.lblTechnicians.Location = new System.Drawing.Point(16, 238);
             this.lblTechnicians.Name = "lblTechnicians";
-            this.lblTechnicians.Size = new System.Drawing.Size(98, 22);
+            this.lblTechnicians.Size = new System.Drawing.Size(54, 22);
             this.lblTechnicians.TabIndex = 8;
-            this.lblTechnicians.Text = "Technicians";
+            this.lblTechnicians.Text = "Profile";
             this.lblTechnicians.Click += new System.EventHandler(this.lblTechnicians_Click);
             // 
             // lblLogut
@@ -404,7 +405,6 @@
             this.Name = "MainDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.MainDashboard_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridStatusBoard)).EndInit();

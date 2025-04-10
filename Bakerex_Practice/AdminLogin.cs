@@ -15,8 +15,6 @@ namespace Bakerex_Practice
 {
     public partial class AdminLogin : Form
     {
-    
-
         public AdminLogin()
         {
             InitializeComponent();
@@ -81,27 +79,10 @@ namespace Bakerex_Practice
             Application.Exit();
         }
 
-        private void lblRegister_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new AdminRegister().Show();
-        }
-
-        private void AdminLogin_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void guna2PictureBox1_Click(object sender, EventArgs e)
         {
             this.Hide();
             new MainUser().Show();
-        }
-
-        private void txtSignup_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new AdminRegister().Show();
         }
     }
 }

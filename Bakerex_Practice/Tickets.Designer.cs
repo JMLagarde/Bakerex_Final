@@ -128,9 +128,9 @@
             this.lblTechnicians.ForeColor = System.Drawing.SystemColors.GrayText;
             this.lblTechnicians.Location = new System.Drawing.Point(16, 238);
             this.lblTechnicians.Name = "lblTechnicians";
-            this.lblTechnicians.Size = new System.Drawing.Size(106, 30);
+            this.lblTechnicians.Size = new System.Drawing.Size(56, 30);
             this.lblTechnicians.TabIndex = 17;
-            this.lblTechnicians.Text = "Technicians";
+            this.lblTechnicians.Text = "Profile";
             this.lblTechnicians.Click += new System.EventHandler(this.lblTechnicians_Click);
             // 
             // lblTickets

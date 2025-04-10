@@ -74,8 +74,6 @@ namespace Bakerex_Practice
                 }
             }
         }
-
-
         private void lblSummary_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -92,6 +90,17 @@ namespace Bakerex_Practice
         {
             this.Hide();
             new MainDashboard(adminId).Show();
+        }
+
+        private void guna2HtmlLabel2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AdminRegister(adminId).Show();
+        }
+
+        private void cbxExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

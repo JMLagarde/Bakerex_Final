@@ -13,13 +13,29 @@ namespace Bakerex_Practice
         {
             InitializeComponent();
             this.adminId = adminId;
+            cbxIdentifier.SelectedIndex = 0;
+        }
+        private void cbxIdentifier_SelectedIndexChanged(object sender, EventArgs e)
+        {
             LoadRequestTable();
         }
-
-        private void MainDashboard_Load(object sender, EventArgs e)
+        private DateTime GetDateFilterValue()
         {
-                cbxIdentifier.SelectedIndex = 0;
+            switch (cbxIdentifier.SelectedItem.ToString())
+            {
+                case "This Day":
+                    return DateTime.Today;
+                case "This Week":
+                    return DateTime.Today.AddDays(-7);
+                case "This Month":
+                    return new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+                case "All Records":
+                    return new DateTime(2025, 1, 1);
+                default:
+                    return DateTime.MinValue;
+            }
         }
+
 
         private void LoadRequestTable()
         {
@@ -92,27 +108,6 @@ namespace Bakerex_Practice
                 MessageBox.Show("Error loading dashboard data: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private DateTime GetDateFilterValue()
-        {
-            switch (cbxIdentifier.SelectedItem.ToString())
-            {
-                case "This Day":
-                    return DateTime.Today;
-                case "This Week":
-                    return DateTime.Today.AddDays(-7); 
-                case "This Month":
-                    return new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1); 
-                default:
-                    return DateTime.MinValue; 
-            }
-        }
-
-        private void cbxIdentifier_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            LoadRequestTable();
-        }
-
         private void cbxExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -152,6 +147,12 @@ namespace Bakerex_Practice
         {
             this.Hide();
             new Technicians(adminId).Show();
+        }
+
+        private void lblLogut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AdminLogin().Show();
         }
     }
 }
