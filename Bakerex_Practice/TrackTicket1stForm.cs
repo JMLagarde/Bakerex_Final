@@ -17,67 +17,57 @@ namespace Bakerex_Practice
         {
             InitializeComponent();
             this.DataGridStatusBoard.CellDoubleClick += new DataGridViewCellEventHandler(this.DataGridStatusBoard_CellDoubleClick);
+            LoadUserTickets();
         }
-
-        private void TrackTicket1stForm_Load(object sender, EventArgs e)
+        private void LoadUserTickets()
         {
+            int userID = DBHelper.CurrentUser.UserID;
 
-        }
-
-        private void btnFind_Click(object sender, EventArgs e)
-        {
-            string email = lblEmail.Text.Trim();
-            string phoneNumber = lblPhoneNumber.Text.Trim();
+            if (userID == 0)
+            {
+                MessageBox.Show("User not logged in.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             string query = @"
                 SELECT 
                     cr.RequestID, 
-                    st.StatusName AS Status, 
-                    cr.Subject, 
                     cr.CustomerName, 
-                    cr.Email, 
-                    cr.PhoneNumber, 
-                    cr.CompanyName, 
-                    it.IssueTypeName AS IssueType, 
-                    cr.CreatedAt, 
-                    cr.Description, 
+                    cr.Subject, 
                     cr.ProductDetails, 
-                    pl.PriorityLevelName AS PriorityLevel, 
-                    cr.Technician, 
-                    cr.Schedule, 
-                    cr.Response 
-                FROM CustomerRequests cr
-                LEFT JOIN IssueType it ON cr.IssueTypeID = it.IssueTypeID
-                LEFT JOIN PriorityLevel pl ON cr.PriorityLevelID = pl.PriorityLevelID
-                LEFT JOIN Status st ON cr.StatusID = st.StatusID
-                WHERE cr.Email = @Email AND cr.PhoneNumber = @PhoneNumber;";
+                    cr.CreatedAt, 
+                    s.StatusName
+                FROM 
+                    CustomerRequests cr
+                JOIN 
+                    Status s ON cr.StatusID = s.StatusID
+                WHERE 
+                    cr.UserID = @UserID
+                ORDER BY 
+                    cr.CreatedAt DESC";
 
-            SqlParameter[] parameters = {
-                new SqlParameter("@Email", email),
-                new SqlParameter("@PhoneNumber", phoneNumber)
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@UserID", userID)
             };
 
             try
             {
-                using (SqlConnection conn = new SqlConnection("Server=DESKTOP-D9KJ8S9\\SQLEXPRESS;Database=BakerexCustomerSupportSystem;Integrated Security=True;"))
-                {
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddRange(parameters);
+                DataTable userTickets = DBHelper.ExecuteQuery(query, parameters);
+                DataGridStatusBoard.DataSource = userTickets;
 
-                    conn.Open();
-                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-
-                    DataGridStatusBoard.DataSource = dt;
-                }
+                DataGridStatusBoard.Columns["RequestID"].HeaderText = "Request ID";
+                DataGridStatusBoard.Columns["CustomerName"].HeaderText = "Customer Name";
+                DataGridStatusBoard.Columns["Subject"].HeaderText = "Subject";
+                DataGridStatusBoard.Columns["StatusName"].HeaderText = "Status";
+                DataGridStatusBoard.Columns["ProductDetails"].HeaderText = "Product Details";
+                DataGridStatusBoard.Columns["CreatedAt"].HeaderText = "Date Created";
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error retrieving ticket data: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error loading tickets: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void DataGridStatusBoard_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -104,6 +94,11 @@ namespace Bakerex_Practice
         {
             this.Hide();
             new AdminLogin().Show();
+        }
+
+        private void cbxExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

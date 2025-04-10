@@ -56,12 +56,14 @@ namespace Bakerex_Practice
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtCustomerName.Text) ||
-                string.IsNullOrWhiteSpace(txtEmail.Text) ||
-                string.IsNullOrWhiteSpace(txtPhoneNumber.Text) ||
-                string.IsNullOrWhiteSpace(txtSubject.Text) ||
-                string.IsNullOrWhiteSpace(txtDescription.Text) ||
-                cbxIssueType.SelectedIndex == -1 ||
-                cbxPrioritylevel.SelectedIndex == -1)
+               string.IsNullOrWhiteSpace(txtEmail.Text) ||
+               string.IsNullOrEmpty(txtCompany.Text) ||
+               string.IsNullOrWhiteSpace(txtAddress.Text) ||
+               string.IsNullOrWhiteSpace(txtPhoneNumber.Text) ||
+               string.IsNullOrWhiteSpace(txtSubject.Text) ||
+               string.IsNullOrWhiteSpace(txtDescription.Text) ||
+               cbxIssueType.SelectedIndex == -1 ||
+               cbxPrioritylevel.SelectedIndex == -1)
             {
                 MessageBox.Show("All fields must be filled.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -74,20 +76,30 @@ namespace Bakerex_Practice
                 return;
             }
 
+            int userID = DBHelper.CurrentUser.UserID;
+
+            if (userID == 0)
+            {
+                MessageBox.Show("User not logged in.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             int issueTypeID = Convert.ToInt32(cbxIssueType.SelectedValue);
             int priorityLevelID = Convert.ToInt32(cbxPrioritylevel.SelectedValue);
 
             string query = @"INSERT INTO CustomerRequests 
-                             (CustomerName, Email, PhoneNumber, CompanyName, IssueTypeID, Subject, Description, ProductDetails, PriorityLevelID) 
-                             VALUES 
-                             (@CustomerName, @Email, @PhoneNumber, @CompanyName, @IssueTypeID, @Subject, @Description, @ProductDetails, @PriorityLevelID)";
+                     (UserID, CustomerName, Email, PhoneNumber, CompanyName, Address, IssueTypeID, Subject, Description, ProductDetails, PriorityLevelID) 
+                     VALUES 
+                     (@UserID, @CustomerName, @Email, @PhoneNumber, @CompanyName, @Address, @IssueTypeID, @Subject, @Description, @ProductDetails, @PriorityLevelID)";
 
             SqlParameter[] parameters = new SqlParameter[]
             {
+                new SqlParameter("@UserID", userID),
                 new SqlParameter("@CustomerName", txtCustomerName.Text),
                 new SqlParameter("@Email", txtEmail.Text),
                 new SqlParameter("@PhoneNumber", txtPhoneNumber.Text),
                 new SqlParameter("@CompanyName", txtCompany.Text),
+                new SqlParameter("@Address", txtAddress.Text),
                 new SqlParameter("@IssueTypeID", issueTypeID),
                 new SqlParameter("@Subject", txtSubject.Text),
                 new SqlParameter("@Description", txtDescription.Text),
@@ -102,9 +114,7 @@ namespace Bakerex_Practice
                 if (rowsAffected > 0)
                 {
                     MessageBox.Show("Request submitted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Hide();
-                    MainUser mainUserForm = new MainUser();
-                    mainUserForm.Show();
+                    ClearFields();
                 }
                 else
                 {
@@ -124,6 +134,7 @@ namespace Bakerex_Practice
             txtEmail.Clear();
             txtPhoneNumber.Clear();
             txtCompany.Clear();
+            txtAddress.Clear();
             cbxIssueType.SelectedIndex = -1;
             txtSubject.Clear();
             txtDescription.Clear();
@@ -134,13 +145,13 @@ namespace Bakerex_Practice
         private void lblHome_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MainUser mainUserForm = new MainUser();
+            new MainUser().Show();
         }
 
         private void lblTrackTicket_Click(object sender, EventArgs e)
         {
             this.Hide();
-            TrackTicket1stForm trackTicketForm = new TrackTicket1stForm();
+            new TrackTicket1stForm().Show();
         }
     }
 }

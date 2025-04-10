@@ -129,7 +129,7 @@
             this.guna2ControlBox1.BorderRadius = 1;
             this.guna2ControlBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(24)))), ((int)(((byte)(34)))));
             this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(739, 7);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(800, 3);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(19, 19);
             this.guna2ControlBox1.TabIndex = 47;

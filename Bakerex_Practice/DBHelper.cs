@@ -55,6 +55,10 @@ namespace Bakerex_Practice
 
             return cmd.ExecuteNonQuery();
         }
-
+        public static class CurrentUser
+        {
+            public static int UserID { get; set; }
+            public static int AdminID { get; set; }
+        }
     }
 }

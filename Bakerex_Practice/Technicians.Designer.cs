@@ -38,8 +38,8 @@
             this.lblStatusBoard = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnSubmit = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtChangeConfirmPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtChangeNewPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -171,8 +171,8 @@
             // 
             this.guna2Panel1.BorderRadius = 20;
             this.guna2Panel1.Controls.Add(this.btnSubmit);
-            this.guna2Panel1.Controls.Add(this.guna2TextBox1);
-            this.guna2Panel1.Controls.Add(this.txtEmail);
+            this.guna2Panel1.Controls.Add(this.txtChangeConfirmPassword);
+            this.guna2Panel1.Controls.Add(this.txtChangeNewPassword);
             this.guna2Panel1.Controls.Add(this.label12);
             this.guna2Panel1.Controls.Add(this.panel1);
             this.guna2Panel1.Controls.Add(this.guna2HtmlLabel2);
@@ -213,56 +213,57 @@
             this.btnSubmit.Size = new System.Drawing.Size(216, 45);
             this.btnSubmit.TabIndex = 48;
             this.btnSubmit.Text = "Submit";
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
-            // guna2TextBox1
+            // txtChangeConfirmPassword
             // 
-            this.guna2TextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
-            this.guna2TextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(94)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(59)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(128)))), ((int)(((byte)(73)))));
-            this.guna2TextBox1.FocusedState.FillColor = System.Drawing.Color.Gray;
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.ForeColor = System.Drawing.Color.White;
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
-            this.guna2TextBox1.HoverState.FillColor = System.Drawing.Color.Gray;
-            this.guna2TextBox1.Location = new System.Drawing.Point(345, 222);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '*';
-            this.guna2TextBox1.PlaceholderText = "Confirm Password";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(300, 44);
-            this.guna2TextBox1.TabIndex = 47;
+            this.txtChangeConfirmPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
+            this.txtChangeConfirmPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(94)))), ((int)(((byte)(255)))));
+            this.txtChangeConfirmPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtChangeConfirmPassword.DefaultText = "";
+            this.txtChangeConfirmPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtChangeConfirmPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtChangeConfirmPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtChangeConfirmPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtChangeConfirmPassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(59)))));
+            this.txtChangeConfirmPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(128)))), ((int)(((byte)(73)))));
+            this.txtChangeConfirmPassword.FocusedState.FillColor = System.Drawing.Color.Gray;
+            this.txtChangeConfirmPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtChangeConfirmPassword.ForeColor = System.Drawing.Color.White;
+            this.txtChangeConfirmPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
+            this.txtChangeConfirmPassword.HoverState.FillColor = System.Drawing.Color.Gray;
+            this.txtChangeConfirmPassword.Location = new System.Drawing.Point(345, 222);
+            this.txtChangeConfirmPassword.Name = "txtChangeConfirmPassword";
+            this.txtChangeConfirmPassword.PasswordChar = '*';
+            this.txtChangeConfirmPassword.PlaceholderText = "Confirm Password";
+            this.txtChangeConfirmPassword.SelectedText = "";
+            this.txtChangeConfirmPassword.Size = new System.Drawing.Size(300, 44);
+            this.txtChangeConfirmPassword.TabIndex = 47;
             // 
-            // txtEmail
+            // txtChangeNewPassword
             // 
-            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(59)))));
-            this.txtEmail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(94)))), ((int)(((byte)(255)))));
-            this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEmail.DefaultText = "";
-            this.txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtEmail.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(59)))));
-            this.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(128)))), ((int)(((byte)(73)))));
-            this.txtEmail.FocusedState.FillColor = System.Drawing.Color.Gray;
-            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtEmail.ForeColor = System.Drawing.Color.Transparent;
-            this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
-            this.txtEmail.HoverState.FillColor = System.Drawing.Color.Gray;
-            this.txtEmail.Location = new System.Drawing.Point(345, 150);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.PasswordChar = '*';
-            this.txtEmail.PlaceholderText = "New Password:";
-            this.txtEmail.SelectedText = "";
-            this.txtEmail.Size = new System.Drawing.Size(300, 44);
-            this.txtEmail.TabIndex = 46;
+            this.txtChangeNewPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(59)))));
+            this.txtChangeNewPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(94)))), ((int)(((byte)(255)))));
+            this.txtChangeNewPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtChangeNewPassword.DefaultText = "";
+            this.txtChangeNewPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtChangeNewPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtChangeNewPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtChangeNewPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtChangeNewPassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(47)))), ((int)(((byte)(59)))));
+            this.txtChangeNewPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(128)))), ((int)(((byte)(73)))));
+            this.txtChangeNewPassword.FocusedState.FillColor = System.Drawing.Color.Gray;
+            this.txtChangeNewPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtChangeNewPassword.ForeColor = System.Drawing.Color.Transparent;
+            this.txtChangeNewPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
+            this.txtChangeNewPassword.HoverState.FillColor = System.Drawing.Color.Gray;
+            this.txtChangeNewPassword.Location = new System.Drawing.Point(345, 150);
+            this.txtChangeNewPassword.Name = "txtChangeNewPassword";
+            this.txtChangeNewPassword.PasswordChar = '*';
+            this.txtChangeNewPassword.PlaceholderText = "New Password:";
+            this.txtChangeNewPassword.SelectedText = "";
+            this.txtChangeNewPassword.Size = new System.Drawing.Size(300, 44);
+            this.txtChangeNewPassword.TabIndex = 46;
             // 
             // label12
             // 
@@ -663,8 +664,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label10;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private Guna.UI2.WinForms.Guna2TextBox txtEmail;
+        private Guna.UI2.WinForms.Guna2TextBox txtChangeConfirmPassword;
+        private Guna.UI2.WinForms.Guna2TextBox txtChangeNewPassword;
         private Guna.UI2.WinForms.Guna2Button btnSubmit;
     }
 }

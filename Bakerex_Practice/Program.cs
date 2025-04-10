@@ -16,7 +16,7 @@ namespace Bakerex_Practice
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainUser());
+            Application.Run(new UserLogin());
         }
     }
 }

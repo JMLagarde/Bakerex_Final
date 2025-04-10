@@ -42,11 +42,6 @@
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.DataGridStatusBoard = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblEmail = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblPhoneNumber = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnFind = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -93,6 +88,7 @@
             this.cbxExit.Name = "cbxExit";
             this.cbxExit.Size = new System.Drawing.Size(19, 19);
             this.cbxExit.TabIndex = 11;
+            this.cbxExit.Click += new System.EventHandler(this.cbxExit_Click);
             // 
             // lblTrackTicket
             // 
@@ -179,7 +175,6 @@
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.DataGridStatusBoard.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.DataGridStatusBoard.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
             this.DataGridStatusBoard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -189,7 +184,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DataGridStatusBoard.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.DataGridStatusBoard.ColumnHeadersHeight = 4;
+            this.DataGridStatusBoard.ColumnHeadersHeight = 30;
             this.DataGridStatusBoard.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -200,11 +195,12 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DataGridStatusBoard.DefaultCellStyle = dataGridViewCellStyle3;
             this.DataGridStatusBoard.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DataGridStatusBoard.Location = new System.Drawing.Point(62, 223);
+            this.DataGridStatusBoard.Location = new System.Drawing.Point(62, 137);
             this.DataGridStatusBoard.Name = "DataGridStatusBoard";
+            this.DataGridStatusBoard.ReadOnly = true;
             this.DataGridStatusBoard.RowHeadersVisible = false;
             this.DataGridStatusBoard.RowHeadersWidth = 51;
-            this.DataGridStatusBoard.Size = new System.Drawing.Size(717, 229);
+            this.DataGridStatusBoard.Size = new System.Drawing.Size(717, 315);
             this.DataGridStatusBoard.TabIndex = 8;
             this.DataGridStatusBoard.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DataGridStatusBoard.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -218,8 +214,8 @@
             this.DataGridStatusBoard.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DataGridStatusBoard.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.DataGridStatusBoard.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.DataGridStatusBoard.ThemeStyle.HeaderStyle.Height = 4;
-            this.DataGridStatusBoard.ThemeStyle.ReadOnly = false;
+            this.DataGridStatusBoard.ThemeStyle.HeaderStyle.Height = 30;
+            this.DataGridStatusBoard.ThemeStyle.ReadOnly = true;
             this.DataGridStatusBoard.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.DataGridStatusBoard.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DataGridStatusBoard.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -228,108 +224,12 @@
             this.DataGridStatusBoard.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DataGridStatusBoard.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(62, 159);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 22);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "Enter Email:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(347, 158);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 22);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "Enter Phone Number:";
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
-            this.lblEmail.BorderColor = System.Drawing.Color.Tan;
-            this.lblEmail.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.lblEmail.DefaultText = "";
-            this.lblEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.lblEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.lblEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.lblEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.lblEmail.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.lblEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(128)))), ((int)(((byte)(73)))));
-            this.lblEmail.FocusedState.FillColor = System.Drawing.Color.DimGray;
-            this.lblEmail.FocusedState.ForeColor = System.Drawing.Color.White;
-            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblEmail.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
-            this.lblEmail.HoverState.FillColor = System.Drawing.Color.Gray;
-            this.lblEmail.Location = new System.Drawing.Point(66, 184);
-            this.lblEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.PlaceholderText = "Email";
-            this.lblEmail.SelectedText = "";
-            this.lblEmail.Size = new System.Drawing.Size(257, 33);
-            this.lblEmail.TabIndex = 11;
-            // 
-            // lblPhoneNumber
-            // 
-            this.lblPhoneNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
-            this.lblPhoneNumber.BorderColor = System.Drawing.Color.Tan;
-            this.lblPhoneNumber.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.lblPhoneNumber.DefaultText = "";
-            this.lblPhoneNumber.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.lblPhoneNumber.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.lblPhoneNumber.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.lblPhoneNumber.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.lblPhoneNumber.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.lblPhoneNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(128)))), ((int)(((byte)(73)))));
-            this.lblPhoneNumber.FocusedState.FillColor = System.Drawing.Color.DimGray;
-            this.lblPhoneNumber.FocusedState.ForeColor = System.Drawing.Color.White;
-            this.lblPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblPhoneNumber.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblPhoneNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(82)))), ((int)(((byte)(89)))));
-            this.lblPhoneNumber.HoverState.FillColor = System.Drawing.Color.Gray;
-            this.lblPhoneNumber.Location = new System.Drawing.Point(351, 184);
-            this.lblPhoneNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.lblPhoneNumber.Name = "lblPhoneNumber";
-            this.lblPhoneNumber.PlaceholderText = "Phone Number";
-            this.lblPhoneNumber.SelectedText = "";
-            this.lblPhoneNumber.Size = new System.Drawing.Size(257, 33);
-            this.lblPhoneNumber.TabIndex = 26;
-            // 
-            // btnFind
-            // 
-            this.btnFind.BorderColor = System.Drawing.Color.Orange;
-            this.btnFind.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnFind.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnFind.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnFind.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnFind.FillColor = System.Drawing.Color.Tan;
-            this.btnFind.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnFind.ForeColor = System.Drawing.Color.White;
-            this.btnFind.Location = new System.Drawing.Point(641, 184);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(115, 33);
-            this.btnFind.TabIndex = 27;
-            this.btnFind.Text = "Find Ticket";
-            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
-            // 
             // TrackTicket1stForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::Bakerex_Practice.Properties.Resources.UserBackground__2_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(843, 475);
-            this.Controls.Add(this.btnFind);
-            this.Controls.Add(this.lblPhoneNumber);
-            this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.DataGridStatusBoard);
             this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.guna2HtmlLabel1);
@@ -339,7 +239,6 @@
             this.Name = "TrackTicket1stForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.TrackTicket1stForm_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
@@ -363,10 +262,5 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2DataGridView DataGridStatusBoard;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label3;
-        private Guna.UI2.WinForms.Guna2TextBox lblEmail;
-        private Guna.UI2.WinForms.Guna2TextBox lblPhoneNumber;
-        private Guna.UI2.WinForms.Guna2Button btnFind;
     }
 }

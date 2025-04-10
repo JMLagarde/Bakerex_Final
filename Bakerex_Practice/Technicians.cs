@@ -102,5 +102,49 @@ namespace Bakerex_Practice
         {
             Application.Exit();
         }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            string newPassword = txtChangeNewPassword.Text.Trim();
+            string confirmPassword = txtChangeConfirmPassword.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(newPassword) || string.IsNullOrWhiteSpace(confirmPassword))
+            {
+                MessageBox.Show("Please fill out both password fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (newPassword != confirmPassword)
+            {
+                MessageBox.Show("Passwords do not match.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string query = "UPDATE Users SET Password = @Password WHERE UserID = @UserID";
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@Password", newPassword),
+                new SqlParameter("@UserID", DBHelper.CurrentUser.UserID)
+            };
+
+            try
+            {
+                int rowsAffected = DBHelper.ExecuteNonQuery(query, parameters);
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Password updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtChangeNewPassword.Clear();
+                    txtChangeConfirmPassword.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to update password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
