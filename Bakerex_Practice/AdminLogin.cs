@@ -44,25 +44,33 @@ namespace Bakerex_Practice
                 using (SqlConnection conn = DBHelper.GetConnection())
                 {
                     conn.Open();
-                    string query = "SELECT AdminID FROM Admin WHERE Email = @Email AND Password = @Password";
+                    string query = @"
+                        SELECT a.AdminID, a.RoleID, r.RoleName 
+                        FROM Admin a
+                        JOIN Role r ON a.RoleID = r.RoleID
+                        WHERE a.Email = @Email AND a.Password = @Password";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
                         cmd.Parameters.AddWithValue("@Password", txtPassword.Text.Trim());
 
-                        object result = cmd.ExecuteScalar();
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                DBHelper.CurrentUser.AdminID = Convert.ToInt32(reader["AdminID"]);
+                                DBHelper.CurrentUser.RoleID = Convert.ToInt32(reader["RoleID"]);
+                                DBHelper.CurrentUser.RoleName = reader["RoleName"].ToString();
 
-                        if (result != null)
-                        {
-                            int adminID = Convert.ToInt32(result);
-                            MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            this.Hide();
-                            new MainDashboard(adminID).Show();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Invalid email or password!", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Hide();
+                                new MainDashboard().Show();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Invalid email or password!", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
                         }
                     }
                 }

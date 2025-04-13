@@ -1,24 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bakerex_Practice
 {
     public partial class AdminRegister : Form
     {
-        private readonly int adminId;
-        public AdminRegister(int adminId)
+        public AdminRegister()
         {
             InitializeComponent();
-            this.adminId = adminId;
             LoadRoles();
         }
 
@@ -88,7 +81,7 @@ namespace Bakerex_Practice
         private bool ValidateInputs()
         {
             if (string.IsNullOrWhiteSpace(txtFullName.Text) ||
-                string.IsNullOrWhiteSpace(txtEmail.Text) ||  
+                string.IsNullOrWhiteSpace(txtEmail.Text) ||
                 string.IsNullOrWhiteSpace(txtPhoneNumber.Text) ||
                 cbxRole.SelectedItem == null)
             {
@@ -112,16 +105,16 @@ namespace Bakerex_Practice
         private void ClearFields()
         {
             txtFullName.Text = "";
-            txtEmail.Text = "";  
+            txtEmail.Text = "";
             txtPhoneNumber.Text = "";
-            txtPassword.Text = ""; 
+            txtPassword.Text = "";
             cbxRole.SelectedIndex = -1; ;
         }
 
         private void lblStatusBoard_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new MainDashboard(adminId).Show();
+            new MainDashboard().Show();
         }
 
         private void lblTickets_Click(object sender, EventArgs e)
@@ -133,7 +126,7 @@ namespace Bakerex_Practice
             }
             else
             {
-                Tickets tickets = new Tickets(requestID, adminId);
+                Tickets tickets = new Tickets(requestID, DBHelper.CurrentUser.AdminID);
                 tickets.Show();
                 this.Hide();
             }
@@ -141,7 +134,7 @@ namespace Bakerex_Practice
         private void lblSummary_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new Summary(adminId).Show();
+            new Summary().Show();
         }
 
         private void lblLogout_Click(object sender, EventArgs e)

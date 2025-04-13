@@ -7,12 +7,9 @@ namespace Bakerex_Practice
 {
     public partial class MainDashboard : Form
     {
-        private int adminId;
-
-        public MainDashboard(int adminId)
+        public MainDashboard()
         {
             InitializeComponent();
-            this.adminId = adminId;
             cbxIdentifier.SelectedIndex = 0;
         }
         private void cbxIdentifier_SelectedIndexChanged(object sender, EventArgs e)
@@ -118,7 +115,7 @@ namespace Bakerex_Practice
             if (e.RowIndex >= 0)
             {
                 int requestID = Convert.ToInt32(DataGridStatusBoard.Rows[e.RowIndex].Cells["RequestID"].Value);
-                Tickets detailsForm = new Tickets(requestID, adminId);
+                Tickets detailsForm = new Tickets(requestID, DBHelper.CurrentUser.AdminID);
                 detailsForm.Show();
             }
         }
@@ -128,7 +125,7 @@ namespace Bakerex_Practice
             if (DataGridStatusBoard.SelectedRows.Count > 0)
             {
                 int requestID = Convert.ToInt32(DataGridStatusBoard.SelectedRows[0].Cells["RequestID"].Value);
-                Tickets ticketsForm = new Tickets(requestID, adminId);
+                Tickets ticketsForm = new Tickets(requestID, DBHelper.CurrentUser.AdminID);
                 ticketsForm.Show();
                 this.Hide();
             }
@@ -140,13 +137,13 @@ namespace Bakerex_Practice
         private void lblSummary_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new Summary(adminId).Show();
+            new Summary().Show();
         }
 
         private void lblTechnicians_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new Technicians(adminId).Show();
+            new Technicians().Show();
         }
 
         private void lblLogut_Click(object sender, EventArgs e)

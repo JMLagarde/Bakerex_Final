@@ -13,12 +13,9 @@ namespace Bakerex_Practice
 {
     public partial class Technicians : Form
     {
-        private readonly int adminId;
-
-        public Technicians(int adminId)
+        public Technicians()
         {
             InitializeComponent();
-            this.adminId = adminId;
             LoadAdminProfile();
         }
         private void lblTickets_Click(object sender, EventArgs e)
@@ -30,7 +27,7 @@ namespace Bakerex_Practice
             }
             else
             {
-                Tickets tickets = new Tickets(requestID, adminId);
+                Tickets tickets = new Tickets(requestID, DBHelper.CurrentUser.AdminID);
                 tickets.Show();
                 this.Hide();
             }
@@ -47,7 +44,7 @@ namespace Bakerex_Practice
             using (SqlConnection conn = DBHelper.GetConnection())
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                cmd.Parameters.AddWithValue("@AdminID", adminId);
+                cmd.Parameters.AddWithValue("@AdminID", DBHelper.CurrentUser.AdminID);
 
                 try
                 {
@@ -77,7 +74,7 @@ namespace Bakerex_Practice
         private void lblSummary_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new Summary(adminId).Show();
+            new Summary().Show();
         }
 
         private void lblLogout_Click(object sender, EventArgs e)
@@ -89,13 +86,13 @@ namespace Bakerex_Practice
         private void lblStatusBoard_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new MainDashboard(adminId).Show();
+            new MainDashboard().Show();
         }
 
         private void guna2HtmlLabel2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new AdminRegister(adminId).Show();
+            new AdminRegister().Show();
         }
 
         private void cbxExit_Click(object sender, EventArgs e)

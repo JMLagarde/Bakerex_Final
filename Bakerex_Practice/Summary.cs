@@ -16,12 +16,9 @@ namespace Bakerex_Practice
 {
     public partial class Summary : Form
     {
-        private int adminId;
-
-        public Summary(int adminId)
+        public Summary()
         {
             InitializeComponent();
-            this.adminId = adminId;
             LoadPriorityChart();
             LoadIssueChart();
             LoadTickets();
@@ -141,7 +138,7 @@ namespace Bakerex_Practice
 
         private void lblStatusBoard_Click(object sender, EventArgs e)
         {
-            MainDashboard mainDashboard = new MainDashboard(adminId);
+            MainDashboard mainDashboard = new MainDashboard();
             mainDashboard.Show();
             this.Hide();
         }
@@ -155,7 +152,7 @@ namespace Bakerex_Practice
             }
             else
             {
-                Tickets tickets = new Tickets(requestID, adminId);
+                Tickets tickets = new Tickets(requestID, DBHelper.CurrentUser.AdminID);
                 tickets.Show();
                 this.Hide();
             }
@@ -163,7 +160,7 @@ namespace Bakerex_Practice
 
         private void lblTechnicians_Click(object sender, EventArgs e)
         {
-            Technicians techniciansForm = new Technicians(adminId);
+            Technicians techniciansForm = new Technicians();
             techniciansForm.Show();
             this.Hide();
         }

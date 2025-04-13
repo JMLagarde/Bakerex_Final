@@ -80,6 +80,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblTicket = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel11.SuspendLayout();
             this.guna2Panel10.SuspendLayout();
@@ -161,6 +162,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BorderRadius = 20;
+            this.guna2Panel1.Controls.Add(this.btnDelete);
             this.guna2Panel1.Controls.Add(this.dtmSchedule);
             this.guna2Panel1.Controls.Add(this.txtResponse);
             this.guna2Panel1.Controls.Add(this.btnUpdate);
@@ -231,7 +233,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnUpdate.Location = new System.Drawing.Point(405, 782);
+            this.btnUpdate.Location = new System.Drawing.Point(456, 782);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(173, 37);
             this.btnUpdate.TabIndex = 26;
@@ -721,6 +723,23 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(51)))), ((int)(((byte)(255)))));
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnDelete.Location = new System.Drawing.Point(38, 782);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(173, 37);
+            this.btnDelete.TabIndex = 29;
+            this.btnDelete.Text = "Delete Ticket";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // Tickets
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -821,5 +840,6 @@
         private Guna.UI2.WinForms.Guna2Button btnUpdate;
         private System.Windows.Forms.TextBox txtResponse;
         private System.Windows.Forms.DateTimePicker dtmSchedule;
+        private Guna.UI2.WinForms.Guna2Button btnDelete;
     }
 }

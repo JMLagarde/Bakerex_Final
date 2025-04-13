@@ -187,13 +187,13 @@ namespace Bakerex_Practice
         private void lblStatusBoard_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new MainDashboard(adminId).Show();
+            new MainDashboard().Show();
         }
 
         private void lblTechnicians_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new Technicians(adminId).Show();
+            new Technicians().Show();
         }
 
         private void lblLogout_Click(object sender, EventArgs e)
@@ -205,7 +205,33 @@ namespace Bakerex_Practice
         private void lblSummary_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new Summary(adminId).Show();
+            new Summary().Show();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this ticket?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                string query = "DELETE FROM CustomerRequests WHERE RequestID = @RequestID";
+
+                SqlParameter[] parameters = {
+            new SqlParameter("@RequestID", requestID)
+        };
+
+                try
+                {
+                    DBHelper.ExecuteNonQuery(query, parameters);
+                    MessageBox.Show("Ticket deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    this.Close();  
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error deleting ticket: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

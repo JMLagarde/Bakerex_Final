@@ -59,6 +59,8 @@ namespace Bakerex_Practice
         {
             public static int UserID { get; set; }
             public static int AdminID { get; set; }
+            public static int RoleID { get; set; }
+            public static string RoleName { get; set; }
         }
     }
 }

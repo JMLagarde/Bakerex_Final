@@ -14,7 +14,6 @@ namespace Bakerex_Practice
     public partial class TrackTicket2ndForm : Form
     {
         private int requestID;
-
         public TrackTicket2ndForm(int requestID)
         {
             InitializeComponent();
@@ -108,6 +107,7 @@ namespace Bakerex_Practice
             this.Hide();
             new AdminLogin().Show();
         }
+
     }
 }
 
